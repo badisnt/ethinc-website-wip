@@ -1,8 +1,15 @@
 {
-  "navigation": {
+  "nav": {
     "services": "Services",
     "products": "Products",
-    "about": "About",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Products",
+    "about": "About Us",
     "contact": "Contact",
     "contactUs": "Contact Us"
   },
@@ -14,42 +21,103 @@
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "AI, GenAI, and computer vision solutions for your business, delivered by EPFL alumni and industry experts. From research to production, we help you unlock value and drive innovation with advanced, privacy-focused technology.",
-    "nlp": {
-      "title": "Natural Language Processing (NLP)",
-      "description": "Expertise in text classification, named entity recognition (NER), sentiment analysis, information extraction, and language understanding for multilingual and domain-specific applications."
+    "subtitle": "We work across several key domains of AI",
+    "learnMore": "Learn More",
+    "dialog": {
+      "subtitle": "Detailed service information",
+      "concept": "General Concept",
+      "useCases": "Use Cases",
+      "projects": "Previous Projects"
     },
-    "generativeAI": {
-      "title": "Generative AI",
-      "description": "Advanced LLMs, content generation, prompt engineering, model adaptation and deployment, finetuning for your data, and privacy-focused solutions including on-premise and secure deployments."
+    "main": {
+      "nlp": {
+        "title": "Natural Language Processing (NLP)",
+        "shortDescription": "We design robust NLP and generative AI systems for multilingual, high-volume, and sensitive environments.",
+        "description": "We design robust NLP and generative AI systems for multilingual, high-volume, and sensitive environments. Our expertise covers text classification, entity extraction, summarization, document parsing, and large language model integration or local deployment.",
+        "useCases": [
+          "Text classification and categorization",
+          "Entity extraction and named entity recognition (NER)",
+          "Document summarization and parsing",
+          "Large language model integration",
+          "Multilingual processing systems"
+        ],
+        "projects": [
+          "Built multilingual NLP pipeline for international humanitarian organization",
+          "Developed entity extraction system for banking compliance",
+          "Deployed privacy-preserving LLM solution for enterprise document processing"
+        ]
+      },
+      "computerVision": {
+        "title": "Computer Vision",
+        "shortDescription": "We build advanced vision and generative vision models that bring structure and insight to image and video data.",
+        "description": "We build advanced vision and generative vision models that bring structure and insight to image and video data. Our solutions include object detection, image classification, video tagging, image generation, and custom multimodal pipelines.",
+        "useCases": [
+          "Object detection and tracking",
+          "Image classification and tagging",
+          "Video analysis and tagging",
+          "Image generation and enhancement",
+          "Custom multimodal AI pipelines"
+        ],
+        "projects": [
+          "Developed real-time object detection system for manufacturing quality control",
+          "Built video analysis platform for media content categorization",
+          "Created custom image classification model for medical imaging application"
+        ]
+      },
+      "ml": {
+        "title": "Machine Learning (ML)",
+        "shortDescription": "We solve predictive and analytical challenges across structured and unstructured data.",
+        "description": "We solve predictive and analytical challenges across structured and unstructured data. Our solutions include tabular ML, anomaly detection, forecasting, and classical ML solutions tailored to your business needs.",
+        "useCases": [
+          "Tabular data modeling and prediction",
+          "Anomaly detection systems",
+          "Time series forecasting",
+          "Classical ML solutions",
+          "Feature engineering and model optimization"
+        ],
+        "projects": [
+          "Developed fraud detection system for fintech company",
+          "Built demand forecasting model for retail supply chain",
+          "Created anomaly detection system for IoT sensor networks"
+        ]
+      },
+      "graphML": {
+        "title": "Graph Machine Learning",
+        "shortDescription": "We use graph-based intelligence to reveal hidden relationships and enable complex reasoning over connected data.",
+        "description": "We use graph-based intelligence to reveal hidden relationships and enable complex reasoning over connected data. Our expertise includes graph ML, link prediction, hybrid pipelines, and knowledge graph applications.",
+        "useCases": [
+          "Graph-based machine learning",
+          "Link prediction and recommendation",
+          "Hybrid ML/graph pipelines",
+          "Knowledge graph construction",
+          "Complex relationship analysis"
+        ],
+        "projects": [
+          "Built knowledge graph system for research organization",
+          "Developed recommendation engine using graph neural networks",
+          "Created hybrid graph-ML pipeline for social network analysis"
+        ]
+      }
     },
-    "computerVision": {
-      "title": "Computer Vision",
-      "description": "Object detection, image recognition, visual analysis, and custom model finetuning for your specific industrial or commercial use cases."
-    },
-    "mlops": {
-      "title": "MLOps & Privacy",
-      "description": "End-to-end ML pipeline management, privacy-preserving model deployment, monitoring, and scalable infrastructure for secure and reliable AI operations."
-    },
-    "softwareEngineering": {
-      "title": "Software Engineering",
-      "description": "Full-stack development, system architecture, and technical consulting for robust, scalable, and maintainable software solutions."
-    },
-    "dataEngineering": {
-      "title": "Data Engineering & Architecture",
-      "description": "Design and implementation of scalable data pipelines, real-time processing, data lakes/warehouses, and architecture optimized for ML and analytics workflows."
-    },
-    "aiStrategy": {
-      "title": "AI Strategy & Roadmapping",
-      "description": "AI opportunity assessment, technology selection, responsible AI governance, and actionable roadmaps for digital transformation and business impact."
-    },
-    "enterpriseAI": {
-      "title": "Enterprise AI Integration & Enablement",
-      "description": "Seamless integration of AI systems into enterprise workflows, AI-powered analysis generation, user training, and ongoing support to maximize adoption and value."
-    },
-    "aiGovernance": {
-      "title": "AI Governance & Compliance",
-      "description": "Establishing frameworks for responsible AI use, regulatory alignment (e.g., GDPR, AI Act), risk assessment, auditability, and internal policy development for enterprise-scale deployments."
+    "other": {
+      "title": "Other Services",
+      "items": {
+        "mlops": "MLOps & Privacy",
+        "softwareEngineering": "Software Engineering",
+        "dataEngineering": "Data Engineering & Architecture",
+        "aiStrategy": "AI Strategy & Roadmapping",
+        "enterpriseAI": "Enterprise AI Integration",
+        "aiGovernance": "AI Governance & Compliance",
+        "cloudInfrastructure": "Cloud Infrastructure",
+        "cloudMigration": "Cloud Migration",
+        "securityAudits": "Security Audits",
+        "cicd": "CI/CD Pipelines",
+        "apiDevelopment": "API Development",
+        "processAutomation": "Process Automation",
+        "modelTraining": "Model Training & Fine-tuning",
+        "dataAnalytics": "Data Analytics",
+        "businessIntelligence": "Business Intelligence"
+      }
     }
   },
   "products": {
@@ -88,6 +156,12 @@
     "subtitle": "A team of tech experts with extensive experience in consulting and product development, delivering innovative solutions across diverse industries.",
     "description": "At Ethinc, we believe in the transformative power of artificial intelligence. Our team of experts combines deep technical knowledge with practical business understanding to deliver AI solutions that drive real results.",
     "mission": "Our mission is to democratize AI technology and make it accessible to businesses of all sizes.",
+    "moreButton": "More Info",
+    "dialog": {
+      "bio": "About",
+      "experience": "Experience",
+      "skills": "Skills"
+    },
     "values": {
       "innovation": "Innovation",
       "excellence": "Excellence",
@@ -97,17 +171,67 @@
     "nizar": {
       "name": "Nizar Ghandri",
       "role": "Co-Founder & Chief Technology Officer (CTO)",
-      "bio": "Former GenAI Tech Lead at UBS with extensive experience in AI for banking, telecommunications, and enterprise solutions. Expert in building scalable AI systems that drive real business value."
+      "bio": "Former GenAI Tech Lead at UBS with extensive experience in AI for banking, telecommunications, and enterprise solutions. Expert in building scalable AI systems that drive real business value.",
+      "skills": [
+        "Generative AI",
+        "Natural Language Processing",
+        "MLOps & Infrastructure",
+        "Banking Systems",
+        "Telecommunications",
+        "Enterprise Solutions",
+        "Python",
+        "TensorFlow",
+        "PyTorch"
+      ],
+      "experience": [
+        "GenAI Tech Lead at UBS - Leading AI initiatives in banking",
+        "AI Solutions Architect for telecommunications industry",
+        "Built scalable ML systems for enterprise clients",
+        "Expert in deploying production-grade AI systems"
+      ]
     },
     "selim": {
       "name": "Selim Fekih",
       "role": "Co-Founder & Chief Operating Officer (COO)",
-      "bio": "AI consultant specializing in the humanitarian sector, with hands-on experience developing NLP solutions and innovative products to address humanitarian challenges."
+      "bio": "AI consultant specializing in the humanitarian sector, with hands-on experience developing NLP solutions and innovative products to address humanitarian challenges.",
+      "skills": [
+        "AI Consulting",
+        "NLP Solutions",
+        "Humanitarian Tech",
+        "Product Development",
+        "Project Management",
+        "Stakeholder Engagement",
+        "Python",
+        "Machine Learning"
+      ],
+      "experience": [
+        "AI Consultant for humanitarian organizations",
+        "Developed NLP solutions for crisis response",
+        "Built innovative products addressing humanitarian challenges",
+        "Managed cross-functional AI projects"
+      ]
     },
     "badis": {
       "name": "Badis Machraoui",
       "role": "Co-Founder & Software/AI Engineer",
-      "bio": "Focuses on the development of our platforms, including AI development, prompt engineering, and software backend. Dedicated to building robust, scalable systems that power our AI solutions."
+      "bio": "Focuses on the development of our platforms, including AI development, prompt engineering, and software backend. Dedicated to building robust, scalable systems that power our AI solutions.",
+      "skills": [
+        "Software Engineering",
+        "Backend Development",
+        "AI Development",
+        "Prompt Engineering",
+        "System Architecture",
+        "Python",
+        "JavaScript/TypeScript",
+        "React",
+        "Node.js"
+      ],
+      "experience": [
+        "Full-stack development of AI platforms",
+        "Backend architecture and system design",
+        "Prompt engineering for LLM applications",
+        "Building scalable, robust AI systems"
+      ]
     }
   },
   "cta":{
@@ -116,6 +240,10 @@
     "button": "Schedule a Call"
   },
   "footer": {
+    "description": "AI solutions for real-world applications. From research to production, we help businesses unlock value and drive innovation with advanced, privacy-focused technology.",
+    "descriptionBrief": "AI solutions for real-world applications.",
+    "contactTitle": "Contact",
+    "quickLinks": "Quick Links",
     "services": "Services",
     "products": "Products",
     "contact": "Contact",
@@ -163,5 +291,48 @@
   "language": {
     "en": "English",
     "fr": "Français"
+  },
+  "policies": {
+    "lastUpdated": "Last updated",
+    "terms": {
+      "title": "Terms of Service",
+      "date": "October 2025",
+      "intro": "Welcome to the Ethinc website. By accessing and using this website, you agree to be bound by these Terms of Service.",
+      "section1": {
+        "title": "Website Use",
+        "content": "This website is provided for informational purposes about Ethinc and our capabilities. You may not use this website for any illegal or unauthorized purpose. We reserve the right to modify, suspend, or discontinue any part of this website at any time without notice."
+      },
+      "section2": {
+        "title": "Intellectual Property",
+        "content": "All content on this website, including text, graphics, logos, images, and code, is the property of Ethinc and is protected by copyright and intellectual property laws. You may not reproduce, distribute, or use any content from this website without our express written permission."
+      },
+      "section3": {
+        "title": "Disclaimer and Limitation of Liability",
+        "content": "This website and its content are provided 'as is' without any warranties, express or implied. Ethinc shall not be liable for any damages arising from the use of this website or reliance on the information provided. The information on this website is for general informational purposes and does not constitute professional advice."
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "date": "October 2025",
+      "intro": "At Ethinc, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information.",
+      "section1": {
+        "title": "Information We Collect",
+        "content": "We may collect personal information such as your name, email address, company name, and phone number when you contact us through our website or engage with our services. We collect this information only when voluntarily provided by you."
+      },
+      "section2": {
+        "title": "How We Use Your Information",
+        "content": "We use your information to respond to inquiries, provide our services, communicate with you about projects, and improve our offerings. We do not sell, trade, or rent your personal information to third parties."
+      },
+      "section3": {
+        "title": "Data Security",
+        "content": "We implement appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security."
+      }
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "date": "October 2025",
+      "noCookies": "We do not use cookies on this website.",
+      "content": "Our website does not use cookies or similar tracking technologies. We do not collect any data through cookies, and your browsing experience is not tracked in any way. This means you can browse our site without any concerns about cookie-based tracking or data collection."
+    }
   }
 } 

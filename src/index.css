@@ -76,6 +76,15 @@ section {
   }
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
@@ -91,7 +100,7 @@ All colors MUST be HSL.
     --popover: 220 15% 12%;
     --popover-foreground: 210 40% 95%;
 
-    --primary: 240 65% 55%;
+    --primary: 267 69% 45%; /* Ethinc purple #7523BF */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 15% 18%;
@@ -100,7 +109,7 @@ All colors MUST be HSL.
     --muted: 220 15% 15%;
     --muted-foreground: 210 15% 60%;
 
-    --accent: 195 100% 65%;
+    --accent: 20 88% 54%; /* Ethinc orange #F36C20 */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -108,14 +117,14 @@ All colors MUST be HSL.
 
     --border: 220 15% 20%;
     --input: 220 15% 18%;
-    --ring: 240 65% 55%;
+    --ring: 267 69% 45%;
 
     /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(240, 65%, 45%), hsl(260, 70%, 55%));
-    --gradient-accent: linear-gradient(135deg, hsl(195, 100%, 55%), hsl(220, 90%, 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(240, 65%, 45%) 0%, hsl(260, 70%, 55%) 50%, hsl(195, 100%, 55%) 100%);
-    --shadow-elegant: 0 10px 40px -10px hsl(240, 65%, 45%, 0.2);
-    --shadow-glow: 0 0 50px hsl(195, 100%, 55%, 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(267, 69%, 45%), hsl(249, 68%, 46%));
+    --gradient-accent: linear-gradient(135deg, hsl(20, 88%, 54%), hsl(267, 69%, 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(267, 69%, 45%) 0%, hsl(249, 68%, 46%) 50%, hsl(20, 88%, 54%) 100%);
+    --shadow-elegant: 0 10px 40px -10px hsl(267, 69%, 45%, 0.2);
+    --shadow-glow: 0 0 50px hsl(267, 69%, 45%, 0.3);
 
     --radius: 0.5rem;
 
@@ -182,5 +191,47 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar styles */
+@layer utilities {
+  /* For webkit browsers (Chrome, Safari, Edge) */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--accent));
+    border-radius: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent) / 0.8);
+  }
+
+  /* For Firefox */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--accent)) hsl(var(--muted));
+  }
+
+  /* Auto-scroll animation */
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+
+  /* Fade in up animation */
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
   }
 }

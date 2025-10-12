@@ -1,8 +1,15 @@
 {
-  "navigation": {
+  "nav": {
     "services": "Services",
     "products": "Produits",
-    "about": "À propos",
+    "about": "Équipe",
+    "contact": "Contact"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "products": "Produits",
+    "about": "Équipe",
     "contact": "Contact",
     "contactUs": "Contactez-nous"
   },
@@ -14,42 +21,103 @@
   },
   "services": {
     "title": "Nos Services",
-    "subtitle": "Solutions IA, GenAI et vision par ordinateur pour votre entreprise, fournies par des anciens de l'EPFL et des experts du secteur. De la recherche à la production, nous vous aidons à débloquer de la valeur et à stimuler l'innovation avec une technologie avancée et axée sur la confidentialité.",
-    "nlp": {
-      "title": "Traitement du Langage Naturel (NLP)",
-      "description": "Expertise en classification de texte, reconnaissance d'entités nommées (NER), analyse de sentiment, extraction d'informations et compréhension du langage pour des applications multilingues et spécifiques au domaine."
+    "subtitle": "Nous travaillons dans plusieurs domaines clés de l'IA",
+    "learnMore": "En savoir plus",
+    "dialog": {
+      "subtitle": "Informations détaillées sur le service",
+      "concept": "Concept Général",
+      "useCases": "Cas d'Usage",
+      "projects": "Projets Précédents"
     },
-    "generativeAI": {
-      "title": "IA Générative",
-      "description": "LLM avancés, génération de contenu, ingénierie de prompts, adaptation et déploiement de modèles, fine-tuning pour vos données, et solutions axées sur la confidentialité incluant les déploiements sur site et sécurisés."
+    "main": {
+      "nlp": {
+        "title": "Traitement du Langage Naturel (NLP)",
+        "shortDescription": "Nous concevons des systèmes NLP et IA génératives robustes pour des environnements multilingues, à haut volume et sensibles.",
+        "description": "Nous concevons des systèmes NLP et IA génératives robustes pour des environnements multilingues, à haut volume et sensibles. Notre expertise couvre la classification de texte, l'extraction d'entités, la synthèse, l'analyse de documents et l'intégration ou le déploiement local de grands modèles de langage.",
+        "useCases": [
+          "Classification et catégorisation de texte",
+          "Extraction d'entités et reconnaissance d'entités nommées (NER)",
+          "Synthèse et analyse de documents",
+          "Intégration de grands modèles de langage",
+          "Systèmes de traitement multilingue"
+        ],
+        "projects": [
+          "Pipeline NLP multilingue pour organisation humanitaire internationale",
+          "Système d'extraction d'entités pour la conformité bancaire",
+          "Solution LLM préservant la confidentialité pour le traitement de documents d'entreprise"
+        ]
+      },
+      "computerVision": {
+        "title": "Vision par Ordinateur",
+        "shortDescription": "Nous construisons des modèles de vision avancés qui apportent structure et perspicacité aux données d'image et de vidéo.",
+        "description": "Nous construisons des modèles de vision avancés et génératifs qui apportent structure et perspicacité aux données d'image et de vidéo. Nos solutions incluent la détection d'objets, la classification d'images, le marquage vidéo, la génération d'images et des pipelines multimodaux personnalisés.",
+        "useCases": [
+          "Détection et suivi d'objets",
+          "Classification et marquage d'images",
+          "Analyse et marquage vidéo",
+          "Génération et amélioration d'images",
+          "Pipelines IA multimodaux personnalisés"
+        ],
+        "projects": [
+          "Système de détection d'objets en temps réel pour le contrôle qualité en fabrication",
+          "Plateforme d'analyse vidéo pour la catégorisation de contenu média",
+          "Modèle de classification d'images personnalisé pour application d'imagerie médicale"
+        ]
+      },
+      "ml": {
+        "title": "Machine Learning (ML)",
+        "shortDescription": "Nous résolvons les défis prédictifs et analytiques sur des données structurées et non structurées.",
+        "description": "Nous résolvons les défis prédictifs et analytiques sur des données structurées et non structurées. Nos solutions incluent le ML tabulaire, la détection d'anomalies, les prévisions et des solutions ML classiques adaptées à vos besoins.",
+        "useCases": [
+          "Modélisation et prédiction de données tabulaires",
+          "Systèmes de détection d'anomalies",
+          "Prévisions de séries temporelles",
+          "Solutions ML classiques",
+          "Ingénierie de caractéristiques et optimisation de modèles"
+        ],
+        "projects": [
+          "Système de détection de fraude pour entreprise fintech",
+          "Modèle de prévision de la demande pour chaîne d'approvisionnement retail",
+          "Système de détection d'anomalies pour réseaux de capteurs IoT"
+        ]
+      },
+      "graphML": {
+        "title": "Graph Machine Learning",
+        "shortDescription": "Nous utilisons l'intelligence basée sur les graphes pour révéler des relations cachées et permettre un raisonnement complexe sur des données connectées.",
+        "description": "Nous utilisons l'intelligence basée sur les graphes pour révéler des relations cachées et permettre un raisonnement complexe sur des données connectées. Notre expertise inclut le ML de graphes, la prédiction de liens, les pipelines hybrides et les applications de graphes de connaissances.",
+        "useCases": [
+          "Machine learning basé sur les graphes",
+          "Prédiction de liens et recommandation",
+          "Pipelines ML/graphe hybrides",
+          "Construction de graphes de connaissances",
+          "Analyse de relations complexes"
+        ],
+        "projects": [
+          "Système de graphe de connaissances pour organisation de recherche",
+          "Moteur de recommandation utilisant des réseaux de neurones graphiques",
+          "Pipeline hybride graphe-ML pour l'analyse de réseaux sociaux"
+        ]
+      }
     },
-    "computerVision": {
-      "title": "Vision par Ordinateur",
-      "description": "Détection d'objets, reconnaissance d'images, analyse visuelle et fine-tuning de modèles personnalisés pour vos cas d'usage industriels ou commerciaux spécifiques."
-    },
-    "mlops": {
-      "title": "MLOps & Confidentialité",
-      "description": "Gestion de pipeline ML de bout en bout, déploiement de modèles préservant la confidentialité, surveillance et infrastructure évolutive pour des opérations IA sécurisées et fiables."
-    },
-    "softwareEngineering": {
-      "title": "Ingénierie Logicielle",
-      "description": "Développement full-stack, architecture système et conseil technique pour des solutions logicielles robustes, évolutives et maintenables."
-    },
-    "dataEngineering": {
-      "title": "Ingénierie & Architecture de Données",
-      "description": "Conception et implémentation de pipelines de données évolutifs, traitement en temps réel, data lakes/warehouses et architecture optimisée pour les workflows ML et analytiques."
-    },
-    "aiStrategy": {
-      "title": "Stratégie IA & Roadmapping",
-      "description": "Évaluation des opportunités IA, sélection technologique, gouvernance IA responsable et roadmaps actionnables pour la transformation numérique et l'impact business."
-    },
-    "enterpriseAI": {
-      "title": "Intégration & Activation IA d'Entreprise",
-      "description": "Intégration transparente des systèmes IA dans les workflows d'entreprise, génération d'analyses alimentées par l'IA, formation des utilisateurs et support continu pour maximiser l'adoption et la valeur."
-    },
-    "aiGovernance": {
-      "title": "Gouvernance & Conformité IA",
-      "description": "Établissement de cadres pour l'utilisation responsable de l'IA, alignement réglementaire (ex: GDPR, AI Act), évaluation des risques, auditabilité et développement de politiques internes pour les déploiements à l'échelle de l'entreprise."
+    "other": {
+      "title": "Autres Services",
+      "items": {
+        "mlops": "MLOps & Confidentialité",
+        "softwareEngineering": "Ingénierie Logicielle",
+        "dataEngineering": "Ingénierie & Architecture de Données",
+        "aiStrategy": "Stratégie IA & Roadmapping",
+        "enterpriseAI": "Intégration IA d'Entreprise",
+        "aiGovernance": "Gouvernance & Conformité IA",
+        "cloudInfrastructure": "Infrastructure Cloud",
+        "cloudMigration": "Migration Cloud",
+        "securityAudits": "Audits de Sécurité",
+        "cicd": "Pipelines CI/CD",
+        "apiDevelopment": "Développement d'API",
+        "processAutomation": "Automatisation des Processus",
+        "modelTraining": "Entraînement & Fine-tuning de Modèles",
+        "dataAnalytics": "Analyse de Données",
+        "businessIntelligence": "Business Intelligence"
+      }
     }
   },
   "products": {
@@ -88,6 +156,12 @@
     "subtitle": "Une équipe d'experts techniques avec une vaste expérience en conseil et développement de produits, fournissant des solutions innovantes dans divers secteurs.",
     "description": "Chez Ethinc, nous croyons au pouvoir transformateur de l'intelligence artificielle. Notre équipe d'experts combine une connaissance technique approfondie avec une compréhension pratique des affaires pour fournir des solutions IA qui produisent de vrais résultats.",
     "mission": "Notre mission est de démocratiser la technologie IA et de la rendre accessible aux entreprises de toutes tailles.",
+    "moreButton": "Plus d'infos",
+    "dialog": {
+      "bio": "À propos",
+      "experience": "Expérience",
+      "skills": "Compétences"
+    },
     "values": {
       "innovation": "Innovation",
       "excellence": "Excellence",
@@ -97,17 +171,67 @@
     "nizar": {
       "name": "Nizar Ghandri",
       "role": "Co-fondateur & Directeur Technique (CTO)",
-      "bio": "Ancien responsable technique GenAI chez UBS avec une vaste expérience en IA pour la banque, les télécommunications et les solutions d'entreprise. Expert dans la création de systèmes IA évolutifs générant une réelle valeur business."
+      "bio": "Ancien responsable technique GenAI chez UBS avec une vaste expérience en IA pour la banque, les télécommunications et les solutions d'entreprise. Expert dans la création de systèmes IA évolutifs générant une réelle valeur business.",
+      "skills": [
+        "IA Générative",
+        "Traitement du langage naturel",
+        "MLOps & Infrastructure",
+        "Systèmes bancaires",
+        "Télécommunications",
+        "Solutions d'entreprise",
+        "Python",
+        "TensorFlow",
+        "PyTorch"
+      ],
+      "experience": [
+        "Responsable technique GenAI chez UBS - Direction des initiatives IA bancaires",
+        "Architecte de solutions IA pour l'industrie des télécommunications",
+        "Construction de systèmes ML évolutifs pour clients entreprise",
+        "Expert en déploiement de systèmes IA en production"
+      ]
     },
     "selim": {
       "name": "Selim Fekih",
       "role": "Co-fondateur & Directeur des Opérations (COO)",
-      "bio": "Consultant IA spécialisé dans le secteur humanitaire, avec une expérience pratique dans le développement de solutions NLP et de produits innovants pour relever les défis humanitaires."
+      "bio": "Consultant IA spécialisé dans le secteur humanitaire, avec une expérience pratique dans le développement de solutions NLP et de produits innovants pour relever les défis humanitaires.",
+      "skills": [
+        "Conseil en IA",
+        "Solutions NLP",
+        "Tech humanitaire",
+        "Développement de produits",
+        "Gestion de projet",
+        "Engagement parties prenantes",
+        "Python",
+        "Machine Learning"
+      ],
+      "experience": [
+        "Consultant IA pour organisations humanitaires",
+        "Développement de solutions NLP pour réponse aux crises",
+        "Création de produits innovants pour défis humanitaires",
+        "Gestion de projets IA transversaux"
+      ]
     },
     "badis": {
       "name": "Badis Machraoui",
       "role": "Co-fondateur & Ingénieur Logiciel/IA",
-      "bio": "Se concentre sur le développement de nos plateformes, incluant le développement IA, l'ingénierie de prompts et le backend logiciel. Dédié à la création de systèmes robustes et évolutifs qui alimentent nos solutions IA."
+      "bio": "Se concentre sur le développement de nos plateformes, incluant le développement IA, l'ingénierie de prompts et le backend logiciel. Dédié à la création de systèmes robustes et évolutifs qui alimentent nos solutions IA.",
+      "skills": [
+        "Génie logiciel",
+        "Développement backend",
+        "Développement IA",
+        "Ingénierie de prompts",
+        "Architecture système",
+        "Python",
+        "JavaScript/TypeScript",
+        "React",
+        "Node.js"
+      ],
+      "experience": [
+        "Développement full-stack de plateformes IA",
+        "Architecture backend et conception système",
+        "Ingénierie de prompts pour applications LLM",
+        "Construction de systèmes IA robustes et évolutifs"
+      ]
     }
   },
   "cta": {
@@ -116,6 +240,10 @@
     "button": "Planifier un appel"
   },
   "footer": {
+    "description": "Solutions IA pour des applications concrètes. De la recherche à la production, nous aidons les entreprises à débloquer de la valeur et à stimuler l'innovation avec une technologie avancée axée sur la confidentialité.",
+    "descriptionBrief": "Solutions IA pour des applications concrètes.",
+    "contactTitle": "Contact",
+    "quickLinks": "Liens Rapides",
     "services": "Services",
     "products": "Produits",
     "contact": "Contact",
@@ -163,5 +291,48 @@
   "language": {
     "en": "English",
     "fr": "Français"
+  },
+  "policies": {
+    "lastUpdated": "Dernière mise à jour",
+    "terms": {
+      "title": "Conditions d'utilisation",
+      "date": "Octobre 2025",
+      "intro": "Bienvenue sur le site web d'Ethinc. En accédant et en utilisant ce site web, vous acceptez d'être lié par ces Conditions d'utilisation.",
+      "section1": {
+        "title": "Utilisation du site web",
+        "content": "Ce site web est fourni à des fins d'information sur Ethinc et nos capacités. Vous ne pouvez pas utiliser ce site web à des fins illégales ou non autorisées. Nous nous réservons le droit de modifier, suspendre ou interrompre tout ou partie de ce site web à tout moment sans préavis."
+      },
+      "section2": {
+        "title": "Propriété intellectuelle",
+        "content": "Tout le contenu de ce site web, y compris le texte, les graphiques, les logos, les images et le code, est la propriété d'Ethinc et est protégé par les lois sur le droit d'auteur et la propriété intellectuelle. Vous ne pouvez reproduire, distribuer ou utiliser aucun contenu de ce site web sans notre autorisation écrite expresse."
+      },
+      "section3": {
+        "title": "Clause de non-responsabilité et limitation de responsabilité",
+        "content": "Ce site web et son contenu sont fournis 'tels quels' sans aucune garantie, expresse ou implicite. Ethinc ne sera pas responsable des dommages résultant de l'utilisation de ce site web ou de la confiance accordée aux informations fournies. Les informations sur ce site web sont à des fins d'information générale et ne constituent pas des conseils professionnels."
+      }
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "date": "Octobre 2025",
+      "intro": "Chez Ethinc, nous prenons votre vie privée au sérieux. Cette Politique de confidentialité explique comment nous collectons, utilisons et protégeons vos informations personnelles.",
+      "section1": {
+        "title": "Informations que nous collectons",
+        "content": "Nous pouvons collecter des informations personnelles telles que votre nom, adresse e-mail, nom de l'entreprise et numéro de téléphone lorsque vous nous contactez via notre site web ou utilisez nos services. Nous ne collectons ces informations que lorsqu'elles sont volontairement fournies par vous."
+      },
+      "section2": {
+        "title": "Comment nous utilisons vos informations",
+        "content": "Nous utilisons vos informations pour répondre aux demandes, fournir nos services, communiquer avec vous au sujet des projets et améliorer nos offres. Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers."
+      },
+      "section3": {
+        "title": "Sécurité des données",
+        "content": "Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos informations personnelles contre l'accès, la modification ou la divulgation non autorisés. Cependant, aucune méthode de transmission sur Internet n'est sûre à 100%, et nous ne pouvons garantir une sécurité absolue."
+      }
+    },
+    "cookies": {
+      "title": "Politique des cookies",
+      "date": "Octobre 2025",
+      "noCookies": "Nous n'utilisons pas de cookies sur ce site web.",
+      "content": "Notre site web n'utilise pas de cookies ou de technologies de suivi similaires. Nous ne collectons aucune donnée via des cookies, et votre expérience de navigation n'est suivie d'aucune manière. Cela signifie que vous pouvez naviguer sur notre site sans aucune préoccupation concernant le suivi basé sur les cookies ou la collecte de données."
+    }
   }
 } 

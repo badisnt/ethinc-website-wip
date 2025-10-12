@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Linkedin, ExternalLink } from "lucide-react";
+import { Linkedin, Brain, Code, Database, Globe, Shield, BarChart3, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import CVForm from "./CVForm";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { TeamMemberDialog } from "./TeamMemberDialog";
 import Selim from "@/assets/people/selim.png";
 import Nizar from "@/assets/people/nizar.jpeg";
 import Badis from "@/assets/people/badis.png";
@@ -13,8 +13,58 @@ const About = () => {
   const { elementRef: titleRef, isIntersecting: titleVisible } = useIntersectionObserver();
   const { elementRef: cardsRef, isIntersecting: cardsVisible } = useIntersectionObserver({ rootMargin: '0px 0px -50px 0px' });
   
+  const skillIconMap: { [key: string]: any } = {
+    "GenAI": Brain,
+    "NLP": Globe,
+    "MLOps": Database,
+    "Banking": BarChart3,
+    "Software": Code,
+    "Backend": Database,
+    "AI": Brain,
+    "Consulting": Users,
+    "Humanitarian": Users,
+  };
+
+  const getSkillIcon = (skill: string) => {
+    const Icon = skillIconMap[skill] || Code;
+    return <Icon className="w-5 h-5" />;
+  };
+
+  const teamMembers = [
+    {
+      name: t('about.nizar.name'),
+      role: t('about.nizar.role'),
+      photo: Nizar,
+      bio: t('about.nizar.bio'),
+      linkedinUrl: "https://www.linkedin.com/in/nizar-ghandri-232b71174/",
+      skills: t('about.nizar.skills', { returnObjects: true }) as string[],
+      experience: t('about.nizar.experience', { returnObjects: true }) as string[],
+      topSkills: ["GenAI", "NLP", "MLOps", "Banking"],
+    },
+    {
+      name: t('about.selim.name'),
+      role: t('about.selim.role'),
+      photo: Selim,
+      bio: t('about.selim.bio'),
+      linkedinUrl: "https://www.linkedin.com/in/selim-fekih-a37521181/",
+      skills: t('about.selim.skills', { returnObjects: true }) as string[],
+      experience: t('about.selim.experience', { returnObjects: true }) as string[],
+      topSkills: ["AI", "Consulting", "NLP", "Humanitarian"],
+    },
+    {
+      name: t('about.badis.name'),
+      role: t('about.badis.role'),
+      photo: Badis,
+      bio: t('about.badis.bio'),
+      linkedinUrl: "https://www.linkedin.com/in/badis-machraoui-9a44051b7/",
+      skills: t('about.badis.skills', { returnObjects: true }) as string[],
+      experience: t('about.badis.experience', { returnObjects: true }) as string[],
+      topSkills: ["Software", "Backend", "AI", "GenAI"],
+    },
+  ];
+  
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="min-h-screen flex items-center py-24 bg-background">
       <div className="container mx-auto px-4">
         <div 
           ref={titleRef}
@@ -33,117 +83,85 @@ const About = () => {
         </div>
 
         <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Nizar Ghandri */}
-          <Card 
-            className={`p-8 bg-card/50 border-border/50 backdrop-blur-sm transition-all duration-700 ${
-              cardsVisible 
-                ? 'opacity-100 transform translate-x-0' 
-                : 'opacity-0 transform -translate-x-8'
-            }`}
-            style={{ transitionDelay: cardsVisible ? '200ms' : '0ms' }}
-          >
-            <CardContent className="p-0">
-              <div className="flex items-start gap-6">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center text-2xl font-bold text-white overflow-hidden">
-                  <img src={Nizar} alt="NG" className="w-full h-full object-cover" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-2">{t('about.nizar.name')}</h3>
-                  <p className="text-accent font-medium mb-3">{t('about.nizar.role')}</p>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {t('about.nizar.bio')}
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <a 
-                      href="https://www.linkedin.com/in/nizar-ghandri-232b71174/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                      LinkedIn
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          {teamMembers.map((member, index) => (
+            <TeamMemberDialog
+              key={index}
+              trigger={
+                <Card 
+                  className={`group cursor-pointer p-6 bg-card/50 border-border/50 backdrop-blur-sm hover:shadow-elegant transition-all duration-700 hover:-translate-y-2 relative ${
+                    index === 2 ? 'lg:col-span-2 lg:mx-auto lg:w-1/2' : ''
+                  } ${
+                    cardsVisible 
+                      ? 'opacity-100 transform translate-y-0' 
+                      : 'opacity-0 transform translate-y-8'
+                  }`}
+                  style={{ transitionDelay: cardsVisible ? `${(index + 1) * 200}ms` : '0ms' }}
+                >
+                  {/* More Info - Top Right */}
+                  <div className="absolute top-3 right-3 z-10">
+                    <span className="text-xs font-medium text-accent group-hover:text-accent/80 transition-colors">
+                      {t('about.moreButton')} →
+                    </span>
+                  </div>
 
-          {/* Selim Fekih */}
-          <Card 
-            className={`p-8 bg-card/50 border-border/50 backdrop-blur-sm transition-all duration-700 ${
-              cardsVisible 
-                ? 'opacity-100 transform translate-x-0' 
-                : 'opacity-0 transform translate-x-8'
-            }`}
-            style={{ transitionDelay: cardsVisible ? '400ms' : '0ms' }}
-          >
-            <CardContent className="p-0">
-              <div className="flex items-start gap-6">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center text-2xl font-bold text-white overflow-hidden">
-                  <img src={Selim} alt="NG" className="w-full h-full object-cover" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-2">{t('about.selim.name')}</h3>
-                  <p className="text-accent font-medium mb-3">{t('about.selim.role')}</p>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {t('about.selim.bio')}
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <a 
-                      href="https://www.linkedin.com/in/selim-fekih-a37521181/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                      LinkedIn
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        
+                  <CardContent className="p-0">
+                    <div className="flex flex-col md:flex-row gap-6">
+                      {/* Left side: Photo and LinkedIn */}
+                      <div className="flex flex-col items-center gap-3 flex-shrink-0">
+                        <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-accent group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-300">
+                          <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                        </div>
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          asChild 
+                          className="w-full px-3"
+                          onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                        >
+                          <a 
+                            href={member.linkedinUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-2"
+                          >
+                            <Linkedin className="w-4 h-4" />
+                            LinkedIn
+                          </a>
+                        </Button>
+                      </div>
 
-          {/* Badis Machraoui */}
-          <Card 
-            className={`p-8 bg-card/50 border-border/50 backdrop-blur-sm lg:col-span-2 lg:mx-auto lg:w-1/2 transition-all duration-700 ${
-              cardsVisible 
-                ? 'opacity-100 transform translate-y-0' 
-                : 'opacity-0 transform translate-y-8'
-            }`}
-            style={{ transitionDelay: cardsVisible ? '600ms' : '0ms' }}
-          >
-            <CardContent className="p-0">
-              <div className="flex items-start gap-6">
-                <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center text-2xl font-bold text-white overflow-hidden">
-                  <img src={Badis} alt="NG" className="w-full h-full object-cover" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold mb-2">{t('about.badis.name')}</h3>
-                  <p className="text-accent font-medium mb-3">{t('about.badis.role')}</p>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {t('about.badis.bio')}
-                  </p>
-                  <Button variant="outline" size="sm" asChild>
-                    <a 
-                      href="https://www.linkedin.com/in/badis-machraoui-9a44051b7/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                      LinkedIn
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                      {/* Right side: Name, Role, and Skills */}
+                      <div className="flex-1 flex flex-col">
+                        <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
+                        <p className="text-accent font-medium mb-4">{member.role}</p>
+                        
+                        {/* Skill Icons */}
+                        <div className="flex flex-wrap gap-1.5">
+                          {member.topSkills.map((skill, skillIndex) => (
+                            <div 
+                              key={skillIndex}
+                              className="flex items-center gap-1.5 bg-muted/50 px-2 py-1 rounded-md border border-border/50"
+                              title={skill}
+                            >
+                              {getSkillIcon(skill)}
+                              <span className="text-xs font-medium">{skill}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              }
+              name={member.name}
+              role={member.role}
+              photo={member.photo}
+              bio={member.bio}
+              linkedinUrl={member.linkedinUrl}
+              experience={member.experience}
+              skills={member.skills}
+            />
+          ))}
         </div>
 
 
