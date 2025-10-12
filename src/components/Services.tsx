@@ -117,26 +117,26 @@ const Services = () => {
             <div className="flex gap-6 animate-scroll">
               {/* First set of services */}
               {otherServicesData.map((service, index) => (
-                <div key={`first-${index}`} className="flex-shrink-0 w-[200px]">
-                  <Card className="bg-card/30 border-border/50 backdrop-blur-sm hover:bg-card/50 transition-all duration-300">
-                    <CardContent className="flex flex-col items-center justify-center p-6 min-h-[140px]">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-3">
+                <div key={`first-${index}`} className="flex-shrink-0 w-[200px] h-[160px]">
+                  <Card className="bg-card/30 border-border/50 backdrop-blur-sm hover:bg-card/50 transition-all duration-300 h-full">
+                    <CardContent className="flex flex-col items-center justify-center p-6 h-full">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-3 flex-shrink-0">
                         <service.icon className="w-6 h-6 text-white" />
                       </div>
-                      <p className="text-sm font-medium text-center">{service.name}</p>
+                      <p className="text-sm font-medium text-center line-clamp-2">{service.name}</p>
                     </CardContent>
                   </Card>
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
               {otherServicesData.map((service, index) => (
-                <div key={`second-${index}`} className="flex-shrink-0 w-[200px]">
-                  <Card className="bg-card/30 border-border/50 backdrop-blur-sm hover:bg-card/50 transition-all duration-300">
-                    <CardContent className="flex flex-col items-center justify-center p-6 min-h-[140px]">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-3">
+                <div key={`second-${index}`} className="flex-shrink-0 w-[200px] h-[160px]">
+                  <Card className="bg-card/30 border-border/50 backdrop-blur-sm hover:bg-card/50 transition-all duration-300 h-full">
+                    <CardContent className="flex flex-col items-center justify-center p-6 h-full">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-3 flex-shrink-0">
                         <service.icon className="w-6 h-6 text-white" />
                       </div>
-                      <p className="text-sm font-medium text-center">{service.name}</p>
+                      <p className="text-sm font-medium text-center line-clamp-2">{service.name}</p>
                     </CardContent>
                   </Card>
                 </div>
