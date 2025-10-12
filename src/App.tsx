@@ -22,11 +22,14 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
+  // Set basename for GitHub Pages deployment
+  const basename = import.meta.env.PROD ? '/ethinc-website-wip' : '/';
+  
   return (
     <QueryClientProvider client={queryClient}>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
