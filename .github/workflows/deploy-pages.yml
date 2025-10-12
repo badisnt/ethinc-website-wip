@@ -27,10 +27,8 @@ jobs:
 
       - run: npm ci
       
-      # Build with the correct base path
+      # Build with the correct base path (vite build runs in production mode by default)
       - run: npm run build
-        env:
-          NODE_ENV: production
       
       # SPA fallback for React Router on GitHub Pages
       - run: cp dist/index.html dist/404.html
