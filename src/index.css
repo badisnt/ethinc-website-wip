@@ -109,7 +109,7 @@ All colors MUST be HSL.
     --muted: 220 15% 15%;
     --muted-foreground: 210 15% 60%;
 
-    --accent: 20 88% 54%; /* Ethinc orange #F36C20 */
+    --accent: 267 69% 45%; /* Ethinc purple #7523BF */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -123,7 +123,7 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(267, 69%, 45%), hsl(249, 68%, 46%));
     --gradient-accent: linear-gradient(135deg, hsl(20, 88%, 54%), hsl(267, 69%, 45%));
     --gradient-hero: linear-gradient(135deg, hsl(267, 69%, 45%) 0%, hsl(249, 68%, 46%) 50%, hsl(20, 88%, 54%) 100%);
-    --shadow-elegant: 0 10px 40px -10px hsl(267, 69%, 45%, 0.2);
+    --shadow-elegant: 0 10px 40px -10px hsl(20, 88%, 54%, 0.2);
     --shadow-glow: 0 0 50px hsl(267, 69%, 45%, 0.3);
 
     --radius: 0.5rem;
