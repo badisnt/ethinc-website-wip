@@ -48,19 +48,19 @@ const Hero = () => {
           {/* Stats - Centered Below */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16 max-w-4xl mx-auto text-center opacity-0 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-accent">3+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white">3+</div>
               <div className="text-white/70 text-sm md:text-base mt-2">Industries Served</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-accent">10+</div>
+              <div className="text-3xl md:text-4xl font-bold text-white">10+</div>
               <div className="text-white/70 text-sm md:text-base mt-2">Projects Delivered</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-accent">Lausanne</div>
+              <div className="text-3xl md:text-4xl font-bold text-white">Lausanne</div>
               <div className="text-white/70 text-sm md:text-base mt-2">Based</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-accent">EPFL</div>
+              <div className="text-3xl md:text-4xl font-bold text-white">EPFL</div>
               <div className="text-white/70 text-sm md:text-base mt-2">Alumni Team</div>
             </div>
           </div>
