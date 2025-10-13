@@ -193,22 +193,24 @@
     "selim": {
       "name": "Selim Fekih",
       "role": "Co-Founder & Chief Operating Officer (COO)",
-      "bio": "AI consultant specializing in the humanitarian sector, with hands-on experience developing NLP solutions and innovative products to address humanitarian challenges.",
+      "bio": "AI consultant specializing in the humanitarian sector, with hands-on experience developing NLP solutions and privacy-focused analysis pipelines to address humanitarian challenges. Contributed to platforms like theDEEP and Reporter AI (reporterai.org), building multilingual and locally deployable NLP systems.",
       "skills": [
         "AI Consulting",
         "NLP Solutions",
         "Humanitarian Tech",
+        "Privacy Engineering",
+        "Multilingual NLP",
         "Product Development",
+        "LLM Fine-tuning",
         "Project Management",
-        "Stakeholder Engagement",
         "Python",
         "Machine Learning"
       ],
       "experience": [
-        "AI Consultant for humanitarian organizations",
-        "Developed NLP solutions for crisis response",
-        "Built innovative products addressing humanitarian challenges",
-        "Managed cross-functional AI projects"
+        "AI Consultant for humanitarian organizations and crisis response platforms",
+        "Built and deployed NLP pipelines for theDEEP and Reporter AI",
+        "Designed privacy-preserving pipelines for sensitive humanitarian data",
+        "Delivered multilingual, field-ready LLM solutions"
       ]
     },
     "badis": {
