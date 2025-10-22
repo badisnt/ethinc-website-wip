@@ -31,71 +31,79 @@
     },
     "main": {
       "nlp": {
-        "title": "Traitement du Langage Naturel (NLP)",
-        "shortDescription": "Nous concevons des systèmes NLP et IA génératives robustes pour des environnements multilingues, à haut volume et sensibles.",
-        "description": "Nous concevons des systèmes NLP et IA génératives robustes pour des environnements multilingues, à haut volume et sensibles. Notre expertise couvre la classification de texte, l'extraction d'entités, la synthèse, l'analyse de documents et l'intégration ou le déploiement local de grands modèles de langage.",
+        "title": "IA Générative & NLP (Traitement du Langage Naturel)",
+        "shortDescription": "Nous concevons des systèmes IA générative et NLP robustes pour des environnements multilingues, à haut volume et sensibles.",
+        "description": "Nous concevons des systèmes IA générative et NLP robustes pour des environnements multilingues, à haut volume et sensibles. Notre expertise couvre les frameworks agentiques, le fine-tuning et déploiement de LLM, la classification de texte, l'extraction d'entités, la synthèse, l'analyse de documents et le traitement multilingue.",
         "useCases": [
-          "Classification et catégorisation de texte",
-          "Extraction d'entités et reconnaissance d'entités nommées (NER)",
+          "Frameworks IA agentique avec LangGraph et LangChain",
+          "Fine-tuning et déploiement local de LLM",
+          "Classification de texte et extraction d'entités",
           "Synthèse et analyse de documents",
-          "Intégration de grands modèles de langage",
-          "Systèmes de traitement multilingue"
+          "Systèmes NLP multilingues"
         ],
         "projects": [
-          "Pipeline NLP multilingue pour organisation humanitaire internationale",
-          "Système d'extraction d'entités pour la conformité bancaire",
-          "Solution LLM préservant la confidentialité pour le traitement de documents d'entreprise"
+          "Framework agentique avec LangGraph pour runtimes DAG et boucles d'agents optimaux",
+          "Système KYC entièrement automatisé pour le secteur bancaire suisse",
+          "Système de révision de matériel marketing conforme pour services financiers",
+          "Détection de nouvelles négatives dans les médias traditionnels pour évaluation des risques",
+          "Génération automatique de tests pour interfaces automobiles",
+          "Embeddings de profils et compétences multilingues pour gestion RH",
+          "Détection de tendances avec analyse de sentiment pour intelligence de marché"
         ]
       },
       "computerVision": {
         "title": "Vision par Ordinateur",
         "shortDescription": "Nous construisons des modèles de vision avancés qui apportent structure et perspicacité aux données d'image et de vidéo.",
-        "description": "Nous construisons des modèles de vision avancés et génératifs qui apportent structure et perspicacité aux données d'image et de vidéo. Nos solutions incluent la détection d'objets, la classification d'images, le marquage vidéo, la génération d'images et des pipelines multimodaux personnalisés.",
+        "description": "Nous construisons des modèles de vision avancés et génératifs qui apportent structure et perspicacité aux données d'image et de vidéo. Nos solutions incluent la détection d'objets, la classification d'images, OCR, imagerie médicale et des pipelines multimodaux personnalisés.",
         "useCases": [
+          "Imagerie médicale et détection de neurones",
+          "OCR et traitement de documents",
           "Détection et suivi d'objets",
-          "Classification et marquage d'images",
-          "Analyse et marquage vidéo",
-          "Génération et amélioration d'images",
+          "Classification et segmentation d'images",
           "Pipelines IA multimodaux personnalisés"
         ],
         "projects": [
-          "Système de détection d'objets en temps réel pour le contrôle qualité en fabrication",
-          "Plateforme d'analyse vidéo pour la catégorisation de contenu média",
-          "Modèle de classification d'images personnalisé pour application d'imagerie médicale"
+          "Détection de neurones en microscopie 3D à 2 photons pour la recherche en neurosciences",
+          "OCR et OpenCV pour extraction de texte et mise en page de documents",
+          "Modèles de segmentation routière pour applications de conduite autonome",
+          "Détection d'objets en temps réel pour contrôle qualité en fabrication"
         ]
       },
       "ml": {
         "title": "Machine Learning (ML)",
         "shortDescription": "Nous résolvons les défis prédictifs et analytiques sur des données structurées et non structurées.",
-        "description": "Nous résolvons les défis prédictifs et analytiques sur des données structurées et non structurées. Nos solutions incluent le ML tabulaire, la détection d'anomalies, les prévisions et des solutions ML classiques adaptées à vos besoins.",
+        "description": "Nous résolvons les défis prédictifs et analytiques sur des données structurées et non structurées. Nos solutions incluent l'IA explicable, l'analyse statistique, les prévisions, le clustering et des solutions ML classiques adaptées à vos besoins.",
         "useCases": [
-          "Modélisation et prédiction de données tabulaires",
-          "Systèmes de détection d'anomalies",
-          "Prévisions de séries temporelles",
-          "Solutions ML classiques",
+          "IA explicable pour support décisionnel",
+          "Analyse statistique et inférence causale",
+          "Prévisions et prédictions de séries temporelles",
+          "Clustering et segmentation",
           "Ingénierie de caractéristiques et optimisation de modèles"
         ],
         "projects": [
-          "Système de détection de fraude pour entreprise fintech",
-          "Modèle de prévision de la demande pour chaîne d'approvisionnement retail",
-          "Système de détection d'anomalies pour réseaux de capteurs IoT"
+          "IA explicable pour optimisation de production manufacturière et résolution de problèmes",
+          "Analyse statistique GLM et inférence causale pour effets de médicaments en pharma",
+          "Modèles XGBoost pour prévisions de revenus dans les services financiers",
+          "Clustering GMM pour catégorisation et segmentation de clients",
+          "Modèles de classification multi-label pour cas d'usage humanitaires"
         ]
       },
       "graphML": {
         "title": "Graph Machine Learning",
         "shortDescription": "Nous utilisons l'intelligence basée sur les graphes pour révéler des relations cachées et permettre un raisonnement complexe sur des données connectées.",
-        "description": "Nous utilisons l'intelligence basée sur les graphes pour révéler des relations cachées et permettre un raisonnement complexe sur des données connectées. Notre expertise inclut le ML de graphes, la prédiction de liens, les pipelines hybrides et les applications de graphes de connaissances.",
+        "description": "Nous utilisons l'intelligence basée sur les graphes pour révéler des relations cachées et permettre un raisonnement complexe sur des données connectées. Notre expertise inclut les embeddings de graphes, la détection de fraude, les réseaux biologiques et le traitement de graphes à grande échelle.",
         "useCases": [
-          "Machine learning basé sur les graphes",
-          "Prédiction de liens et recommandation",
-          "Pipelines ML/graphe hybrides",
-          "Construction de graphes de connaissances",
+          "Embeddings de topologie de graphe pour détection de fraude",
+          "Analyse de réseaux biologiques",
+          "Traitement de graphes à grande échelle avec Neo4j",
+          "Détection d'anomalies dans les patterns de transactions",
           "Analyse de relations complexes"
         ],
         "projects": [
-          "Système de graphe de connaissances pour organisation de recherche",
-          "Moteur de recommandation utilisant des réseaux de neurones graphiques",
-          "Pipeline hybride graphe-ML pour l'analyse de réseaux sociaux"
+          "Embeddings de topologie de graphe pour patterns de transactions anormaux et détection de fraude bancaire",
+          "Embeddings de graphe pour classification de protéines toxiques en bioinformatique",
+          "Traitement de grands graphes Neo4j pour intelligence des réseaux sociaux",
+          "Systèmes de recommandation utilisant des réseaux de neurones graphiques"
         ]
       }
     },
@@ -171,23 +179,23 @@
     "nizar": {
       "name": "Nizar Ghandri",
       "role": "Co-fondateur & Directeur Technique (CTO)",
-      "bio": "Ancien responsable technique GenAI chez UBS avec une vaste expérience en IA pour la banque, les télécommunications et les solutions d'entreprise. Expert dans la création de systèmes IA évolutifs générant une réelle valeur business.",
+      "bio": "Ancien responsable technique GenAI chez UBS, spécialisé en IA générative, déploiement end-to-end et gestion des parties prenantes. Combinant une solide expertise technique avec des compétences commerciales, il stimule l'innovation IA du concept à la production.",
       "skills": [
         "IA Générative",
         "Traitement du langage naturel",
-        "MLOps & Infrastructure",
-        "Systèmes bancaires",
-        "Télécommunications",
-        "Solutions d'entreprise",
+        "Graph Machine Learning",
+        "MLOps & Déploiement",
+        "Gestion des parties prenantes",
+        "IA d'entreprise",
         "Python",
         "TensorFlow",
         "PyTorch"
       ],
       "experience": [
-        "Responsable technique GenAI chez UBS - Direction des initiatives IA bancaires",
-        "Architecte de solutions IA pour l'industrie des télécommunications",
-        "Construction de systèmes ML évolutifs pour clients entreprise",
-        "Expert en déploiement de systèmes IA en production"
+        "UBS – Responsable technique GenAI : Direction du développement et du déploiement de solutions GenAI d'entreprise avec focus sur l'évolutivité et l'impact",
+        "Swisscom – Chercheur Graph ML : Recherche en machine learning basé sur les graphes et systèmes IA avancés",
+        "Visium – Consultant IA : Projets ML et d'ingénierie de données dans les secteurs pharma, manufacturing et bancaire",
+        "SAP – Collaborateur de recherche : Travail sur NLP pour la cybersécurité, amélioration des capacités IA d'entreprise"
       ]
     },
     "selim": {

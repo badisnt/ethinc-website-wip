@@ -221,9 +221,9 @@ All colors MUST be HSL.
     scrollbar-color: hsl(var(--accent)) hsl(var(--muted));
   }
 
-  /* Auto-scroll animation */
+  /* Auto-scroll animation - faster speed */
   .animate-scroll {
-    animation: scroll 20s linear infinite;
+    animation: scroll 12s linear infinite;
   }
 
   .animate-scroll:hover {
@@ -233,5 +233,15 @@ All colors MUST be HSL.
   /* Fade in up animation */
   .animate-fadeInUp {
     animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  /* Hide scrollbar for drag-to-scroll containers */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

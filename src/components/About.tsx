@@ -23,6 +23,9 @@ const About = () => {
     "AI": Brain,
     "Consulting": Users,
     "Humanitarian": Users,
+    "Graph ML": Shield,
+    "Enterprise": BarChart3,
+    "Deployment": Database,
   };
 
   const getSkillIcon = (skill: string) => {
@@ -39,7 +42,7 @@ const About = () => {
       linkedinUrl: "https://www.linkedin.com/in/nizar-ghandri-232b71174/",
       skills: t('about.nizar.skills', { returnObjects: true }) as string[],
       experience: t('about.nizar.experience', { returnObjects: true }) as string[],
-      topSkills: ["GenAI", "NLP", "MLOps", "Banking"],
+      topSkills: ["GenAI", "Graph ML", "MLOps", "Enterprise"],
     },
     {
       name: t('about.selim.name'),
@@ -49,7 +52,7 @@ const About = () => {
       linkedinUrl: "https://www.linkedin.com/in/selim-fekih-a37521181/",
       skills: t('about.selim.skills', { returnObjects: true }) as string[],
       experience: t('about.selim.experience', { returnObjects: true }) as string[],
-      topSkills: ["AI", "Consulting", "NLP", "Humanitarian"],
+      topSkills: ["NLP", "Consulting", "AI", "Humanitarian"],
     },
     {
       name: t('about.badis.name'),
@@ -59,7 +62,7 @@ const About = () => {
       linkedinUrl: "https://www.linkedin.com/in/badis-machraoui-9a44051b7/",
       skills: t('about.badis.skills', { returnObjects: true }) as string[],
       experience: t('about.badis.experience', { returnObjects: true }) as string[],
-      topSkills: ["Software", "Backend", "AI", "GenAI"],
+      topSkills: ["Software", "Backend", "GenAI", "AI"],
     },
   ];
   

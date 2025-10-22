@@ -3,11 +3,76 @@ import { Brain, Eye, TrendingUp, Network, Cog, Code, Database, BarChart3, Shield
 import { useTranslation } from "react-i18next";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { ServiceDialog } from "./ServiceDialog";
+import { useRef, useState, useEffect } from "react";
 
 const Services = () => {
   const { t } = useTranslation();
   const { elementRef: titleRef, isIntersecting: titleVisible } = useIntersectionObserver();
   const { elementRef: gridRef, isIntersecting: gridVisible } = useIntersectionObserver({ rootMargin: '0px 0px -50px 0px' });
+  
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number>();
+  const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const scrollSpeedRef = useRef(0.5); // pixels per frame
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const scroll = () => {
+      if (!isPaused && !isDragging && container) {
+        container.scrollLeft += scrollSpeedRef.current;
+        
+        // Reset scroll when we've scrolled through half (first set of duplicates)
+        const halfWidth = container.scrollWidth / 2;
+        if (container.scrollLeft >= halfWidth) {
+          container.scrollLeft = 0;
+        }
+      }
+      animationRef.current = requestAnimationFrame(scroll);
+    };
+
+    animationRef.current = requestAnimationFrame(scroll);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isPaused, isDragging]);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+    scrollContainerRef.current.style.cursor = 'grabbing';
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.cursor = 'grab';
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.cursor = 'grab';
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
   
   const mainServices = [
     {
@@ -113,34 +178,49 @@ const Services = () => {
             {t('services.other.title')}
           </h3>
           
-          <div className="relative overflow-hidden">
-            <div className="flex gap-6 animate-scroll">
-              {/* First set of services */}
-              {otherServicesData.map((service, index) => (
-                <div key={`first-${index}`} className="flex-shrink-0 w-[200px] h-[160px]">
-                  <Card className="bg-card/30 border-border/50 backdrop-blur-sm hover:bg-card/50 transition-all duration-300 h-full">
-                    <CardContent className="flex flex-col items-center justify-center p-6 h-full">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-3 flex-shrink-0">
-                        <service.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <p className="text-sm font-medium text-center line-clamp-2">{service.name}</p>
-                    </CardContent>
-                  </Card>
-                </div>
+          <div className="relative">
+            {/* Left fade gradient */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            
+            {/* Right fade gradient */}
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <div 
+              ref={scrollContainerRef}
+              className="relative overflow-x-scroll overflow-y-hidden hide-scrollbar cursor-grab"
+              style={{ 
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                WebkitOverflowScrolling: 'touch'
+              }}
+              onMouseDown={handleMouseDown}
+              onMouseLeave={handleMouseLeave}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseOut={() => {
+                if (!isDragging) setIsPaused(false);
+              }}
+              onTouchStart={() => setIsPaused(true)}
+              onTouchEnd={() => setIsPaused(false)}
+            >
+            <div className="flex gap-6 w-max">
+              {/* Render services twice for seamless infinite scroll */}
+              {[...Array(2)].map((_, setIndex) => (
+                otherServicesData.map((service, index) => (
+                  <div key={`set-${setIndex}-${index}`} className="flex-shrink-0 w-[200px] h-[160px]">
+                    <Card className="bg-card/30 border-border/50 backdrop-blur-sm hover:bg-card/50 transition-all duration-300 h-full">
+                      <CardContent className="flex flex-col items-center justify-center p-6 h-full">
+                        <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-3 flex-shrink-0">
+                          <service.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <p className="text-sm font-medium text-center line-clamp-2">{service.name}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))
               ))}
-              {/* Duplicate set for seamless loop */}
-              {otherServicesData.map((service, index) => (
-                <div key={`second-${index}`} className="flex-shrink-0 w-[200px] h-[160px]">
-                  <Card className="bg-card/30 border-border/50 backdrop-blur-sm hover:bg-card/50 transition-all duration-300 h-full">
-                    <CardContent className="flex flex-col items-center justify-center p-6 h-full">
-                      <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-3 flex-shrink-0">
-                        <service.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <p className="text-sm font-medium text-center line-clamp-2">{service.name}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
+            </div>
             </div>
           </div>
         </div>

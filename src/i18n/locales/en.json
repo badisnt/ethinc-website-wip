@@ -31,71 +31,79 @@
     },
     "main": {
       "nlp": {
-        "title": "Natural Language Processing (NLP)",
-        "shortDescription": "We design robust NLP and generative AI systems for multilingual, high-volume, and sensitive environments.",
-        "description": "We design robust NLP and generative AI systems for multilingual, high-volume, and sensitive environments. Our expertise covers text classification, entity extraction, summarization, document parsing, and large language model integration or local deployment.",
+        "title": "Generative AI & NLP (Natural Language Processing)",
+        "shortDescription": "We design robust generative AI and NLP systems for multilingual, high-volume, and sensitive environments.",
+        "description": "We design robust generative AI and NLP systems for multilingual, high-volume, and sensitive environments. Our expertise covers agentic frameworks, LLM fine-tuning and deployment, text classification, entity extraction, summarization, document parsing, and multilingual processing.",
         "useCases": [
-          "Text classification and categorization",
-          "Entity extraction and named entity recognition (NER)",
+          "Agentic AI frameworks with LangGraph and LangChain",
+          "LLM fine-tuning and local deployment",
+          "Text classification and entity extraction",
           "Document summarization and parsing",
-          "Large language model integration",
-          "Multilingual processing systems"
+          "Multilingual NLP systems"
         ],
         "projects": [
-          "Built multilingual NLP pipeline for international humanitarian organization",
-          "Developed entity extraction system for banking compliance",
-          "Deployed privacy-preserving LLM solution for enterprise document processing"
+          "Built agentic framework with LangGraph for optimal DAG and agent loop runtimes",
+          "Fully automated KYC system for Swiss banking sector",
+          "Compliant marketing material review system for financial services",
+          "Negative news detection in traditional media for risk assessment",
+          "Automatic test generation for car interfaces",
+          "Multilingual profile & skills embeddings for HR management",
+          "Trend detection with sentiment analysis for market intelligence"
         ]
       },
       "computerVision": {
         "title": "Computer Vision",
         "shortDescription": "We build advanced vision and generative vision models that bring structure and insight to image and video data.",
-        "description": "We build advanced vision and generative vision models that bring structure and insight to image and video data. Our solutions include object detection, image classification, video tagging, image generation, and custom multimodal pipelines.",
+        "description": "We build advanced vision and generative vision models that bring structure and insight to image and video data. Our solutions include object detection, image classification, OCR, medical imaging, and custom multimodal pipelines.",
         "useCases": [
+          "Medical imaging and neuron detection",
+          "OCR and document processing",
           "Object detection and tracking",
-          "Image classification and tagging",
-          "Video analysis and tagging",
-          "Image generation and enhancement",
+          "Image classification and segmentation",
           "Custom multimodal AI pipelines"
         ],
         "projects": [
-          "Developed real-time object detection system for manufacturing quality control",
-          "Built video analysis platform for media content categorization",
-          "Created custom image classification model for medical imaging application"
+          "Neuron detection in 3D 2-photon microscopy for neuroscience research",
+          "OCR and OpenCV for text and layout extraction from documents",
+          "Road segmentation models for autonomous driving applications",
+          "Real-time object detection for manufacturing quality control"
         ]
       },
       "ml": {
         "title": "Machine Learning (ML)",
         "shortDescription": "We solve predictive and analytical challenges across structured and unstructured data.",
-        "description": "We solve predictive and analytical challenges across structured and unstructured data. Our solutions include tabular ML, anomaly detection, forecasting, and classical ML solutions tailored to your business needs.",
+        "description": "We solve predictive and analytical challenges across structured and unstructured data. Our solutions include explainable AI, statistical analysis, forecasting, clustering, and classical ML solutions tailored to your business needs.",
         "useCases": [
-          "Tabular data modeling and prediction",
-          "Anomaly detection systems",
-          "Time series forecasting",
-          "Classical ML solutions",
+          "Explainable AI for decision support",
+          "Statistical analysis and causal inference",
+          "Time series forecasting and prediction",
+          "Clustering and segmentation",
           "Feature engineering and model optimization"
         ],
         "projects": [
-          "Developed fraud detection system for fintech company",
-          "Built demand forecasting model for retail supply chain",
-          "Created anomaly detection system for IoT sensor networks"
+          "Explainable AI for manufacturing production optimization and problem solving",
+          "GLM statistical analysis and causal inference for drug effects in pharma",
+          "XGBoost models for earnings forecasting in financial services",
+          "GMM clustering for client categorization and segmentation",
+          "Multilabel classification models for humanitarian text use cases"
         ]
       },
       "graphML": {
         "title": "Graph Machine Learning",
         "shortDescription": "We use graph-based intelligence to reveal hidden relationships and enable complex reasoning over connected data.",
-        "description": "We use graph-based intelligence to reveal hidden relationships and enable complex reasoning over connected data. Our expertise includes graph ML, link prediction, hybrid pipelines, and knowledge graph applications.",
+        "description": "We use graph-based intelligence to reveal hidden relationships and enable complex reasoning over connected data. Our expertise includes graph embeddings, fraud detection, biological networks, and large-scale graph processing.",
         "useCases": [
-          "Graph-based machine learning",
-          "Link prediction and recommendation",
-          "Hybrid ML/graph pipelines",
-          "Knowledge graph construction",
+          "Graph topology embeddings for fraud detection",
+          "Biological network analysis",
+          "Large-scale graph processing with Neo4j",
+          "Anomaly detection in transaction patterns",
           "Complex relationship analysis"
         ],
         "projects": [
-          "Built knowledge graph system for research organization",
-          "Developed recommendation engine using graph neural networks",
-          "Created hybrid graph-ML pipeline for social network analysis"
+          "Graph topology embeddings for anomalous transaction patterns and fraud detection in banking",
+          "Graph embeddings for poisonous protein classification in bioinformatics",
+          "Neo4j large graph processing for social media intelligence",
+          "Recommendation systems using graph neural networks"
         ]
       }
     },
@@ -171,23 +179,23 @@
     "nizar": {
       "name": "Nizar Ghandri",
       "role": "Co-Founder & Chief Technology Officer (CTO)",
-      "bio": "Former GenAI Tech Lead at UBS with extensive experience in AI for banking, telecommunications, and enterprise solutions. Expert in building scalable AI systems that drive real business value.",
+      "bio": "Former GenAI Tech Lead at UBS, specializing in generative AI, end-to-end deployment, and stakeholder management. Combining strong technical expertise with business and sales skills, he drives AI innovation from concept to production.",
       "skills": [
         "Generative AI",
         "Natural Language Processing",
-        "MLOps & Infrastructure",
-        "Banking Systems",
-        "Telecommunications",
-        "Enterprise Solutions",
+        "Graph Machine Learning",
+        "MLOps & Deployment",
+        "Stakeholder Management",
+        "Enterprise AI",
         "Python",
         "TensorFlow",
         "PyTorch"
       ],
       "experience": [
-        "GenAI Tech Lead at UBS - Leading AI initiatives in banking",
-        "AI Solutions Architect for telecommunications industry",
-        "Built scalable ML systems for enterprise clients",
-        "Expert in deploying production-grade AI systems"
+        "UBS – GenAI Tech Lead: Led development and deployment of enterprise-grade GenAI solutions with a focus on scalability and impact",
+        "Swisscom – Graph ML Researcher: Conducted research in graph-based machine learning and advanced AI systems",
+        "Visium – AI Consultant: Delivered ML and data engineering projects across pharma, manufacturing, and banking industries",
+        "SAP – Research Collaborator: Worked on NLP for cybersecurity, enhancing enterprise AI capabilities"
       ]
     },
     "selim": {
