@@ -12,27 +12,34 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Name, email, and message are required' });
   }
 
-  // Check for required environment variables
-  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    console.error('Gmail credentials not configured');
+  // Check for SMTP credentials
+  console.log('Environment check:', {
+    SMTP_HOST: process.env.SMTP_HOST ? 'SET' : 'MISSING',
+    SMTP_PORT: process.env.SMTP_PORT ? 'SET' : 'MISSING',
+    SMTP_EMAIL: process.env.SMTP_EMAIL ? 'SET' : 'MISSING',
+    SMTP_PASSWORD: process.env.SMTP_PASSWORD ? 'SET' : 'MISSING',
+  });
+  
+  if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
+    console.error('SMTP credentials not configured');
     return res.status(500).json({ error: 'Email service not configured' });
   }
 
-  // Configure Gmail SMTP transporter
+  // Create SMTP transporter
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: false, // Use TLS (STARTTLS on port 587)
     auth: {
-      user: process.env.SMTP_USER, // badismach@gmail.com
-      pass: process.env.SMTP_PASS, // App Password (16 characters)
+      user: process.env.SMTP_EMAIL,
+      pass: process.env.SMTP_PASSWORD,
     },
   });
 
   // Email content
   const mailOptions = {
-    from: `"ETHINC Contact Form" <${process.env.SMTP_USER}>`, // badismach@gmail.com
-    to: 'badis.machraoui@ethinc.ch',
+    from: `"ETHINC Contact Form" <${process.env.SMTP_EMAIL}>`,
+    to: 'badismach@gmail.com', // Recipient email
     replyTo: email,
     subject: `New Contact Form Submission from ${name}`,
     html: `
@@ -90,8 +97,8 @@ This email was sent from the ETHINC website contact form.
   };
 
   try {
-    await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully to:', mailOptions.to);
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info.messageId);
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('Error sending email:', err);

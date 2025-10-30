@@ -20,6 +20,8 @@ const About = () => {
     "Banking": BarChart3,
     "Software": Code,
     "Backend": Database,
+    "Frontend": Globe,
+    "DevOps": Shield,
     "AI": Brain,
     "Consulting": Users,
     "Humanitarian": Users,
@@ -30,7 +32,7 @@ const About = () => {
 
   const getSkillIcon = (skill: string) => {
     const Icon = skillIconMap[skill] || Code;
-    return <Icon className="w-5 h-5" />;
+    return <Icon className="w-4 h-4" />;
   };
 
   const teamMembers = [
@@ -62,7 +64,7 @@ const About = () => {
       linkedinUrl: "https://www.linkedin.com/in/badis-machraoui-9a44051b7/",
       skills: t('about.badis.skills', { returnObjects: true }) as string[],
       experience: t('about.badis.experience', { returnObjects: true }) as string[],
-      topSkills: ["Software", "Backend", "GenAI", "AI"],
+      topSkills: ["Frontend", "Backend", "AI", "DevOps"],
     },
   ];
   
@@ -147,7 +149,7 @@ const About = () => {
                               title={skill}
                             >
                               {getSkillIcon(skill)}
-                              <span className="text-xs font-medium">{skill}</span>
+                              <span className="text-[11px] font-medium">{skill}</span>
                             </div>
                           ))}
                         </div>

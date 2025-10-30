@@ -31,7 +31,7 @@
     },
     "main": {
       "nlp": {
-        "title": "Generative AI & NLP (Natural Language Processing)",
+        "title": "Generative AI & NLP",
         "shortDescription": "We design robust generative AI and NLP systems for multilingual, high-volume, and sensitive environments.",
         "description": "We design robust generative AI and NLP systems for multilingual, high-volume, and sensitive environments. Our expertise covers agentic frameworks, LLM fine-tuning and deployment, text classification, entity extraction, summarization, document parsing, and multilingual processing.",
         "useCases": [
@@ -70,7 +70,7 @@
         ]
       },
       "ml": {
-        "title": "Machine Learning (ML)",
+        "title": "Machine Learning",
         "shortDescription": "We solve predictive and analytical challenges across structured and unstructured data.",
         "description": "We solve predictive and analytical challenges across structured and unstructured data. Our solutions include explainable AI, statistical analysis, forecasting, clustering, and classical ML solutions tailored to your business needs.",
         "useCases": [
@@ -226,11 +226,12 @@
       "role": "Co-Founder & Software/AI Engineer",
       "bio": "Focuses on the development of our platforms, including AI development, prompt engineering, and software backend. Dedicated to building robust, scalable systems that power our AI solutions.",
       "skills": [
-        "Software Engineering",
+        "Frontend Development",
         "Backend Development",
         "AI Development",
         "Prompt Engineering",
         "System Architecture",
+        "Database Design",
         "Python",
         "JavaScript/TypeScript",
         "React",
@@ -239,8 +240,7 @@
       "experience": [
         "Full-stack development of AI platforms",
         "Backend architecture and system design",
-        "Prompt engineering for LLM applications",
-        "Building scalable, robust AI systems"
+        "Prompt engineering for LLM applications"
       ]
     }
   },

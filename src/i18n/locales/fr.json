@@ -31,7 +31,7 @@
     },
     "main": {
       "nlp": {
-        "title": "IA Générative & NLP (Traitement du Langage Naturel)",
+        "title": "IA Générative & NLP",
         "shortDescription": "Nous concevons des systèmes IA générative et NLP robustes pour des environnements multilingues, à haut volume et sensibles.",
         "description": "Nous concevons des systèmes IA générative et NLP robustes pour des environnements multilingues, à haut volume et sensibles. Notre expertise couvre les frameworks agentiques, le fine-tuning et déploiement de LLM, la classification de texte, l'extraction d'entités, la synthèse, l'analyse de documents et le traitement multilingue.",
         "useCases": [
@@ -70,7 +70,7 @@
         ]
       },
       "ml": {
-        "title": "Machine Learning (ML)",
+        "title": "Machine Learning",
         "shortDescription": "Nous résolvons les défis prédictifs et analytiques sur des données structurées et non structurées.",
         "description": "Nous résolvons les défis prédictifs et analytiques sur des données structurées et non structurées. Nos solutions incluent l'IA explicable, l'analyse statistique, les prévisions, le clustering et des solutions ML classiques adaptées à vos besoins.",
         "useCases": [
@@ -226,11 +226,12 @@
       "role": "Co-fondateur & Ingénieur Logiciel/IA",
       "bio": "Se concentre sur le développement de nos plateformes, incluant le développement IA, l'ingénierie de prompts et le backend logiciel. Dédié à la création de systèmes robustes et évolutifs qui alimentent nos solutions IA.",
       "skills": [
-        "Génie logiciel",
+        "Développement frontend",
         "Développement backend",
         "Développement IA",
         "Ingénierie de prompts",
         "Architecture système",
+        "Conception de bases de données",
         "Python",
         "JavaScript/TypeScript",
         "React",
@@ -239,8 +240,7 @@
       "experience": [
         "Développement full-stack de plateformes IA",
         "Architecture backend et conception système",
-        "Ingénierie de prompts pour applications LLM",
-        "Construction de systèmes IA robustes et évolutifs"
+        "Ingénierie de prompts pour applications LLM"
       ]
     }
   },
