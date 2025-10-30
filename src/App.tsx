@@ -22,8 +22,8 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
-  // Set basename for GitHub Pages deployment
-  const basename = import.meta.env.PROD ? '/ethinc-website-wip' : '/';
+  // Set basename for GitHub Pages deployment only (not for Vercel)
+  const basename = import.meta.env.VITE_GITHUB_PAGES === 'true' ? '/ethinc-website-wip' : '/';
   
   return (
     <QueryClientProvider client={queryClient}>
