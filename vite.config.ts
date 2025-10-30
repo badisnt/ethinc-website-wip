@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Set base path for GitHub Pages deployment
-  base: mode === 'production' ? '/ethinc-website-wip/' : '/',
+  // Set base path for GitHub Pages deployment only (not for Vercel)
+  base: process.env.GITHUB_PAGES === 'true' ? '/ethinc-website-wip/' : '/',
   server: {
     host: "::",
     port: 8080,
