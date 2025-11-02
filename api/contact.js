@@ -13,34 +13,27 @@ export default async function handler(req, res) {
   }
 
   // Check for SMTP credentials
-  console.log('Environment check:', {
-    SMTP_HOST: process.env.SMTP_HOST ? 'SET' : 'MISSING',
-    SMTP_PORT: process.env.SMTP_PORT ? 'SET' : 'MISSING',
-    SMTP_EMAIL: process.env.SMTP_EMAIL ? 'SET' : 'MISSING',
-    SMTP_PASSWORD: process.env.SMTP_PASSWORD ? 'SET' : 'MISSING',
-  });
-  
   if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
     console.error('SMTP credentials not configured');
     return res.status(500).json({ error: 'Email service not configured' });
   }
 
-  // Create SMTP transporter
+  // Create SMTP transporter (Microsoft 365)
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    host: process.env.SMTP_HOST || 'smtp.office365.com',
     port: parseInt(process.env.SMTP_PORT || '587'),
     secure: false, // Use TLS (STARTTLS on port 587)
     auth: {
-      user: process.env.SMTP_EMAIL,
+      user: process.env.SMTP_EMAIL, // Login with your personal email
       pass: process.env.SMTP_PASSWORD,
     },
   });
 
   // Email content
   const mailOptions = {
-    from: `"ETHINC Contact Form" <${process.env.SMTP_EMAIL}>`,
-    to: 'badismach@gmail.com', // Recipient email
-    replyTo: email,
+    from: 'ETHINC Contact Form <contact@ethinc.ch>', // Send FROM shared mailbox
+    to: 'contact@ethinc.ch', // Send TO shared mailbox
+    replyTo: email, // Reply goes to the form submitter
     subject: `New Contact Form Submission from ${name}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
