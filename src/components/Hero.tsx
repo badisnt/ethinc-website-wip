@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import heroImage from "@/assets/hero-bg.jpg";
+import heroImage from "@/assets/unsplash.jpg";
 
 const Hero = () => {
   const { t } = useTranslation();
