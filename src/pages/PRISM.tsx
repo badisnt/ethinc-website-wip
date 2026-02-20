@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ContactForm from "@/components/ContactForm";
 
 const PRISM = () => {
   const features = [
@@ -69,13 +68,11 @@ const PRISM = () => {
             </p>
             
             <div className="flex gap-4">
-              <ContactForm
-                trigger={
-                  <Button variant="glass" size="xl">
-                    Get Started
-                  </Button>
-                }
-              />
+              <Link to="/contact">
+                <Button variant="glass" size="xl">
+                  Get Started
+                </Button>
+              </Link>
               <Button variant="outline" size="xl" className="border-white/30 text-white hover:bg-white/10">
                 Online Demo Coming Soon
               </Button>
@@ -144,13 +141,11 @@ const PRISM = () => {
                 <p className="text-white/90 mb-6">
                   PRISM can be installed on your infrastructure or private cloud, customized for your domain, and scaled to meet your team's data processing needs.
                 </p>
-                <ContactForm
-                  trigger={
-                    <Button variant="glass" className="w-full">
-                      Contact Sales
-                    </Button>
-                  }
-                />
+                <Link to="/contact">
+                  <Button variant="glass" className="w-full">
+                    Contact Sales
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

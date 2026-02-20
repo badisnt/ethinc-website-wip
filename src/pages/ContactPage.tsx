@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import {
   Mail,
@@ -12,17 +12,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { toast } from "sonner";
-
-const services = [
-  "Generative AI & NLP",
-  "Computer Vision",
-  "Machine Learning",
-  "Graph Machine Learning",
-  "Data Analytics",
-  "Process Automation",
-  "Custom AI Solution",
-  "Other",
-];
 
 const faqs = [
   {
@@ -48,15 +37,34 @@ export function ContactPage() {
     name: "",
     email: "",
     company: "",
-    service: "",
-    budget: "",
+    phone: "",
+    subject: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
+  const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: "" });
+
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    setCaptcha({ num1, num2, answer: "" });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const correctAnswer = captcha.num1 + captcha.num2;
+    if (parseInt(captcha.answer) !== correctAnswer) {
+      toast.error("Incorrect answer. Please try again.");
+      generateCaptcha();
+      return;
+    }
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -77,7 +85,7 @@ export function ContactPage() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -105,7 +113,7 @@ export function ContactPage() {
               </span>
             </h1>
             <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: '16px', lineHeight: '1.7' }}>
-              Ready to transform your business with AI? Let's discuss your project and explore how we can help.
+              Ready to transform your business with AI?<br />Let's discuss your project and explore how we can help.
             </p>
           </motion.div>
         </div>
@@ -126,7 +134,7 @@ export function ContactPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="h-full flex items-center justify-center rounded-2xl bg-white border border-gray-200/80 shadow-sm p-16"
                 >
-                  <div className="text-center">
+                    <div className="text-center">
                     <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="w-10 h-10 text-green-500" />
                     </div>
@@ -139,7 +147,8 @@ export function ContactPage() {
                     <button
                       onClick={() => {
                         setSubmitted(false);
-                        setFormData({ name: "", email: "", company: "", service: "", budget: "", message: "" });
+                        setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
+                        generateCaptcha();
                       }}
                       className="text-purple-600 hover:text-orange-500 transition-colors flex items-center gap-2 mx-auto"
                       style={{ fontSize: '14px', fontWeight: 500 }}
@@ -151,20 +160,23 @@ export function ContactPage() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="rounded-2xl bg-white border border-gray-200/80 shadow-sm p-8 md:p-10">
-                  <h3 className="text-[#1a1a3e] mb-6" style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
-                    Tell us about your project
+                  <h3 className="text-[#1a1a3e] mb-2" style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+                    Get in Touch
                   </h3>
+                  <p className="text-[#8a8a9e] mb-6" style={{ fontSize: '14px' }}>
+                    Ready to transform your business with AI? Let's talk.
+                  </p>
 
                   <div className="grid md:grid-cols-2 gap-5 mb-5">
                     <div>
-                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Full Name *</label>
-                      <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe"
+                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Name *</label>
+                      <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Your full name"
                         className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                         style={{ fontSize: '14px' }} />
                     </div>
                     <div>
-                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Email Address *</label>
-                      <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@company.com"
+                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Email *</label>
+                      <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="your@email.com"
                         className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                         style={{ fontSize: '14px' }} />
                     </div>
@@ -173,49 +185,68 @@ export function ContactPage() {
                   <div className="grid md:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Company</label>
-                      <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your company name"
+                      <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your company"
                         className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                         style={{ fontSize: '14px' }} />
                     </div>
                     <div>
-                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Service of Interest</label>
-                      <select name="service" value={formData.service} onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors appearance-none cursor-pointer"
-                        style={{ fontSize: '14px' }}>
-                        <option value="">Select a service</option>
-                        {services.map((s) => (<option key={s} value={s}>{s}</option>))}
-                      </select>
+                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Phone</label>
+                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Your phone number"
+                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
+                        style={{ fontSize: '14px' }} />
                     </div>
                   </div>
 
                   <div className="mb-5">
-                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Estimated Budget</label>
-                    <select name="budget" value={formData.budget} onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors appearance-none cursor-pointer"
-                      style={{ fontSize: '14px' }}>
-                      <option value="">Select budget range</option>
-                      <option value="<10k">Less than CHF 10,000</option>
-                      <option value="10k-25k">CHF 10,000 - 25,000</option>
-                      <option value="25k-50k">CHF 25,000 - 50,000</option>
-                      <option value="50k-100k">CHF 50,000 - 100,000</option>
-                      <option value="100k+">CHF 100,000+</option>
-                    </select>
+                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Subject</label>
+                    <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="What is this about?"
+                      className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
+                      style={{ fontSize: '14px' }} />
                   </div>
 
-                  <div className="mb-6">
-                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Project Description *</label>
-                    <textarea name="message" value={formData.message} onChange={handleChange} required rows={5}
-                      placeholder="Tell us about your project, challenges, and what you're looking to achieve..."
-                      className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors resize-none"
+                  <div className="mb-5">
+                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Message *</label>
+                    <textarea name="message" value={formData.message} onChange={handleChange} required rows={4}
+                      placeholder="Tell us about your project or specific requirements..."
+                      className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors resize-y"
                       style={{ fontSize: '14px', lineHeight: '1.6' }} />
                   </div>
 
-                  <button type="submit"
-                    className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-xl shadow-purple-600/20"
-                    style={{ fontSize: '15px', fontWeight: 500 }}>
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </button>
+                  <div className="mb-6">
+                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Security Check *</label>
+                    <div className="flex items-center gap-3">
+                      <div className="text-sm font-medium bg-[#f5f3ee] px-4 py-3 rounded-lg border border-gray-200 text-[#1a1a3e] whitespace-nowrap">
+                        {captcha.num1} + {captcha.num2} = ?
+                      </div>
+                      <input
+                        type="number"
+                        value={captcha.answer}
+                        onChange={(e) => setCaptcha(prev => ({ ...prev, answer: e.target.value }))}
+                        placeholder="Answer"
+                        required
+                        className="w-32 px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
+                        style={{ fontSize: '14px' }}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end gap-3">
+                    <button type="button"
+                      onClick={() => {
+                        setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
+                        generateCaptcha();
+                      }}
+                      className="px-6 py-3 rounded-lg border border-gray-200 text-[#3a3a52] hover:bg-gray-50 transition-colors"
+                      style={{ fontSize: '14px', fontWeight: 500 }}>
+                      Cancel
+                    </button>
+                    <button type="submit"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-purple-600/20"
+                      style={{ fontSize: '14px', fontWeight: 500 }}>
+                      <Send className="w-4 h-4" />
+                      Send Message
+                    </button>
+                  </div>
                 </form>
               )}
             </motion.div>

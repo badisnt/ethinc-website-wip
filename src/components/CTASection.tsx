@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { CalendarDays, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import ContactForm from "@/components/ContactForm";
 import { Link } from "react-router-dom";
 
 export function CTASection() {
@@ -58,18 +57,15 @@ export function CTASection() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <ContactForm
-              trigger={
-                <button
-                  className="shrink-0 inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-xl shadow-purple-600/20 group cursor-pointer"
-                  style={{ fontSize: '15px', fontWeight: 600 }}
-                >
-                  <CalendarDays className="w-5 h-5" />
-                  {t('cta.button', 'Schedule a Call')}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              }
-            />
+            <Link
+              to="/contact"
+              className="shrink-0 inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-xl shadow-purple-600/20 group"
+              style={{ fontSize: '15px', fontWeight: 600 }}
+            >
+              <CalendarDays className="w-5 h-5" />
+              {t('cta.button', 'Schedule a Call')}
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
 
             <Link
               to="/projects"

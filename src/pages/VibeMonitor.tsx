@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ContactForm from "@/components/ContactForm";
 import DemoVideo from "@/assets/demo.mp4";
 import PosterImage from "@/assets/hero-bg.jpg";
 
@@ -77,13 +76,11 @@ const VibeMonitor = () => {
             </p>
             
             <div className="flex gap-4">
-              <ContactForm
-                trigger={
-                  <Button variant="glass" size="xl">
-                    Get Started
-                  </Button>
-                }
-              />
+              <Link to="/contact">
+                <Button variant="glass" size="xl">
+                  Get Started
+                </Button>
+              </Link>
               <Dialog>
                 <DialogTrigger asChild>
                   <Button variant="outline" size="xl" className="border-white/30 text-white hover:bg-white/10">
@@ -169,13 +166,11 @@ const VibeMonitor = () => {
                 <p className="text-white/90 mb-6">
                   Contact us today to learn how VibeMonitor can transform your social media monitoring and public sentiment analysis.
                 </p>
-                <ContactForm
-                  trigger={
-                    <Button variant="glass" className="w-full">
-                      Request Demo
-                    </Button>
-                  }
-                />
+                <Link to="/contact">
+                  <Button variant="glass" className="w-full">
+                    Request Demo
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

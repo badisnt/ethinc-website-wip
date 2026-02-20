@@ -1,6 +1,6 @@
 import { Calendar, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ContactForm from "@/components/ContactForm";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
@@ -35,19 +35,17 @@ const CTA = () => {
           
           {/* Button - Right side */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-end gap-6">
-            <ContactForm
-              trigger={
-                <Button 
-                  variant="glass" 
-                  size="xl" 
-                  className="group min-w-[280px] shadow-2xl hover:shadow-3xl transition-all"
-                >
-                  <Calendar className="w-5 h-5 mr-2" />
-                  {t('cta.button')}
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              }
-            />
+            <Link to="/contact">
+              <Button 
+                variant="glass" 
+                size="xl" 
+                className="group min-w-[280px] shadow-2xl hover:shadow-3xl transition-all"
+              >
+                <Calendar className="w-5 h-5 mr-2" />
+                {t('cta.button')}
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

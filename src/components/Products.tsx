@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Monitor, Shield, Calendar, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import ContactForm from "./ContactForm";
 import PrismImage from "@/assets/prism.png";
 
 const Products = () => {
@@ -81,14 +80,12 @@ const Products = () => {
                 </div>
 
                 <div className="flex gap-3 pt-4">
-                  {<ContactForm
-                    trigger={
-                      <Button variant="hero" className="flex-1">
-                        <Calendar className="w-5 h-5 mr-2" />
-                        {t('products.requestDemo')}
-                      </Button>
-                    }
-                  />}
+                  <Link to="/contact" className="flex-1">
+                    <Button variant="hero" className="w-full">
+                      <Calendar className="w-5 h-5 mr-2" />
+                      {t('products.requestDemo')}
+                    </Button>
+                  </Link>
                   <Link to={product.link} className="flex-1">
                     <Button variant="outline" className="w-full">
                       {t('products.learnMore')}
