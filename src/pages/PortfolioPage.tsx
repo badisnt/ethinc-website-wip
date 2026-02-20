@@ -119,7 +119,7 @@ export function PortfolioPage() {
 
   return (
     <div className="pb-0">
-      <div className="pt-28 pb-16 bg-[#14142b]">
+      <div className="pt-28 pb-16 bg-[#1a1a3e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -155,7 +155,7 @@ export function PortfolioPage() {
           >
             <div className="text-center mb-16">
               <h2
-                className="text-[#14142b] mb-4"
+                className="text-[#1a1a3e] mb-4"
                 style={{
                   fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
                   fontWeight: 700,
@@ -197,7 +197,7 @@ export function PortfolioPage() {
                           {step.step}
                         </span>
                       </div>
-                      <h3 className="text-[#14142b] mb-3" style={{ fontSize: "17px", fontWeight: 600 }}>{step.title}</h3>
+                      <h3 className="text-[#1a1a3e] mb-3" style={{ fontSize: "17px", fontWeight: 600 }}>{step.title}</h3>
                       <p className="text-[#5a5a72]" style={{ fontSize: "14px", lineHeight: "1.7" }}>{step.description}</p>
                     </div>
                   </motion.div>
@@ -208,7 +208,7 @@ export function PortfolioPage() {
         </div>
       </div>
 
-      <div className="py-24 bg-[#14142b]">
+      <div className="py-24 bg-[#1a1a3e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -252,7 +252,7 @@ export function PortfolioPage() {
                         alt={project.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#14142b] via-transparent to-transparent opacity-60" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a3e] via-transparent to-transparent opacity-60" />
                       <div className="absolute top-4 left-4">
                         <span className="px-3 py-1 rounded-full bg-purple-600/80 backdrop-blur-sm text-white" style={{ fontSize: '11px', fontWeight: 500 }}>
                           {project.category}

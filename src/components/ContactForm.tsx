@@ -17,11 +17,11 @@ import {
 
 
 
-async function sendContactForm(name: string, email: string, company: string, phone: string, message: string) {
+async function sendContactForm(name: string, email: string, company: string, phone: string, subject: string, message: string) {
   const res = await fetch('/api/contact', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, company, phone,  message }),
+    body: JSON.stringify({ name, email, company, phone, subject, message }),
   });
 
   if (!res.ok) throw new Error('Failed to send contact form');
@@ -40,6 +40,7 @@ const ContactForm = ({ trigger }: ContactFormProps) => {
     email: "",
     company: "",
     phone: "",
+    subject: "",
     message: "",
   });
 
@@ -91,7 +92,7 @@ const ContactForm = ({ trigger }: ContactFormProps) => {
     // User will handle the sending logic
     console.log("Form submitted:", formData);
 
-    sendContactForm(formData.name, formData.email, formData.company, formData.phone, formData.message)
+    sendContactForm(formData.name, formData.email, formData.company, formData.phone, formData.subject, formData.message)
       .then(() => {
         toast({
           title: t('contact.success'),
@@ -102,6 +103,7 @@ const ContactForm = ({ trigger }: ContactFormProps) => {
           email: "",
           company: "",
           phone: "",
+          subject: "",
           message: "",
         });
         generateCaptcha(); // Reset captcha
@@ -178,6 +180,17 @@ const ContactForm = ({ trigger }: ContactFormProps) => {
                 placeholder={t('contact.placeholders.phone')}
               />
             </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="subject">{t('contact.subject', 'Subject')}</Label>
+            <Input
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleInputChange}
+              placeholder={t('contact.placeholders.subject', 'What is this about?')}
+            />
           </div>
 
           <div className="space-y-2">

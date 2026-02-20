@@ -84,7 +84,7 @@ export function ContactPage() {
 
   return (
     <div className="pb-0">
-      <div className="pt-28 pb-16 bg-[#14142b]">
+      <div className="pt-28 pb-16 bg-[#1a1a3e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -130,7 +130,7 @@ export function ContactPage() {
                     <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="w-10 h-10 text-green-500" />
                     </div>
-                    <h3 className="text-[#14142b] mb-3" style={{ fontSize: '24px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+                    <h3 className="text-[#1a1a3e] mb-3" style={{ fontSize: '24px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
                       Message Sent!
                     </h3>
                     <p className="text-[#5a5a72] mb-6 max-w-md" style={{ fontSize: '15px', lineHeight: '1.7' }}>
@@ -151,7 +151,7 @@ export function ContactPage() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="rounded-2xl bg-white border border-gray-200/80 shadow-sm p-8 md:p-10">
-                  <h3 className="text-[#14142b] mb-6" style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+                  <h3 className="text-[#1a1a3e] mb-6" style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
                     Tell us about your project
                   </h3>
 
@@ -159,13 +159,13 @@ export function ContactPage() {
                     <div>
                       <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Full Name *</label>
                       <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe"
-                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#14142b] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                         style={{ fontSize: '14px' }} />
                     </div>
                     <div>
                       <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Email Address *</label>
                       <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@company.com"
-                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#14142b] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                         style={{ fontSize: '14px' }} />
                     </div>
                   </div>
@@ -174,13 +174,13 @@ export function ContactPage() {
                     <div>
                       <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Company</label>
                       <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your company name"
-                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#14142b] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
+                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                         style={{ fontSize: '14px' }} />
                     </div>
                     <div>
                       <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Service of Interest</label>
                       <select name="service" value={formData.service} onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#14142b] focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors appearance-none cursor-pointer"
+                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors appearance-none cursor-pointer"
                         style={{ fontSize: '14px' }}>
                         <option value="">Select a service</option>
                         {services.map((s) => (<option key={s} value={s}>{s}</option>))}
@@ -191,7 +191,7 @@ export function ContactPage() {
                   <div className="mb-5">
                     <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Estimated Budget</label>
                     <select name="budget" value={formData.budget} onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#14142b] focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors appearance-none cursor-pointer"
+                      className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors appearance-none cursor-pointer"
                       style={{ fontSize: '14px' }}>
                       <option value="">Select budget range</option>
                       <option value="<10k">Less than CHF 10,000</option>
@@ -206,7 +206,7 @@ export function ContactPage() {
                     <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Project Description *</label>
                     <textarea name="message" value={formData.message} onChange={handleChange} required rows={5}
                       placeholder="Tell us about your project, challenges, and what you're looking to achieve..."
-                      className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#14142b] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors resize-none"
                       style={{ fontSize: '14px', lineHeight: '1.6' }} />
                   </div>
 
@@ -227,7 +227,7 @@ export function ContactPage() {
               className="space-y-6"
             >
               <div className="rounded-2xl bg-white border border-gray-200/80 shadow-sm p-8">
-                <h3 className="text-[#14142b] mb-6" style={{ fontSize: '18px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+                <h3 className="text-[#1a1a3e] mb-6" style={{ fontSize: '18px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
                   Contact Information
                 </h3>
                 <div className="space-y-5">
@@ -237,7 +237,7 @@ export function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[#8a8a9e] mb-0.5" style={{ fontSize: '12px' }}>Email</p>
-                      <p className="text-[#14142b]" style={{ fontSize: '14px' }}>contact@ethinc.ch</p>
+                      <p className="text-[#1a1a3e]" style={{ fontSize: '14px' }}>contact@ethinc.ch</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -246,7 +246,7 @@ export function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[#8a8a9e] mb-0.5" style={{ fontSize: '12px' }}>Location</p>
-                      <p className="text-[#14142b]" style={{ fontSize: '14px' }}>Lausanne, Vaud CH</p>
+                      <p className="text-[#1a1a3e]" style={{ fontSize: '14px' }}>Lausanne, Vaud CH</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -255,7 +255,7 @@ export function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[#8a8a9e] mb-0.5" style={{ fontSize: '12px' }}>Phone</p>
-                      <p className="text-[#14142b]" style={{ fontSize: '14px' }}>+41 XX XXX XX XX</p>
+                      <p className="text-[#1a1a3e]" style={{ fontSize: '14px' }}>+41 XX XXX XX XX</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -264,7 +264,7 @@ export function ContactPage() {
                     </div>
                     <div>
                       <p className="text-[#8a8a9e] mb-0.5" style={{ fontSize: '12px' }}>Response Time</p>
-                      <p className="text-[#14142b]" style={{ fontSize: '14px' }}>Within 24 hours</p>
+                      <p className="text-[#1a1a3e]" style={{ fontSize: '14px' }}>Within 24 hours</p>
                     </div>
                   </div>
                 </div>
@@ -296,7 +296,7 @@ export function ContactPage() {
                   </div>
                   <div className="text-center z-10">
                     <MapPin className="w-8 h-8 text-purple-600 mx-auto mb-2" />
-                    <p className="text-[#14142b]" style={{ fontSize: '14px', fontWeight: 500 }}>Lausanne, Switzerland</p>
+                    <p className="text-[#1a1a3e]" style={{ fontSize: '14px', fontWeight: 500 }}>Lausanne, Switzerland</p>
                     <p className="text-[#8a8a9e]" style={{ fontSize: '12px' }}>EPFL Innovation Park</p>
                   </div>
                 </div>
@@ -306,7 +306,7 @@ export function ContactPage() {
         </div>
       </div>
 
-      <div className="py-24 bg-[#14142b]">
+      <div className="py-24 bg-[#1a1a3e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

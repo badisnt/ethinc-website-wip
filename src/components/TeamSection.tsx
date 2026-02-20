@@ -65,7 +65,7 @@ export function TeamSection() {
 
   return (
     <section className="py-12 lg:py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#161630]/50 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1c1c42]/50 to-transparent pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-[260px_1fr] gap-6 lg:gap-10">
           <div className="flex lg:flex-col gap-3 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-hide">
@@ -164,8 +164,8 @@ export function TeamSection() {
                       alt={member.name}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#14142b] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#14142b]/80" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#14142b] via-transparent to-transparent opacity-60 md:opacity-0" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a3e] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#1a1a3e]/80" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a3e] via-transparent to-transparent opacity-60 md:opacity-0" />
 
                     <div className="absolute bottom-0 left-0 right-0 p-6 md:hidden">
                       <h3

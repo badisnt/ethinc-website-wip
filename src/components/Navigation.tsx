@@ -50,7 +50,7 @@ const Navigation = () => {
         isVisible ? "translate-y-0" : "-translate-y-full"
       } ${
         isScrolled
-          ? "bg-[#14142b]/90 backdrop-blur-2xl border-b border-white/[0.08] shadow-lg shadow-purple-900/10 after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-gradient-to-r after:from-transparent after:via-purple-500/20 after:to-transparent"
+          ? "bg-[#1a1a3e]/90 backdrop-blur-2xl border-b border-white/[0.08] shadow-lg shadow-purple-900/10 after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-gradient-to-r after:from-transparent after:via-purple-500/20 after:to-transparent"
           : "bg-transparent"
       }`}
     >
@@ -106,7 +106,7 @@ const Navigation = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#14142b]/95 backdrop-blur-xl border-b border-white/[0.06]"
+            className="md:hidden bg-[#1a1a3e]/95 backdrop-blur-xl border-b border-white/[0.06]"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (

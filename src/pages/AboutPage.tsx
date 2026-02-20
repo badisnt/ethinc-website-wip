@@ -14,7 +14,7 @@ const milestones = [
 export function AboutPage() {
   return (
     <div className="pb-0">
-      <div className="pt-28 pb-20 bg-[#14142b]">
+      <div className="pt-28 pb-20 bg-[#1a1a3e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -88,7 +88,7 @@ export function AboutPage() {
             className="text-center mb-12"
           >
             <h2
-              className="text-[#14142b] mb-4"
+              className="text-[#1a1a3e] mb-4"
               style={{
                 fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
                 fontWeight: 700,
@@ -121,7 +121,7 @@ export function AboutPage() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-100 to-orange-50 flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-6 h-6 text-purple-600" />
                 </div>
-                <div className="text-[#14142b] mb-1" style={{ fontSize: '26px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+                <div className="text-[#1a1a3e] mb-1" style={{ fontSize: '26px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
                   {item.value}
                 </div>
                 <div className="text-[#8a8a9e]" style={{ fontSize: '13px' }}>{item.label}</div>

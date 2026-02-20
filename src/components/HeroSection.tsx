@@ -361,7 +361,7 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center overflow-hidden"
     >
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#171735] via-[#14142b] to-[#161630]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e1e45] via-[#1a1a3e] to-[#1c1c42]" />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/[0.08] via-transparent to-orange-900/[0.06]" />
       </div>
 

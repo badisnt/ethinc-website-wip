@@ -29,7 +29,7 @@ const values = [
 export function TeamPage() {
   return (
     <div className="pb-0">
-      <div className="pt-28 pb-0 bg-[#14142b]">
+      <div className="pt-28 pb-0 bg-[#1a1a3e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export function TeamPage() {
           >
             <div className="text-center mb-16">
               <h2
-                className="text-[#14142b] mb-4"
+                className="text-[#1a1a3e] mb-4"
                 style={{
                   fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
                   fontWeight: 700,
@@ -97,7 +97,7 @@ export function TeamPage() {
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-100 to-orange-50 flex items-center justify-center mx-auto mb-5">
                     <value.icon className="w-6 h-6 text-purple-600" />
                   </div>
-                  <h3 className="text-[#14142b] mb-3" style={{ fontSize: "17px", fontWeight: 600 }}>
+                  <h3 className="text-[#1a1a3e] mb-3" style={{ fontSize: "17px", fontWeight: 600 }}>
                     {value.title}
                   </h3>
                   <p className="text-[#5a5a72]" style={{ fontSize: "14px", lineHeight: "1.7" }}>
@@ -110,8 +110,8 @@ export function TeamPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#14142b]">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1e1240] via-[#18133a] to-[#1a1535]" />
+      <section className="relative overflow-hidden bg-[#1a1a3e]">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#251850] via-[#1f1a4a] to-[#211c45]" />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-transparent to-orange-600/[0.08]" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/[0.08] rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />

@@ -88,7 +88,7 @@ function ServiceCard({ service, index }: { service: typeof services[number]; ind
         >
           <service.icon className="w-6 h-6 text-white" />
         </div>
-        <h3 className="text-[#14142b] mb-3" style={{ fontSize: '17px', fontWeight: 600 }}>
+        <h3 className="text-[#1a1a3e] mb-3" style={{ fontSize: '17px', fontWeight: 600 }}>
           {t(service.titleKey, service.titleFallback)}
         </h3>
         <p className="text-[#5a5a72]" style={{ fontSize: '14px', lineHeight: '1.7' }}>
@@ -117,7 +117,7 @@ export function ServicesSection() {
           className="text-center mb-16"
         >
           <h2
-            className="text-[#14142b] mb-4"
+            className="text-[#1a1a3e] mb-4"
             style={{
               fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
               fontWeight: 700,
@@ -125,7 +125,7 @@ export function ServicesSection() {
             }}
           >
             <span className="text-[#8a8a9e]">{t('services.sectionTitle', 'How we can')}</span>{" "}
-            <span className="text-[#14142b]">
+            <span className="text-[#1a1a3e]">
               {t('services.sectionHighlight', 'help you')}
             </span>
           </h2>

@@ -17,7 +17,7 @@ export function Layout() {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen bg-[#14142b] text-white">
+    <div className="min-h-screen bg-[#1a1a3e] text-white">
       <motion.div
         className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500 via-orange-400 to-purple-500 z-[60] origin-left"
         style={{ scaleX }}
@@ -38,7 +38,7 @@ export function Layout() {
         position="bottom-right"
         toastOptions={{
           style: {
-            background: "#1a1a38",
+            background: "#20204a",
             border: "1px solid rgba(124,58,237,0.15)",
             color: "#f0f0ff",
           },

@@ -84,7 +84,7 @@ export function BlogPage() {
 
   return (
     <div className="pb-0">
-      <div className="pt-28 pb-20 bg-[#14142b]">
+      <div className="pt-28 pb-20 bg-[#1a1a3e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -163,7 +163,7 @@ export function BlogPage() {
                 className={`px-4 py-2 rounded-full transition-all duration-300 ${
                   activeCategory === cat
                     ? "bg-gradient-to-r from-purple-600 to-orange-500 text-white shadow-lg shadow-purple-600/20"
-                    : "bg-white text-[#5a5a72] hover:text-[#14142b] hover:shadow-md border border-gray-200/80"
+                    : "bg-white text-[#5a5a72] hover:text-[#1a1a3e] hover:shadow-md border border-gray-200/80"
                 }`}
                 style={{ fontSize: '13px', fontWeight: 500 }}
               >
@@ -196,7 +196,7 @@ export function BlogPage() {
                         {post.category}
                       </span>
                     </div>
-                    <h3 className="text-[#14142b] mb-3 group-hover:text-purple-600 transition-colors" style={{ fontSize: '17px', fontWeight: 600, lineHeight: 1.4 }}>
+                    <h3 className="text-[#1a1a3e] mb-3 group-hover:text-purple-600 transition-colors" style={{ fontSize: '17px', fontWeight: 600, lineHeight: 1.4 }}>
                       {post.title}
                     </h3>
                     <p className="text-[#5a5a72] mb-4" style={{ fontSize: '14px', lineHeight: '1.7' }}>{post.excerpt}</p>

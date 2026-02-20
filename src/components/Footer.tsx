@@ -8,7 +8,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-[#0f0f24] border-t border-white/[0.06] text-gray-400 py-16">
+    <footer className="bg-[#151538] border-t border-white/[0.06] text-gray-400 py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
           {/* Brand */}
