@@ -16,7 +16,7 @@ const LanguageSwitcher = () => {
   };
 
   const getCurrentLanguageLabel = () => {
-    return i18n.language === 'en' ? 'EN' : 'FR';
+    return i18n.language?.startsWith('en') ? 'EN' : 'FR';
   };
 
   return (

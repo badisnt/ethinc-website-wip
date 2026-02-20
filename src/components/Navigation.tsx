@@ -1,178 +1,138 @@
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
-import ContactForm from "./ContactForm";
 import LanguageSwitcher from "./LanguageSwitcher";
-import EthincIcon from "@/assets/ethinc_icon.png";
+import EthincIcon from "@/assets/ethinc_icon2.png";
+
+const navLinks = [
+  { labelKey: "navigation.home", fallback: "Home", href: "/" },
+  { labelKey: "navigation.team", fallback: "Team", href: "/team" },
+  { labelKey: "navigation.projects", fallback: "Projects", href: "/projects" },
+  { labelKey: "navigation.blog", fallback: "Blog", href: "/blog" },
+  { labelKey: "navigation.aboutUs", fallback: "About Us", href: "/about" },
+];
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
   const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Show navbar when at the top
-      if (currentScrollY < 10) {
+      const currentY = window.scrollY;
+      setIsScrolled(currentY > 20);
+
+      if (currentY < 10) {
         setIsVisible(true);
-      } 
-      // Hide when scrolling down, show when scrolling up
-      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      } else if (currentY > lastScrollY && currentY > 80) {
         setIsVisible(false);
-      } else if (currentScrollY < lastScrollY) {
+      } else if (currentY < lastScrollY) {
         setIsVisible(true);
       }
-      
-      setLastScrollY(currentScrollY);
+      setLastScrollY(currentY);
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-    setIsOpen(false); // Close mobile menu after clicking
-  };
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-lg border-b border-white/20 w-full transition-transform duration-300 ease-in-out ${
-      isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
-      <div className="container mx-auto px-4 max-w-full">
-        <div className="flex items-center justify-between h-16 w-full relative">
-          {/* Logo - Left */}
-          <Link to="/" className="flex items-center space-x-2 text-xl sm:text-2xl font-bold text-white hover:text-white/80 transition-colors flex-shrink-0 font-system">
-            <img src={EthincIcon} alt="Ethinc" className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0" />
-            <span className="whitespace-nowrap">Ethinc</span>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      } ${
+        isScrolled
+          ? "bg-[#14142b]/90 backdrop-blur-2xl border-b border-white/[0.08] shadow-lg shadow-purple-900/10 after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-gradient-to-r after:from-transparent after:via-purple-500/20 after:to-transparent"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <Link to="/" className="flex items-center gap-2 group">
+            <img src={EthincIcon} alt="Ethinc" className="w-8 h-8 object-contain" />
+            <span className="text-white" style={{ fontSize: '20px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+              Ethinc
+            </span>
           </Link>
 
-          {/* Desktop Menu - Center */}
-          <div className="hidden md:flex items-center justify-center space-x-12 lg:space-x-16 absolute left-1/2 transform -translate-x-1/2 font-heading">
-            <a 
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="text-white/90 hover:text-white transition-colors"
-            >
-              {t('navigation.home')}
-            </a>
-            <a 
-              href="#services" 
-              onClick={(e) => handleSmoothScroll(e, 'services')}
-              className="text-white/90 hover:text-white transition-colors"
-            >
-              {t('navigation.services')}
-            </a>
-            {/* <a href="#products" className="text-white/90 hover:text-white transition-colors">
-              {t('navigation.products')}
-            </a> */}
-            <a 
-              href="#about" 
-              onClick={(e) => handleSmoothScroll(e, 'about')}
-              className="text-white/90 hover:text-white transition-colors"
-            >
-              {t('navigation.about')}
-            </a>
-            <a 
-              href="#contact" 
-              onClick={(e) => handleSmoothScroll(e, 'contact')}
-              className="text-white/90 hover:text-white transition-colors"
-            >
-              {t('navigation.contact')}
-            </a>
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={`px-3 py-2 rounded-lg transition-all duration-200 ${
+                  location.pathname === link.href
+                    ? "text-white bg-white/10"
+                    : "text-gray-300 hover:text-white hover:bg-white/5"
+                }`}
+                style={{ fontSize: '14px' }}
+              >
+                {t(link.labelKey, link.fallback)}
+              </Link>
+            ))}
           </div>
 
-          {/* Language & Contact - Right */}
-          <div className="hidden md:flex items-center space-x-4 font-heading">
+          <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher />
-            <ContactForm
-              trigger={
-                <Button variant="hero" size="sm">
-                  {t('navigation.contactUs')}
-                </Button>
-              }
-            />
+            <Link
+              to="/contact"
+              className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-purple-600/20"
+              style={{ fontSize: '14px', fontWeight: 500 }}
+            >
+              {t('navigation.contactUs', 'Contact Us')}
+            </Link>
           </div>
 
-          {/* Mobile Menu Button - Right */}
           <button
-            className="md:hidden text-white p-2 flex-shrink-0"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden text-white p-2"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-white/20 w-full">
-            <div className="flex flex-col space-y-4 w-full font-heading">
-              <a 
-                href="#hero"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                  setIsOpen(false);
-                }}
-                className="text-white/90 hover:text-white transition-colors py-2"
-              >
-                {t('navigation.home')}
-              </a>
-              <a 
-                href="#services" 
-                onClick={(e) => handleSmoothScroll(e, 'services')}
-                className="text-white/90 hover:text-white transition-colors py-2"
-              >
-                {t('navigation.services')}
-              </a>
-              {/* <a href="#products" className="text-white/90 hover:text-white transition-colors py-2">
-                {t('navigation.products')}
-              </a> */}
-              <a 
-                href="#about" 
-                onClick={(e) => handleSmoothScroll(e, 'about')}
-                className="text-white/90 hover:text-white transition-colors py-2"
-              >
-                {t('navigation.about')}
-              </a>
-              <a 
-                href="#contact" 
-                onClick={(e) => handleSmoothScroll(e, 'contact')}
-                className="text-white/90 hover:text-white transition-colors py-2"
-              >
-                {t('navigation.contact')}
-              </a>
-              <LanguageSwitcher />
-              <ContactForm
-                trigger={
-                  <Button variant="hero" size="sm" className="w-fit">
-                    {t('navigation.contactUs')}
-                  </Button>
-                }
-              />
-            </div>
-          </div>
-        )}
       </div>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-[#14142b]/95 backdrop-blur-xl border-b border-white/[0.06]"
+          >
+            <div className="px-4 py-4 space-y-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="block px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+                  style={{ fontSize: '15px' }}
+                >
+                  {t(link.labelKey, link.fallback)}
+                </Link>
+              ))}
+              <div className="pt-2 px-4">
+                <LanguageSwitcher />
+              </div>
+              <Link
+                to="/contact"
+                className="block mt-4 text-center px-5 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white"
+                style={{ fontSize: '15px', fontWeight: 500 }}
+              >
+                {t('navigation.contactUs', 'Contact Us')}
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

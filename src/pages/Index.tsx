@@ -1,21 +1,15 @@
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-// import Products from "@/components/Products";
-import Footer from "@/components/Footer";
-import CTA from "@/components/CTA";
+import { HeroSection } from "@/components/HeroSection";
+import { MarqueeSection } from "@/components/MarqueeSection";
+import { ServicesSection } from "@/components/ServicesSection";
+import { CTASection } from "@/components/CTASection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <Hero />
-      <Services />
-      {/* <Products /> */}
-      <About />
-      <CTA />
-      <Footer />
+    <div>
+      <HeroSection />
+      <MarqueeSection />
+      <ServicesSection />
+      <CTASection />
     </div>
   );
 };
