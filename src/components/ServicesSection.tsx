@@ -110,8 +110,8 @@ export function ServicesSection() {
   const headingOpacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
 
   return (
-    <section ref={sectionRef} id="services" className="py-24 relative bg-[#f5f3ee]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section ref={sectionRef} id="services" className="py-24 relative bg-[#f5f3ee] min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
         <motion.div
           style={{ y: headingY, opacity: headingOpacity }}
           className="text-center mb-16"

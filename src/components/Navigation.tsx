@@ -8,7 +8,6 @@ import EthincIcon from "@/assets/ethinc_icon2.png";
 
 const navLinks = [
   { labelKey: "navigation.home", fallback: "Home", href: "/" },
-  { labelKey: "navigation.team", fallback: "Team", href: "/team" },
   { labelKey: "navigation.projects", fallback: "Projects", href: "/projects" },
   { labelKey: "navigation.blog", fallback: "Blog", href: "/blog" },
   { labelKey: "navigation.aboutUs", fallback: "About Us", href: "/about" },
@@ -63,7 +62,7 @@ const Navigation = () => {
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -78,10 +77,6 @@ const Navigation = () => {
                 {t(link.labelKey, link.fallback)}
               </Link>
             ))}
-          </div>
-
-          <div className="hidden md:flex items-center gap-3">
-            <LanguageSwitcher />
             <Link
               to="/contact"
               className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-purple-600/20"
@@ -89,6 +84,7 @@ const Navigation = () => {
             >
               {t('navigation.contactUs', 'Contact Us')}
             </Link>
+            <LanguageSwitcher />
           </div>
 
           <button
@@ -119,9 +115,6 @@ const Navigation = () => {
                   {t(link.labelKey, link.fallback)}
                 </Link>
               ))}
-              <div className="pt-2 px-4">
-                <LanguageSwitcher />
-              </div>
               <Link
                 to="/contact"
                 className="block mt-4 text-center px-5 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white"
@@ -129,6 +122,9 @@ const Navigation = () => {
               >
                 {t('navigation.contactUs', 'Contact Us')}
               </Link>
+              <div className="pt-2 px-4">
+                <LanguageSwitcher />
+              </div>
             </div>
           </motion.div>
         )}

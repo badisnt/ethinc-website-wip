@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import { Award, Users, GraduationCap, Globe, ArrowRight } from "lucide-react";
+import { Award, Users, GraduationCap, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
-import { CTASection } from "@/components/CTASection";
-import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
+import { TeamSection } from "@/components/TeamSection";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 const milestones = [
   { icon: Award, label: "Founded", value: "2023" },
@@ -14,12 +14,12 @@ const milestones = [
 export function AboutPage() {
   return (
     <div className="pb-0">
-      <div className="pt-28 pb-20 bg-[#1a1a3e]">
+      <div className="pt-28 pb-0 bg-[#1a1a3e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-20"
+            className="text-center mb-4"
           >
             <h1
               className="text-white mb-6"
@@ -29,7 +29,7 @@ export function AboutPage() {
                 fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
               }}
             >
-              About{" "}
+              The People Behind{" "}
               <span className="bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent">
                 Ethinc
               </span>
@@ -39,44 +39,9 @@ export function AboutPage() {
               expertise with a passion for solving real-world problems through cutting-edge artificial intelligence.
             </p>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-12 items-center"
-          >
-            <div>
-              <h2 className="text-white mb-6" style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
-                Our Story
-              </h2>
-              <div className="space-y-4 text-gray-300" style={{ fontSize: '15px', lineHeight: '1.8' }}>
-                <p>
-                  Ethinc was born from a shared vision at EPFL: to bridge the gap between cutting-edge AI research and
-                  practical business applications. Our founders saw firsthand how powerful AI models remained locked in
-                  research labs while businesses struggled with manual processes.
-                </p>
-                <p>
-                  We set out to change that. Today, we help organizations across industries leverage AI to transform
-                  their operations, from natural language processing and computer vision to graph machine learning and
-                  predictive analytics.
-                </p>
-                <p>
-                  Based in the heart of Switzerland's innovation ecosystem in Lausanne, we combine Swiss precision with
-                  cutting-edge technology to deliver solutions that matter.
-                </p>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/10 to-orange-600/[0.08] rounded-2xl blur-2xl" />
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwbWVldGluZyUyMG9mZmljZSUyMHRlY2hub2xvZ3klMjBzdGFydHVwfGVufDF8fHx8MTc3MTQyMDI4N3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Team at work"
-                className="relative rounded-2xl border border-white/[0.08] w-full"
-              />
-            </div>
-          </motion.div>
         </div>
+
+        <TeamSection />
       </div>
 
       <div className="py-24 bg-[#f5f3ee]">
@@ -106,7 +71,7 @@ export function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6"
           >
             {milestones.map((item, i) => (
               <motion.div
@@ -128,26 +93,59 @@ export function AboutPage() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </div>
 
+      <section className="relative overflow-hidden bg-[#1a1a3e]">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#251850] via-[#1f1a4a] to-[#211c45]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-transparent to-orange-600/[0.08]" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/[0.08] rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-orange-500/15 to-transparent" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
+            transition={{ duration: 0.6 }}
+            className="flex flex-col md:flex-row items-center justify-between gap-10"
           >
+            <div className="flex-1 text-center md:text-left">
+              <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
+                <Sparkles className="w-5 h-5 text-orange-400" />
+                <span className="text-orange-400" style={{ fontSize: "14px", fontWeight: 500 }}>We're growing</span>
+              </div>
+              <h2
+                className="text-white mb-4"
+                style={{
+                  fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                  fontWeight: 700,
+                  fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+                  lineHeight: 1.2,
+                }}
+              >
+                Interested in joining our team?
+              </h2>
+              <p className="text-gray-300 max-w-xl" style={{ fontSize: "17px", lineHeight: "1.8" }}>
+                We're always looking for talented people who share our passion
+                for AI and want to work on meaningful projects. Get in touch
+                and tell us about yourself.
+              </p>
+            </div>
+
             <Link
-              to="/team"
-              className="inline-flex items-center gap-2 text-purple-600 hover:text-orange-500 transition-colors group"
-              style={{ fontSize: '15px', fontWeight: 500 }}
+              to="/contact"
+              className="shrink-0 inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-xl shadow-purple-600/20 group"
+              style={{ fontSize: "15px", fontWeight: 600 }}
             >
-              Meet our team
+              Apply Now
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
-      </div>
-
-      <CTASection />
+      </section>
     </div>
   );
 }

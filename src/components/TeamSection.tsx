@@ -12,7 +12,7 @@ const team = [
     role: "Co-Founder & Chief Technology Officer",
     shortRole: "CTO",
     image: Nizar,
-    bio: "Nizar leads Ethinc's technical vision and architecture. With a background in machine learning and software engineering from EPFL, he specializes in building scalable AI systems that bridge the gap between cutting-edge research and production-ready applications. His work spans natural language processing, generative AI, and graph-based machine learning.",
+    bio: "Nizar leads Ethinc's technical vision and product architecture as Co-Founder & CTO. With experience delivering end-to-end Generative AI systems at UBS for legal, compliance, and risk workflows, he specializes in applying LLMs to real-world, high-stakes use cases like KYC and regulatory documentation. His background also spans GraphML research at Swisscom and applied ML/NLP roles across industry, bringing both strategic depth and execution to Ethinc's engineering direction.",
     focus: [
       "Technical Architecture & System Design",
       "NLP & Generative AI",
@@ -29,7 +29,7 @@ const team = [
     role: "Co-Founder & Chief Operating Officer",
     shortRole: "COO",
     image: Selim,
-    bio: "Selim drives Ethinc's business strategy and client relationships. An EPFL graduate with deep expertise in AI ethics and natural language processing, he ensures every project delivers measurable impact while adhering to responsible AI principles. He bridges the gap between technical capabilities and real business needs.",
+    bio: "Selim drives Ethinc's operations and delivery as Co-Founder & COO, blending strong technical expertise with a mission-driven approach. An NLP specialist, he has designed AI solutions for humanitarian and international organizations, contributing to platforms like theDEEP and ReporterAI and building privacy-focused, multilingual analysis pipelines for complex, time-sensitive contexts. He helps translate Ethinc's vision into impactful work through structure, purpose, and creativity.",
     focus: [
       "Business Strategy & Operations",
       "AI Ethics & Governance",
@@ -46,7 +46,7 @@ const team = [
     role: "Co-Founder & Principal AI Engineer",
     shortRole: "Principal Engineer",
     image: Badis,
-    bio: "Badis is the engineering force behind Ethinc's computer vision and edge AI solutions. With expertise in robotics and deep learning from EPFL, he designs and deploys high-performance models that operate in real-time production environments. His focus on efficiency and reliability ensures solutions that work at scale.",
+    bio: "Badis is Ethinc's Founding Engineer, bringing hands-on versatility across AI, cybersecurity, and full-stack development. With strong computer science foundations and ongoing studies in cybersecurity, he supports the team by building reliable features, strengthening infrastructure, and improving models as needs evolve. He plays a key role in shaping the systems and interfaces that power Ethinc's products.",
     focus: [
       "Computer Vision & Image Processing",
       "Edge AI & Robotics",
@@ -79,7 +79,7 @@ export function TeamSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.3, ease }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto h-[420px]"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto h-[520px]"
             >
               {team.map((person, i) => (
                 <motion.button
@@ -92,7 +92,7 @@ export function TeamSection() {
                   onClick={() => setSelectedIndex(i)}
                   className="group relative rounded-2xl bg-white/[0.04] border border-white/[0.07] overflow-hidden text-center cursor-pointer hover:border-purple-500/30 hover:bg-white/[0.06] transition-colors duration-300"
                 >
-                  <div className="relative h-[420px] overflow-hidden">
+                  <div className="relative h-[520px] overflow-hidden">
                     <img
                       src={person.image}
                       alt={person.name}
@@ -126,7 +126,7 @@ export function TeamSection() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease }}
             >
-              <div className="grid lg:grid-cols-[260px_1fr] gap-6 lg:gap-10 h-[420px]">
+              <div className="grid lg:grid-cols-[260px_1fr] gap-6 lg:gap-10 h-[520px]">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -218,7 +218,7 @@ export function TeamSection() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.4, ease }}
-                        className="relative rounded-2xl bg-white/[0.04] border border-white/[0.07] overflow-hidden h-[420px]"
+                        className="relative rounded-2xl bg-white/[0.04] border border-white/[0.07] overflow-hidden h-[520px]"
                       >
                         <motion.button
                           initial={{ opacity: 0 }}

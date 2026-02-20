@@ -15,7 +15,7 @@ export function CTASection() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#1a1a3e]">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#1a1a3e] min-h-screen flex items-center">
       <div className="absolute inset-0 bg-gradient-to-r from-[#251850] via-[#1f1a4a] to-[#211c45]" />
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-transparent to-orange-600/[0.08]" />
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/[0.08] rounded-full blur-3xl -translate-y-1/4 translate-x-1/4" />
