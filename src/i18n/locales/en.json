@@ -14,10 +14,138 @@
     "contactUs": "Contact Us"
   },
   "hero": {
-    "title": "AI solutions for real-world applications",
-    "subtitle": "We specialize in cutting-edge artificial intelligence solutions, from natural language processing to computer vision, helping businesses transform their operations and unlock new possibilities.",
+    "title": "Making Intelligence Work for Organizations",
+    "subtitle": "We design and implement AI and data solutions that improve workflows, support decision-making, and unlock value from organizational data.",
     "cta": "Get Started",
-    "learnMore": "Learn More"
+    "learnMore": "Learn More",
+    "viewWork": "View Our Work",
+    "getInTouch": "Get in Touch"
+  },
+  "quote": {
+    "line1": "\"Building meaningful AI systems requires more than technology.",
+    "line2": "It requires engineering rigor, responsible choices, and trust.\""
+  },
+  "values": {
+    "titlePart1": "What Guides",
+    "titlePart2": "Our Work",
+    "pillars": {
+      "engineering": {
+        "title": "AI as an Engineering Discipline",
+        "description": "We treat artificial intelligence as an engineering discipline. Systems are designed with clearly defined objectives, documented assumptions, and measurable evaluation criteria. Particular attention is given to transparency and explainability, ensuring that models remain understandable in their behavior and appropriate for their intended use."
+      },
+      "ethics": {
+        "title": "Ethics",
+        "description": "Ethics at Ethinc guides how projects are selected, designed, and delivered. We apply a rigorous ethical filter when evaluating engagements, prioritizing work that contributes to constructive and sustainable outcomes. Ethical considerations also shape technical choices, including privacy-aware design and transparent documentation of system capabilities and limitations."
+      },
+      "innovation": {
+        "title": "Pragmatic Innovation",
+        "description": "We approach innovation with pragmatism and discipline. New technologies are adopted when they offer clear measurable value and can be integrated reliably into operational environments. Experimental ideas are explored through prototypes or proofs of concept before broader deployment. We believe in allowing organizations to innovate while maintaining control and stability."
+      },
+      "trust": {
+        "title": "Trust",
+        "description": "Trust at Ethinc is built through clarity and transparency in every engagement. Projects are defined with clearly documented objectives, open communication, and structured delivery processes. We prioritize thorough documentation, knowledge transfer, and strict respect for data confidentiality so that clients retain full understanding and control of the systems developed."
+      }
+    }
+  },
+  "expertise": {
+    "titlePart1": "Areas of",
+    "titlePart2": "Expertise",
+    "cta": "Discuss your project with us",
+    "items": {
+      "aiml": {
+        "title": "Artificial Intelligence & Machine Learning",
+        "description": "AI and ML form the analytical core of modern data systems. We apply engineering rigor to design models capable of interpreting complex data, identifying patterns, and supporting informed decision-making across structured and unstructured information."
+      },
+      "genai": {
+        "title": "Generative AI & NLP",
+        "description": "Systems designed to structure and retrieve knowledge, automate document-heavy workflows, and support analytical work. This includes LLM integration, RAG, model fine-tuning, agent systems, multilingual processing, OCR, and multimodal AI."
+      },
+      "ml": {
+        "title": "Machine Learning",
+        "description": "Predictive systems that detect patterns in data for forecasting, anomaly detection, and process optimization. We focus on building models that remain interpretable, reliable, and aligned with real decision processes."
+      },
+      "cv": {
+        "title": "Computer Vision",
+        "description": "Vision systems that interpret visual environments and transform images or video into structured information. From quality inspection to infrastructure monitoring, these systems integrate directly into operational workflows."
+      },
+      "graphml": {
+        "title": "Graph Machine Learning",
+        "description": "Models that capture relationships between entities — people, transactions, documents, or systems — to reveal patterns traditional analytics miss. Valuable for knowledge graphs, network analysis, fraud detection, and complex data structures."
+      }
+    }
+  },
+  "serviceModel": {
+    "titlePart1": "Our Service",
+    "titlePart2": "Model",
+    "subtitle": "We support organizations at different stages of their AI and data initiatives, from early exploration to system development and long-term operational support.",
+    "items": {
+      "implementation": {
+        "title": "Implementation",
+        "description": "Design and development of AI and data systems. A dedicated consulting and engineering team works with you over an agreed project scope and timeline, from system architecture and development to testing and deployment."
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Ongoing technical support for systems previously developed or deployed. A consulting team monitors performance, updates models, improves data pipelines, and adapts systems as operational requirements evolve."
+      },
+      "advisory": {
+        "title": "Advisory",
+        "description": "Targeted expertise to help organizations evaluate opportunities, structure initiatives, and make informed decisions around AI and data systems. Engagements focus on problem framing, solution design, technical assessment, and implementation planning."
+      }
+    }
+  },
+  "projectDelivery": {
+    "titlePart1": "Project",
+    "titlePart2": "Delivery",
+    "subtitle": "Ethinc projects follow a structured delivery process designed to move from problem framing to reliable operational systems.",
+    "steps": {
+      "research": {
+        "title": "Research & Framing",
+        "description": "Understanding the problem space and defining a viable technical approach. Use-case definition, feasibility assessment, technical evaluation, risk and governance considerations, and prototype validation."
+      },
+      "design": {
+        "title": "System Design & Engineering",
+        "description": "Designing the architecture and building the core intelligence systems. AI architecture and data modeling, LLM integration, custom machine learning pipelines, and API-ready modular systems."
+      },
+      "deploy": {
+        "title": "Infrastructure & Deployment",
+        "description": "Deploying systems within secure and scalable operational environments. Cloud or on-premise infrastructure, secure containerized environments, CI/CD and MLOps integration, monitoring and system reliability."
+      },
+      "transfer": {
+        "title": "Knowledge Transfer",
+        "description": "Ensuring teams understand, operate, and evolve the deployed systems. Documentation and system handover, internal team enablement, and training workshops."
+      }
+    }
+  },
+  "projectsPage": {
+    "titlePart1": "Our",
+    "titlePart2": "Projects",
+    "subtitle": "Explore our collection of AI projects that have delivered measurable impact across various industries."
+  },
+  "aboutPage": {
+    "titlePart1": "Meet",
+    "titlePart2": "Us",
+    "subtitle": "We are a team of EPFL alumni and AI specialists based in Lausanne, Switzerland. We combine deep technical expertise with a passion for solving real-world problems through cutting-edge artificial intelligence.",
+    "growing": "We're growing",
+    "joinTitle": "Interested in joining our team?",
+    "joinSubtitle": "We're always looking for talented people who share our passion for AI and want to work on meaningful projects. Get in touch and tell us about yourself.",
+    "applyNow": "Apply Now"
+  },
+  "blogPage": {
+    "titlePart1": "Read",
+    "titlePart2": "Us",
+    "subtitle": "Our blog is where we document the ideas, experiments, and observations that emerge from our work. We write about technical findings, industry experiences, and the broader questions surrounding artificial intelligence and data systems."
+  },
+  "contactPage": {
+    "titlePart1": "Contact",
+    "titlePart2": "Us",
+    "subtitle": "Ready to transform your business with AI? Let's discuss your project and explore how we can help.",
+    "formTitle": "Get in Touch",
+    "formSubtitle": "Ready to transform your business with AI? Let's talk.",
+    "subject": "Subject",
+    "messageSent": "Message Sent!",
+    "thankYou": "Thank you for reaching out. Our team will review your message and get back to you within 24 hours.",
+    "sendAnother": "Send another message",
+    "contactInfo": "Contact Information"
   },
   "services": {
     "title": "Our Services",
@@ -244,14 +372,15 @@
       ]
     }
   },
-  "cta":{
+  "cta": {
     "title": "Interested in working with us?",
     "subtitle": "Schedule a call and see how Ethinc's AI solutions can help your operations.",
-    "button": "Schedule a Call"
+    "button": "Schedule a Call",
+    "viewWork": "View Our Work"
   },
   "footer": {
-    "description": "AI solutions for real-world applications. From research to production, we help businesses unlock value and drive innovation with advanced, privacy-focused technology.",
-    "descriptionBrief": "AI solutions for real-world applications.",
+    "description": "Making intelligence work for organizations. We design and implement AI and data solutions that improve workflows, support decision-making, and unlock value from organizational data.",
+    "descriptionBrief": "Making intelligence work for organizations.",
     "contactTitle": "Contact",
     "quickLinks": "Quick Links",
     "services": "Services",
@@ -262,7 +391,7 @@
     "emailLabel": "Email",
     "locationLabel": "Location",
     "followUs": "Follow Us",
-    "copyright": "© 2025 Ethinc. All rights reserved.",
+    "copyright": "© 2026 Ethinc. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookie Policy"

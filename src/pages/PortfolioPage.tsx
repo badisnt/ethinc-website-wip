@@ -1,43 +1,17 @@
 import { motion } from "motion/react";
-import { Search, Lightbulb, Code2, Rocket } from "lucide-react";
+import { Search, PenTool, Cloud, BookOpen } from "lucide-react";
 import { ProjectsSection } from "@/components/ProjectsSection";
+import { useTranslation } from "react-i18next";
 
-const processSteps = [
-  {
-    step: "01",
-    icon: Search,
-    title: "Discovery & Assessment",
-    description:
-      "We begin by understanding your business challenges, data landscape, and objectives. Our team conducts a thorough assessment to identify the highest-impact AI opportunities.",
-    color: "from-purple-500 to-violet-600",
-  },
-  {
-    step: "02",
-    icon: Lightbulb,
-    title: "Strategy & Design",
-    description:
-      "We design a tailored AI solution architecture, selecting the right models, frameworks, and infrastructure. We create detailed technical specifications and project roadmaps.",
-    color: "from-orange-500 to-amber-600",
-  },
-  {
-    step: "03",
-    icon: Code2,
-    title: "Development & Training",
-    description:
-      "Our engineers build and train custom models using your data. We follow agile methodologies with regular demos and iterations to ensure alignment with your goals.",
-    color: "from-amber-500 to-yellow-600",
-  },
-  {
-    step: "04",
-    icon: Rocket,
-    title: "Deployment & Support",
-    description:
-      "We deploy production-ready solutions with monitoring, automated retraining pipelines, and comprehensive documentation. Ongoing support ensures sustained performance.",
-    color: "from-violet-500 to-purple-600",
-  },
+const stepKeys = [
+  { key: "research", step: "01", icon: Search, color: "from-purple-500 to-violet-600" },
+  { key: "design", step: "02", icon: PenTool, color: "from-orange-500 to-amber-600" },
+  { key: "deploy", step: "03", icon: Cloud, color: "from-amber-500 to-yellow-600" },
+  { key: "transfer", step: "04", icon: BookOpen, color: "from-violet-500 to-purple-600" },
 ];
 
 export function PortfolioPage() {
+  const { t } = useTranslation();
   return (
     <div className="pb-0">
       <div className="pt-28 pb-24 bg-[#1a1a3e] min-h-screen">
@@ -56,21 +30,21 @@ export function PortfolioPage() {
                   fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
                 }}
               >
-                Our{" "}
+                {t('projectDelivery.titlePart1', 'Project')}{" "}
                 <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
-                  Process
+                  {t('projectDelivery.titlePart2', 'Delivery')}
                 </span>
               </h2>
               <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: "16px", lineHeight: "1.7" }}>
-                A structured, transparent approach that ensures every project delivers maximum value.
+                {t('projectDelivery.subtitle', 'Ethinc projects follow a structured delivery process designed to move from problem framing to reliable operational systems.')}
               </p>
             </div>
 
             <div className="relative">
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {processSteps.map((step, i) => (
+                {stepKeys.map((step, i) => (
                   <motion.div
-                    key={step.title}
+                    key={step.key}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -90,8 +64,8 @@ export function PortfolioPage() {
                           {step.step}
                         </span>
                       </div>
-                      <h3 className="text-white mb-3" style={{ fontSize: "17px", fontWeight: 600 }}>{step.title}</h3>
-                      <p className="text-gray-400" style={{ fontSize: "14px", lineHeight: "1.7" }}>{step.description}</p>
+                      <h3 className="text-white mb-3" style={{ fontSize: "17px", fontWeight: 600 }}>{t(`projectDelivery.steps.${step.key}.title`)}</h3>
+                      <p className="text-gray-400" style={{ fontSize: "14px", lineHeight: "1.7" }}>{t(`projectDelivery.steps.${step.key}.description`)}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -117,13 +91,13 @@ export function PortfolioPage() {
                 fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
               }}
             >
-              Our{" "}
+              {t('projectsPage.titlePart1', 'Our')}{" "}
               <span className="bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent">
-                Projects
+                {t('projectsPage.titlePart2', 'Projects')}
               </span>
             </h1>
             <p className="text-[#5a5a72] max-w-2xl mx-auto" style={{ fontSize: '16px', lineHeight: '1.7' }}>
-              Explore our collection of AI projects that have delivered measurable impact across various industries.
+              {t('projectsPage.subtitle', 'Explore our collection of AI projects that have delivered measurable impact across various industries.')}
             </p>
           </motion.div>
 

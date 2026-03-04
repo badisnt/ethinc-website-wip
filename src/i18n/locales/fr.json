@@ -14,10 +14,138 @@
     "contactUs": "Contactez-nous"
   },
   "hero": {
-    "title": "Solutions IA pour des applications concrètes",
-    "subtitle": "Nous nous spécialisons dans les solutions d'intelligence artificielle de pointe, du traitement du langage naturel à la vision par ordinateur, aidant les entreprises à transformer leurs opérations et à débloquer de nouvelles possibilités.",
+    "title": "L'intelligence au service des organisations",
+    "subtitle": "Nous concevons et mettons en œuvre des solutions d'IA et de données qui améliorent les flux de travail, soutiennent la prise de décision et valorisent les données organisationnelles.",
     "cta": "Commencer",
-    "learnMore": "En savoir plus"
+    "learnMore": "En savoir plus",
+    "viewWork": "Voir nos réalisations",
+    "getInTouch": "Nous contacter"
+  },
+  "quote": {
+    "line1": "« Construire des systèmes d'IA significatifs nécessite plus que de la technologie.",
+    "line2": "Cela exige de la rigueur en ingénierie, des choix responsables et de la confiance. »"
+  },
+  "values": {
+    "titlePart1": "Ce qui guide",
+    "titlePart2": "notre travail",
+    "pillars": {
+      "engineering": {
+        "title": "L'IA comme discipline d'ingénierie",
+        "description": "Nous traitons l'intelligence artificielle comme une discipline d'ingénierie. Les systèmes sont conçus avec des objectifs clairement définis, des hypothèses documentées et des critères d'évaluation mesurables. Une attention particulière est accordée à la transparence et à l'explicabilité, garantissant que les modèles restent compréhensibles dans leur comportement et appropriés à leur usage prévu."
+      },
+      "ethics": {
+        "title": "Éthique",
+        "description": "L'éthique chez Ethinc guide la manière dont les projets sont sélectionnés, conçus et livrés. Nous appliquons un filtre éthique rigoureux lors de l'évaluation des missions, en privilégiant les travaux qui contribuent à des résultats constructifs et durables. Les considérations éthiques façonnent également les choix techniques, y compris la conception respectueuse de la vie privée et la documentation transparente des capacités et limitations des systèmes."
+      },
+      "innovation": {
+        "title": "Innovation pragmatique",
+        "description": "Nous abordons l'innovation avec pragmatisme et discipline. Les nouvelles technologies sont adoptées lorsqu'elles offrent une valeur mesurable claire et peuvent être intégrées de manière fiable dans les environnements opérationnels. Les idées expérimentales sont explorées par des prototypes ou preuves de concept avant un déploiement plus large. Nous croyons en la possibilité d'innover tout en maintenant contrôle et stabilité."
+      },
+      "trust": {
+        "title": "Confiance",
+        "description": "La confiance chez Ethinc se construit par la clarté et la transparence dans chaque engagement. Les projets sont définis avec des objectifs clairement documentés, une communication ouverte et des processus de livraison structurés. Nous donnons la priorité à une documentation approfondie, au transfert de connaissances et au strict respect de la confidentialité des données afin que les clients conservent une compréhension et un contrôle complets des systèmes développés."
+      }
+    }
+  },
+  "expertise": {
+    "titlePart1": "Domaines",
+    "titlePart2": "d'expertise",
+    "cta": "Discutons de votre projet",
+    "items": {
+      "aiml": {
+        "title": "Intelligence artificielle & Machine Learning",
+        "description": "L'IA et le ML forment le cœur analytique des systèmes de données modernes. Nous appliquons une rigueur d'ingénierie pour concevoir des modèles capables d'interpréter des données complexes, d'identifier des schémas et de soutenir une prise de décision éclairée sur des informations structurées et non structurées."
+      },
+      "genai": {
+        "title": "IA générative & NLP",
+        "description": "Systèmes conçus pour structurer et récupérer les connaissances, automatiser les flux de travail documentaires et soutenir le travail analytique. Cela comprend l'intégration de LLM, le RAG, le fine-tuning de modèles, les systèmes d'agents, le traitement multilingue, l'OCR et l'IA multimodale."
+      },
+      "ml": {
+        "title": "Machine Learning",
+        "description": "Systèmes prédictifs qui détectent des schémas dans les données pour la prévision, la détection d'anomalies et l'optimisation des processus. Nous nous concentrons sur la construction de modèles qui restent interprétables, fiables et alignés sur les processus décisionnels réels."
+      },
+      "cv": {
+        "title": "Vision par ordinateur",
+        "description": "Systèmes de vision qui interprètent les environnements visuels et transforment les images ou vidéos en informations structurées. Du contrôle qualité à la surveillance d'infrastructures, ces systèmes s'intègrent directement dans les flux de travail opérationnels."
+      },
+      "graphml": {
+        "title": "Graph Machine Learning",
+        "description": "Modèles qui capturent les relations entre entités — personnes, transactions, documents ou systèmes — pour révéler des schémas que l'analyse traditionnelle ne détecte pas. Utile pour les graphes de connaissances, l'analyse de réseaux, la détection de fraude et les structures de données complexes."
+      }
+    }
+  },
+  "serviceModel": {
+    "titlePart1": "Notre modèle",
+    "titlePart2": "de service",
+    "subtitle": "Nous accompagnons les organisations à différentes étapes de leurs initiatives en IA et données, de l'exploration initiale au développement de systèmes et au support opérationnel à long terme.",
+    "items": {
+      "implementation": {
+        "title": "Implémentation",
+        "description": "Conception et développement de systèmes d'IA et de données. Une équipe dédiée de conseil et d'ingénierie travaille avec vous sur un périmètre et un calendrier convenus, de l'architecture système et du développement aux tests et au déploiement."
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Support technique continu pour les systèmes précédemment développés ou déployés. Une équipe de conseil surveille les performances, met à jour les modèles, améliore les pipelines de données et adapte les systèmes à mesure que les exigences opérationnelles évoluent."
+      },
+      "advisory": {
+        "title": "Conseil",
+        "description": "Expertise ciblée pour aider les organisations à évaluer les opportunités, structurer les initiatives et prendre des décisions éclairées concernant les systèmes d'IA et de données. Les missions se concentrent sur le cadrage des problèmes, la conception de solutions, l'évaluation technique et la planification de la mise en œuvre."
+      }
+    }
+  },
+  "projectDelivery": {
+    "titlePart1": "Livraison",
+    "titlePart2": "de projet",
+    "subtitle": "Les projets Ethinc suivent un processus de livraison structuré conçu pour passer du cadrage du problème à des systèmes opérationnels fiables.",
+    "steps": {
+      "research": {
+        "title": "Recherche & cadrage",
+        "description": "Comprendre l'espace du problème et définir une approche technique viable. Définition du cas d'usage, évaluation de faisabilité, évaluation technique, considérations de risque et de gouvernance, et validation de prototype."
+      },
+      "design": {
+        "title": "Conception & ingénierie",
+        "description": "Concevoir l'architecture et construire les systèmes d'intelligence de base. Architecture IA et modélisation des données, intégration de LLM, pipelines de machine learning personnalisés et systèmes modulaires prêts pour l'API."
+      },
+      "deploy": {
+        "title": "Infrastructure & déploiement",
+        "description": "Déployer les systèmes dans des environnements opérationnels sécurisés et évolutifs. Infrastructure cloud ou sur site, environnements conteneurisés sécurisés, intégration CI/CD et MLOps, surveillance et fiabilité du système."
+      },
+      "transfer": {
+        "title": "Transfert de connaissances",
+        "description": "S'assurer que les équipes comprennent, opèrent et font évoluer les systèmes déployés. Documentation et transfert du système, montée en compétence des équipes internes et ateliers de formation."
+      }
+    }
+  },
+  "projectsPage": {
+    "titlePart1": "Nos",
+    "titlePart2": "projets",
+    "subtitle": "Découvrez notre collection de projets IA qui ont eu un impact mesurable dans divers secteurs."
+  },
+  "aboutPage": {
+    "titlePart1": "Découvrez",
+    "titlePart2": "notre équipe",
+    "subtitle": "Nous sommes une équipe d'anciens de l'EPFL et de spécialistes en IA basés à Lausanne, en Suisse. Nous combinons une expertise technique approfondie avec la passion de résoudre des problèmes concrets grâce à l'intelligence artificielle.",
+    "growing": "Nous grandissons",
+    "joinTitle": "Intéressé à rejoindre notre équipe ?",
+    "joinSubtitle": "Nous recherchons toujours des personnes talentueuses qui partagent notre passion pour l'IA et souhaitent travailler sur des projets significatifs. Contactez-nous et parlez-nous de vous.",
+    "applyNow": "Postuler"
+  },
+  "blogPage": {
+    "titlePart1": "Lisez",
+    "titlePart2": "-nous",
+    "subtitle": "Notre blog est l'endroit où nous documentons les idées, expériences et observations qui émergent de notre travail. Nous écrivons sur les découvertes techniques, les expériences sectorielles et les questions plus larges entourant l'intelligence artificielle et les systèmes de données."
+  },
+  "contactPage": {
+    "titlePart1": "Contactez",
+    "titlePart2": "-nous",
+    "subtitle": "Prêt à transformer votre entreprise avec l'IA ? Discutons de votre projet et explorons comment nous pouvons vous aider.",
+    "formTitle": "Prenez contact",
+    "formSubtitle": "Prêt à transformer votre entreprise avec l'IA ? Parlons-en.",
+    "subject": "Objet",
+    "messageSent": "Message envoyé !",
+    "thankYou": "Merci de nous avoir contactés. Notre équipe examinera votre message et vous répondra dans les 24 heures.",
+    "sendAnother": "Envoyer un autre message",
+    "contactInfo": "Informations de contact"
   },
   "services": {
     "title": "Nos Services",
@@ -247,11 +375,12 @@
   "cta": {
     "title": "Intéressé à travailler avec nous ?",
     "subtitle": "Planifiez un appel et découvrez comment les solutions IA d'Ethinc peuvent améliorer vos opérations.",
-    "button": "Planifier un appel"
+    "button": "Planifier un appel",
+    "viewWork": "Voir nos réalisations"
   },
   "footer": {
-    "description": "Solutions IA pour des applications concrètes. De la recherche à la production, nous aidons les entreprises à débloquer de la valeur et à stimuler l'innovation avec une technologie avancée axée sur la confidentialité.",
-    "descriptionBrief": "Solutions IA pour des applications concrètes.",
+    "description": "L'intelligence au service des organisations. Nous concevons et mettons en œuvre des solutions d'IA et de données qui améliorent les flux de travail, soutiennent la prise de décision et valorisent les données organisationnelles.",
+    "descriptionBrief": "L'intelligence au service des organisations.",
     "contactTitle": "Contact",
     "quickLinks": "Liens Rapides",
     "services": "Services",
@@ -262,7 +391,7 @@
     "emailLabel": "Email",
     "locationLabel": "Localisation",
     "followUs": "Suivez-nous",
-    "copyright": "© 2025 Ethinc. Tous droits réservés.",
+    "copyright": "© 2026 Ethinc. Tous droits réservés.",
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
     "cookies": "Politique des cookies"

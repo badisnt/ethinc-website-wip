@@ -83,7 +83,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="border-t border-white/[0.05] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p className="text-center md:text-left">{t('footer.copyright', '\u00a9 2025 Ethinc. All rights reserved.')}</p>
+          <p className="text-center md:text-left">{t('footer.copyright', '\u00a9 2026 Ethinc. All rights reserved.')}</p>
           <div className="flex flex-wrap justify-center gap-6">
             <PolicyDialog
               type="privacy"

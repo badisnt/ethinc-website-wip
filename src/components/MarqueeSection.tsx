@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const items = [
   "Natural Language Processing",
   "Computer Vision",
@@ -11,13 +13,27 @@ const items = [
   "Deep Learning",
 ];
 
+export function QuoteSection() {
+  const { t } = useTranslation();
+  return (
+    <section className="py-14 px-4 bg-[#f5f3ee] border-y border-gray-200/60">
+      <p
+        className="text-[#3a3a52] max-w-3xl mx-auto italic text-center"
+        style={{ fontSize: '17px', lineHeight: '1.8', fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}
+      >
+        {t('quote.line1', '"Building meaningful AI systems requires more than technology.')}
+        <br className="hidden sm:block" />
+        {t('quote.line2', 'It requires engineering rigor, responsible choices, and trust."')}
+      </p>
+    </section>
+  );
+}
+
 export function MarqueeSection() {
   const doubled = [...items, ...items];
 
   return (
-    <section
-      className="py-14 relative overflow-hidden bg-[#f5f3ee] border-y border-gray-200/60"
-    >
+    <section className="relative overflow-hidden bg-[#f5f3ee] border-y border-gray-200/60 py-8">
       <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f5f3ee] to-transparent z-10 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f5f3ee] to-transparent z-10 pointer-events-none" />
 

@@ -1,7 +1,9 @@
 import { motion } from "motion/react";
 import { BlogSection } from "@/components/BlogSection";
+import { useTranslation } from "react-i18next";
 
 export function BlogPage() {
+  const { t } = useTranslation();
   return (
     <div className="pb-0">
       <div className="pt-28 pb-24 bg-[#1a1a3e] min-h-screen">
@@ -19,13 +21,13 @@ export function BlogPage() {
                 fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
               }}
             >
-              Our{" "}
+              {t('blogPage.titlePart1', 'Read')}{" "}
               <span className="bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent">
-                Blog
+                {t('blogPage.titlePart2', 'Us')}
               </span>
             </h1>
             <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: '16px', lineHeight: '1.7' }}>
-              Stay up to date with the latest in AI research, industry insights, and technical deep-dives from our team.
+              {t('blogPage.subtitle', 'Our blog is where we document the ideas, experiments, and observations that emerge from our work. We write about technical findings, industry experiences, and the broader questions surrounding artificial intelligence and data systems.')}
             </p>
           </motion.div>
 

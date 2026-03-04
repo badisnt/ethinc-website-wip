@@ -8,7 +8,7 @@ const stats = [
   { value: 3, suffix: "+", labelKey: "hero.stats.industries" },
   { value: 10, suffix: "+", labelKey: "hero.stats.projects" },
   { value: 100, suffix: "%", labelKey: "hero.stats.epfl" },
-  { value: 2023, suffix: "", labelKey: "hero.stats.founded" },
+  { value: 2025, suffix: "", labelKey: "hero.stats.founded" },
 ];
 
 function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
@@ -348,8 +348,8 @@ export function HeroSection() {
     }
   }, [mouseX, mouseY, glowX, glowY]);
 
-  const fullTitle = t('hero.title', 'AI solutions for real-world applications');
-  const highlightWord = 'real-world';
+  const fullTitle = t('hero.title', 'Making Intelligence Work for Organizations');
+  const highlightWord = 'Organizations';
   const allWords = fullTitle.split(/\s+/).filter(Boolean);
 
   const fallbackLabels = ["Industries Served", "Projects Delivered", "EPFL Alumni", "Founded"];
@@ -426,7 +426,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              {t('hero.subtitle', 'We specialize in cutting-edge artificial intelligence solutions, from natural language processing to computer vision, helping businesses transform their operations and unlock new possibilities.')}
+              {t('hero.subtitle', 'We design and implement AI and data solutions that improve workflows, support decision-making, and unlock value from organizational data.')}
             </motion.p>
 
             <motion.div
@@ -462,24 +462,6 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        <motion.div
-          ref={statsRef}
-          style={{ y: statsY, opacity: statsOpacity }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -3 }}
-              className="text-center p-6 rounded-xl bg-white/[0.04] border border-white/[0.06] hover:border-orange-500/20 transition-all duration-300"
-            >
-              <div className="text-white mb-1" style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              </div>
-              <div className="text-gray-400" style={{ fontSize: '13px' }}>{t(stat.labelKey, fallbackLabels[i])}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

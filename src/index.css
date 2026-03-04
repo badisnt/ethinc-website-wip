@@ -201,33 +201,17 @@ All colors MUST be HSL.
   }
 }
 
-/* Custom scrollbar styles */
+/* Hide all scrollbars globally */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @layer utilities {
-  /* For webkit browsers (Chrome, Safari, Edge) */
-  .scrollbar-thin::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-    border-radius: 4px;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: hsl(var(--accent));
-    border-radius: 4px;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--accent) / 0.8);
-  }
-
-  /* For Firefox */
-  .scrollbar-thin {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(var(--accent)) hsl(var(--muted));
-  }
-
   /* Auto-scroll animation - faster speed */
   .animate-scroll {
     animation: scroll 12s linear infinite;
@@ -240,15 +224,5 @@ All colors MUST be HSL.
   /* Fade in up animation */
   .animate-fadeInUp {
     animation: fadeInUp 0.8s ease-out forwards;
-  }
-
-  /* Hide scrollbar for drag-to-scroll containers */
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
   }
 }

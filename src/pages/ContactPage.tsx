@@ -3,46 +3,25 @@ import { motion } from "motion/react";
 import {
   Mail,
   MapPin,
-  Phone,
   Send,
-  Clock,
   Linkedin,
   Github,
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
 import { toast } from "sonner";
-
-const faqs = [
-  {
-    q: "What industries do you work with?",
-    a: "We work across multiple industries including healthcare, manufacturing, finance, retail, and smart cities. Our AI solutions are adaptable to any domain with data-driven challenges.",
-  },
-  {
-    q: "How long does a typical project take?",
-    a: "Project timelines vary based on complexity. A proof-of-concept typically takes 4-8 weeks, while full production deployments range from 3-6 months. We'll provide a detailed timeline during our initial consultation.",
-  },
-  {
-    q: "Do you offer ongoing support?",
-    a: "Yes, we provide comprehensive post-deployment support including model monitoring, retraining pipelines, performance optimization, and technical support to ensure sustained results.",
-  },
-  {
-    q: "What's your pricing model?",
-    a: "We offer flexible pricing models including project-based, retainer, and milestone-based arrangements. We'll work with you to find the best fit during our discovery phase.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export function ContactPage() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
-    phone: "",
     subject: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: "" });
 
   useEffect(() => {
@@ -107,13 +86,13 @@ export function ContactPage() {
                 fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
               }}
             >
-              Contact{" "}
+              {t('contactPage.titlePart1', 'Contact')}{" "}
               <span className="bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent">
-                Us
+                {t('contactPage.titlePart2', 'Us')}
               </span>
             </h1>
             <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: '16px', lineHeight: '1.7' }}>
-              Ready to transform your business with AI?<br />Let's discuss your project and explore how we can help.
+              {t('contactPage.subtitle', "Ready to transform your business with AI? Let's discuss your project and explore how we can help.")}
             </p>
           </motion.div>
         </div>
@@ -139,21 +118,21 @@ export function ContactPage() {
                       <CheckCircle className="w-10 h-10 text-green-500" />
                     </div>
                     <h3 className="text-[#1a1a3e] mb-3" style={{ fontSize: '24px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
-                      Message Sent!
+                      {t('contactPage.messageSent', 'Message Sent!')}
                     </h3>
                     <p className="text-[#5a5a72] mb-6 max-w-md" style={{ fontSize: '15px', lineHeight: '1.7' }}>
-                      Thank you for reaching out. Our team will review your message and get back to you within 24 hours.
+                      {t('contactPage.thankYou', 'Thank you for reaching out. Our team will review your message and get back to you within 24 hours.')}
                     </p>
                     <button
                       onClick={() => {
                         setSubmitted(false);
-                        setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
+                        setFormData({ name: "", email: "", company: "", subject: "", message: "" });
                         generateCaptcha();
                       }}
                       className="text-purple-600 hover:text-orange-500 transition-colors flex items-center gap-2 mx-auto"
                       style={{ fontSize: '14px', fontWeight: 500 }}
                     >
-                      Send another message
+                      {t('contactPage.sendAnother', 'Send another message')}
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
@@ -161,51 +140,43 @@ export function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="rounded-2xl bg-white border border-gray-200/80 shadow-sm p-8 md:p-10">
                   <h3 className="text-[#1a1a3e] mb-2" style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
-                    Get in Touch
+                    {t('contactPage.formTitle', 'Get in Touch')}
                   </h3>
                   <p className="text-[#8a8a9e] mb-6" style={{ fontSize: '14px' }}>
-                    Ready to transform your business with AI? Let's talk.
+                    {t('contactPage.formSubtitle', "Ready to transform your business with AI? Let's talk.")}
                   </p>
 
                   <div className="grid md:grid-cols-2 gap-5 mb-5">
                     <div>
-                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Name *</label>
+                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>{t('contact.name', 'Name')} *</label>
                       <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Your full name"
                         className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                         style={{ fontSize: '14px' }} />
                     </div>
                     <div>
-                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Email *</label>
+                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>{t('contact.email', 'Email')} *</label>
                       <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="your@email.com"
                         className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                         style={{ fontSize: '14px' }} />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-5 mb-5">
-                    <div>
-                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Company</label>
-                      <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your company"
-                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
-                        style={{ fontSize: '14px' }} />
-                    </div>
-                    <div>
-                      <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Phone</label>
-                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Your phone number"
-                        className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
-                        style={{ fontSize: '14px' }} />
-                    </div>
+                  <div className="mb-5">
+                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>{t('contact.company', 'Company')}</label>
+                    <input type="text" name="company" value={formData.company} onChange={handleChange} placeholder="Your company"
+                      className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
+                      style={{ fontSize: '14px' }} />
                   </div>
 
                   <div className="mb-5">
-                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Subject</label>
+                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>{t('contactPage.subject', 'Subject')}</label>
                     <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="What is this about?"
                       className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                       style={{ fontSize: '14px' }} />
                   </div>
 
                   <div className="mb-5">
-                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Message *</label>
+                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>{t('contact.message', 'Message')} *</label>
                     <textarea name="message" value={formData.message} onChange={handleChange} required rows={4}
                       placeholder="Tell us about your project or specific requirements..."
                       className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors resize-y"
@@ -213,7 +184,7 @@ export function ContactPage() {
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>Security Check *</label>
+                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>{t('contact.captcha.label', 'Security Check')} *</label>
                     <div className="flex items-center gap-3">
                       <div className="text-sm font-medium bg-[#f5f3ee] px-4 py-3 rounded-lg border border-gray-200 text-[#1a1a3e] whitespace-nowrap">
                         {captcha.num1} + {captcha.num2} = ?
@@ -233,18 +204,18 @@ export function ContactPage() {
                   <div className="flex justify-end gap-3">
                     <button type="button"
                       onClick={() => {
-                        setFormData({ name: "", email: "", company: "", phone: "", subject: "", message: "" });
+                        setFormData({ name: "", email: "", company: "", subject: "", message: "" });
                         generateCaptcha();
                       }}
                       className="px-6 py-3 rounded-lg border border-gray-200 text-[#3a3a52] hover:bg-gray-50 transition-colors"
                       style={{ fontSize: '14px', fontWeight: 500 }}>
-                      Cancel
+                      {t('contact.buttons.cancel', 'Cancel')}
                     </button>
                     <button type="submit"
                       className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-purple-600/20"
                       style={{ fontSize: '14px', fontWeight: 500 }}>
                       <Send className="w-4 h-4" />
-                      Send Message
+                      {t('contact.buttons.send', 'Send Message')}
                     </button>
                   </div>
                 </form>
@@ -259,7 +230,7 @@ export function ContactPage() {
             >
               <div className="rounded-2xl bg-white border border-gray-200/80 shadow-sm p-8">
                 <h3 className="text-[#1a1a3e] mb-6" style={{ fontSize: '18px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
-                  Contact Information
+                  {t('contactPage.contactInfo', 'Contact Information')}
                 </h3>
                 <div className="space-y-5">
                   <div className="flex items-start gap-4">
@@ -280,28 +251,10 @@ export function ContactPage() {
                       <p className="text-[#1a1a3e]" style={{ fontSize: '14px' }}>Lausanne, Vaud CH</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-100 to-orange-50 flex items-center justify-center shrink-0">
-                      <Phone className="w-5 h-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <p className="text-[#8a8a9e] mb-0.5" style={{ fontSize: '12px' }}>Phone</p>
-                      <p className="text-[#1a1a3e]" style={{ fontSize: '14px' }}>+41 XX XXX XX XX</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-100 to-orange-50 flex items-center justify-center shrink-0">
-                      <Clock className="w-5 h-5 text-purple-600" />
-                    </div>
-                    <div>
-                      <p className="text-[#8a8a9e] mb-0.5" style={{ fontSize: '12px' }}>Response Time</p>
-                      <p className="text-[#1a1a3e]" style={{ fontSize: '14px' }}>Within 24 hours</p>
-                    </div>
-                  </div>
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-gray-100">
-                  <p className="text-[#8a8a9e] mb-3" style={{ fontSize: '13px', fontWeight: 500 }}>Follow Us</p>
+                  <p className="text-[#8a8a9e] mb-3" style={{ fontSize: '13px', fontWeight: 500 }}>{t('footer.followUs', 'Follow Us')}</p>
                   <div className="flex gap-3">
                     <a href="https://www.linkedin.com/company/ethinc/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-[#f5f3ee] hover:bg-purple-50 border border-gray-200/80 flex items-center justify-center text-[#5a5a72] hover:text-purple-600 transition-all">
                       <Linkedin className="w-4 h-4" />
@@ -328,7 +281,6 @@ export function ContactPage() {
                   <div className="text-center z-10">
                     <MapPin className="w-8 h-8 text-purple-600 mx-auto mb-2" />
                     <p className="text-[#1a1a3e]" style={{ fontSize: '14px', fontWeight: 500 }}>Lausanne, Switzerland</p>
-                    <p className="text-[#8a8a9e]" style={{ fontSize: '12px' }}>EPFL Innovation Park</p>
                   </div>
                 </div>
               </div>
@@ -337,57 +289,6 @@ export function ContactPage() {
         </div>
       </div>
 
-      <div className="py-24 bg-[#1a1a3e]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-12">
-              <h2
-                className="text-white mb-4"
-                style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}
-              >
-                Frequently Asked{" "}
-                <span className="bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent">
-                  Questions
-                </span>
-              </h2>
-            </div>
-
-            <div className="max-w-3xl mx-auto space-y-4">
-              {faqs.map((faq, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-white/[0.04] border border-white/[0.06] overflow-hidden"
-                >
-                  <button
-                    onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between p-5 text-left"
-                  >
-                    <span className="text-white" style={{ fontSize: '15px', fontWeight: 500 }}>{faq.q}</span>
-                    <span className={`text-orange-400 transition-transform duration-300 ${expandedFaq === i ? "rotate-45" : ""}`} style={{ fontSize: '20px' }}>+</span>
-                  </button>
-                  {expandedFaq === i && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      className="px-5 pb-5"
-                    >
-                      <p className="text-gray-400" style={{ fontSize: '14px', lineHeight: '1.7' }}>{faq.a}</p>
-                    </motion.div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </div>
     </div>
   );
 }

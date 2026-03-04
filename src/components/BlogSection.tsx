@@ -2,78 +2,100 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Clock, User, ChevronRight, X } from "lucide-react";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
+import kvImg from "@/assets/blog/kv.jpeg";
+import constraintsImg from "@/assets/blog/constraints.jpeg";
+import lastsImg from "@/assets/blog/lasts.jpeg";
+import trustImg from "@/assets/blog/trust.jpeg";
 
 const categories = ["All", "Lessons from the Field", "From the Build"];
 
 const blogPosts = [
   {
     id: 1,
-    title: "The Future of Generative AI in Enterprise Applications",
+    title: "KV-Cache Optimization: Cutting LLM Inference Costs at Scale",
     excerpt:
-      "Explore how generative AI is reshaping enterprise workflows, from automated content creation to intelligent code generation and beyond.",
-    content: "Generative AI is transforming how enterprises approach content creation, code generation, and customer interactions. From automated document drafting to intelligent assistants that understand context, the possibilities are expanding rapidly.",
-    author: "Nizar Ghandri",
-    date: "Jan 15, 2026",
-    readTime: "8 min read",
+      "A100s were running. Costs were rising. Performance wasn't improving. Here's how we optimized a production GenAI workload's inference layer for a 38% cost reduction per million tokens.",
+    content: `A client was scaling a production GenAI workload. Traffic was increasing steadily, and GPU spend was growing faster than usage. During the engagement, we identified the inference layer as the primary optimization opportunity.
+
+The system was running real-time LLM inference on A100 40GB GPUs using HF TGI. Despite strong hardware capacity, the workload showed high latency under multi-turn usage, low effective throughput per GPU, memory pressure limiting batch size, and significant cost spikes during peak traffic. The model weights were not the issue — the bottleneck was in how inference, memory, and batching were handled at the serving layer.
+
+We focused on optimizing the inference stack rather than touching model weights. The intervention included enabling KV-cache reuse across streaming and multi-turn sessions, switching to PagedAttention to remove memory fragmentation, replacing FIFO batching with cache-aware dynamic batching, aligning context window and block size with actual prompt distribution, and adding observability around KV-cache hit rate to inform scheduling.
+
+The improvements were immediate and quantifiable. P50 latency went from 1.9s to 1.2s (−37%), P95 from 4.8s to 2.9s (−40%), and throughput per GPU increased by 52% tokens/sec. Cost per 1M tokens dropped 38%, monthly GPU spend dropped 34%, and requests served per GPU increased by 55%.
+
+At production scale, LLM inference efficiency is heavily influenced by memory layout, cache strategy, and batching logic. Optimizing KV-cache behavior and scheduling can unlock substantial gains without changing the underlying model.`,
+    author: "Ethinc",
+    date: "Feb 25, 2026",
+    readTime: "5 min read",
     category: "From the Build",
-    image:
-      "https://images.unsplash.com/photo-1655393001768-d946c97d6fd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwZnV0dXJlJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NzEzNDY1Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: kvImg,
     featured: true,
   },
   {
     id: 2,
-    title: "Graph Neural Networks: A Practical Guide",
+    title: "Designing AI Under Real Constraints",
     excerpt:
-      "An in-depth look at how Graph Neural Networks can be applied to real-world problems like social network analysis, recommendation systems, and fraud detection.",
-    content: "Graph Neural Networks (GNNs) excel at learning from structured, relational data. This guide walks through practical applications in social networks, recommendation engines, and fraud detection.",
-    author: "Selim Fekih",
-    date: "Dec 28, 2025",
-    readTime: "12 min read",
-    category: "From the Build",
-    image:
-      "https://images.unsplash.com/photo-1550729154-e3abdffadd93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMG5ldXJhbCUyMG5ldHdvcmslMjBkYXJrJTIwcHVycGxlfGVufDF8fHx8MTc3MTQyMDI4M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "Information produced by an AI system is not \"the answer.\" It's evidence inside a decision process. Three design practices that determine whether AI systems succeed in practice.",
+    content: `Information produced by an AI system is yet to be "the answer." It's evidence inside a decision process. In many real deployments, information is assembled from secondary sources — public reporting, institutional repositories, web signals, and scanned documents — often multilingual and highly context-dependent. The engineering problem is whether the output is usable under scrutiny.
+
+Based on our experience delivering AI systems for clients, three design practices consistently determine whether those systems succeed in practice.
+
+First, provenance by design: if a system produces an estimate, it should retain a precise trail of what contributed to it — sources, transformations, and assumptions. This is the practical purpose of data provenance: validation, auditability, and root-cause analysis when something looks off.
+
+Second, human review as a system component: in high-stakes workflows, analysts don't take the model's output — they validate it. Human-in-the-loop is a formal pattern where humans are deliberately inserted into the workflow to ensure accuracy and safety.
+
+Third, accountability across the lifecycle: modern AI governance frameworks increasingly treat explainability and accountability as lifecycle requirements — how systems are built, deployed, monitored, and updated.
+
+When organizations operate under pressure and constraints, the model is rarely the bottleneck. The bottleneck is whether the system can produce outputs that are traceable back to sources, reviewable by analysts, explainable to decision-makers, and maintainable as contexts and definitions evolve.`,
+    author: "Ethinc",
+    date: "Feb 4, 2026",
+    readTime: "4 min read",
+    category: "Lessons from the Field",
+    image: constraintsImg,
     featured: false,
   },
   {
     id: 3,
-    title: "Edge AI: Bringing Computer Vision to Production Lines",
+    title: "Building AI That Lasts",
     excerpt:
-      "How we deployed real-time computer vision models on edge devices for manufacturing quality inspection, achieving sub-10ms inference.",
-    content: "Deploying AI at the edge requires careful optimization. We share our experience bringing computer vision to production lines with sub-10ms inference latency.",
-    author: "Badis Machraoui",
-    date: "Dec 10, 2025",
+      "Nizar Ghandri reflects on his experience designing AI systems for tightly regulated environments — where trust, traceability, and operational fit are the true enablers of adoption.",
+    content: `In this edition of our Lessons from the Field series, we reflect on the path and experience of Nizar Ghandri, our co-founder and CTO, whose work spans some of the most tightly regulated and technically demanding environments in the industry.
+
+Nizar's journey into AI began with a deep fascination for the intersection of algorithms and reasoning. That early curiosity eventually led him into advanced machine learning and real-world AI engineering. But experience quickly taught him that technical performance is only half the equation. In large organizations, especially in sectors like finance and legal, the real challenge often lies in bringing AI into production under tight constraints around privacy, regulation, and risk governance.
+
+He witnessed how the journey from a trained model to a production-ready system can be slowed significantly — not by model quality, but by everything around it: validation processes, auditability requirements, and the need for human-centric workflows. In such environments, trust, traceability, and operational fit become the true enablers of adoption.
+
+To address this, Nizar helped design internal AI frameworks that made systems transparent and controllable. This included pilot tools for collecting iterative user feedback, step-by-step reasoning traces to make outputs explainable, decision systems with fallback logic and clear error signaling, and governance layers to align with compliance standards. Rather than build black boxes, the goal was to build systems that humans could inspect, understand, and improve.
+
+One common pitfall he observed in organizations is the tendency to over-prioritize short-term convenience — such as relying entirely on external APIs — at the expense of long-term flexibility and sovereignty. His experience shows that hybrid architectures that combine cloud services with on-premise control often provide the best balance between speed, cost control, and regulatory alignment.`,
+    author: "Nizar Ghandri",
+    date: "Nov 15, 2025",
     readTime: "6 min read",
-    category: "From the Build",
-    image:
-      "https://images.unsplash.com/photo-1551330969-cf6e919d206f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxBSSUyMGNvbXB1dGVyJTIwdmlzaW9uJTIwcHJvamVjdCUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NzE0MjAyODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    category: "Lessons from the Field",
+    image: lastsImg,
     featured: false,
   },
   {
     id: 4,
-    title: "Building Robust MLOps Pipelines for Startups",
+    title: "Building AI You Can Trust",
     excerpt:
-      "A practical guide to setting up production-grade ML infrastructure without the enterprise budget. From model versioning to automated retraining.",
-    content: "Startups don't need enterprise budgets to build solid MLOps. We outline a practical approach to model versioning, monitoring, and automated retraining.",
-    author: "Nizar Ghandri",
-    date: "Nov 22, 2025",
-    readTime: "10 min read",
-    category: "Lessons from the Field",
-    image:
-      "https://images.unsplash.com/photo-1506399558188-acca6f8cbf41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwY2VudGVyJTIwc2VydmVyJTIwY2xvdWQlMjBjb21wdXRpbmd8ZW58MXx8fHwxNzcxNDIwMjkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Ethical AI: Building Responsible ML Systems",
-    excerpt:
-      "Why ethical considerations should be at the core of every AI project, and how to implement fairness, transparency, and accountability in your models.",
-    content: "Ethics isn't an afterthought—it should be built into every AI project from the start. We discuss fairness, transparency, and accountability in ML systems.",
+      "Selim Fekih shares lessons from building NLP systems for humanitarian organizations — where wrong information doesn't just break a dashboard, it impacts people's lives.",
+    content: `At Ethinc, trust is not a buzzword — it's a design principle. To explore what that really means, we sat down with our co-founder Selim Fekih, who has spent countless days building NLP systems for humanitarian and international organizations.
+
+His journey into AI didn't begin with hype — it began with a personal thought experiment: "What if I could build a model that thinks like Nietzsche, and have a conversation with him?" That curiosity for language, philosophy, and meaning pulled him deep into Natural Language Processing, and eventually into the humanitarian sector.
+
+One project that marked him was building an end-to-end NLP pipeline for crisis response, transforming chaotic data into real-time insights for field analysts. The feedback? "This saved us hours we didn't have." That's when it clicked: AI isn't just about performance — it's about reliability, trust, and making people's work easier.
+
+But trust is fragile. "The hardest lesson was adoption by field analysts," Selim told us. Even a technically sound model can be dismissed if users don't trust it. Especially in sensitive environments, analysts need evidence-based outputs and systems that integrate seamlessly into their workflows, not slow them down.
+
+That's why Selim's approach has become almost obsessively meticulous. In projects like ReporterAI.org, the margin for error is very thin. Wrong information doesn't just break a dashboard — it breaks confidence and impacts people's lives. The answer? Transparent models, careful evaluation, human validation, and humility in design.
+
+And the idea that NGOs lag behind in AI? "Some of the most advanced, practical AI systems I've worked on were built in humanitarian orgs — with fewer resources, but far more purpose."`,
     author: "Selim Fekih",
-    date: "Nov 5, 2025",
-    readTime: "7 min read",
+    date: "Nov 8, 2025",
+    readTime: "5 min read",
     category: "Lessons from the Field",
-    image:
-      "https://images.unsplash.com/photo-1760224254191-16a7cf659ad1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjB0ZWNobm9sb2d5JTIwZ3JhZGllbnQlMjBiYWNrZ3JvdW5kfGVufDF8fHx8MTc3MTM4NjgyMXww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: trustImg,
     featured: false,
   },
 ];
