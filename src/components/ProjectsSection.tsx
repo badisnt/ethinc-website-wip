@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ExternalLink, ChevronRight, X, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Tag } from "lucide-react";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 
 const categories = [
@@ -84,32 +84,39 @@ const projects = [
 
 const ease = [0.4, 0, 0.2, 1] as const;
 
-export function ProjectsSection() {
+export function ProjectsSection({ header }: { header?: React.ReactNode }) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
 
   const filteredProjects =
     activeCategory === "All"
       ? projects
       : projects.filter((p) => p.category === activeCategory);
 
-  const isExpanded = selectedIndex !== null;
-  const project = isExpanded && selectedIndex < filteredProjects.length
-    ? filteredProjects[selectedIndex]
-    : null;
-  const absoluteIndex = project ? projects.findIndex((p) => p.id === project.id) : -1;
+  const selectedProject = selectedId !== null ? projects.find((p) => p.id === selectedId) : null;
+
+  const openProject = (id: number) => {
+    setSelectedId(id);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const closeProject = () => {
+    setSelectedId(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div>
       <AnimatePresence mode="wait">
-        {!isExpanded ? (
+        {!selectedProject ? (
           <motion.div
             key="grid"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 0.97 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease }}
           >
+            {header}
             <div className="flex flex-wrap justify-center gap-2 mb-12">
               {categories.map((cat) => (
                 <button
@@ -118,48 +125,65 @@ export function ProjectsSection() {
                   className={`px-5 py-2.5 rounded-full transition-all duration-300 ${
                     activeCategory === cat
                       ? "bg-gradient-to-r from-purple-600 to-orange-500 text-white shadow-lg shadow-purple-600/20"
-                      : "bg-white text-[#5a5a72] hover:text-[#1a1a3e] hover:bg-gray-50 border border-gray-200/80"
+                      : "bg-white/[0.07] text-gray-400 hover:text-white hover:bg-white/[0.12] border border-white/[0.08]"
                   }`}
-                  style={{ fontSize: '13px', fontWeight: 500 }}
+                  style={{ fontSize: "13px", fontWeight: 500 }}
                 >
                   {cat}
                 </button>
               ))}
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-10">
               {filteredProjects.map((proj, i) => (
                 <motion.button
                   key={proj.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: i * 0.05 }}
-                  whileHover={{ y: -6 }}
-                  onClick={() => setSelectedIndex(filteredProjects.indexOf(proj))}
-                  className="group text-left"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.06 }}
+                  whileHover={{ y: -4 }}
+                  onClick={() => openProject(proj.id)}
+                  className="group text-left flex flex-col h-full"
                 >
-                  <div className="h-full rounded-2xl bg-white border border-gray-200/80 shadow-sm hover:shadow-lg hover:border-purple-300/50 overflow-hidden transition-all duration-500">
-                    <div className="relative overflow-hidden aspect-[16/10]">
-                      <ImageWithFallback
-                        src={proj.image}
-                        alt={proj.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 rounded-full bg-purple-600/90 backdrop-blur-sm text-white" style={{ fontSize: '11px', fontWeight: 500 }}>
-                          {proj.category}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-[#1a1a3e] mb-3" style={{ fontSize: '18px', fontWeight: 600 }}>{proj.title}</h3>
-                      <p className="text-[#5a5a72] mb-4 line-clamp-2" style={{ fontSize: '14px', lineHeight: '1.7' }}>{proj.description}</p>
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                        <span className="text-green-600" style={{ fontSize: '13px', fontWeight: 500 }}>{proj.result}</span>
-                        <ArrowRight className="w-4 h-4 text-purple-500 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
+                  <div className="relative overflow-hidden rounded-lg aspect-[2/1] mb-5">
+                    <ImageWithFallback
+                      src={proj.image}
+                      alt={proj.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  </div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span
+                      className="uppercase tracking-[0.15em] text-purple-400"
+                      style={{ fontSize: "11px", fontWeight: 600 }}
+                    >
+                      {proj.category}
+                    </span>
+                  </div>
+                  <h3
+                    className="text-white mb-2 group-hover:text-orange-300 transition-colors"
+                    style={{
+                      fontSize: "clamp(18px, 2vw, 22px)",
+                      fontWeight: 700,
+                      lineHeight: 1.3,
+                      fontFamily: 'Georgia, "Times New Roman", serif',
+                    }}
+                  >
+                    {proj.title}
+                  </h3>
+                  <p
+                    className="text-gray-400 line-clamp-2 mb-3 flex-1"
+                    style={{ fontSize: "14px", lineHeight: "1.7" }}
+                  >
+                    {proj.description}
+                  </p>
+                  <div
+                    className="flex items-center justify-between pt-3 border-t border-white/[0.06] mt-auto"
+                    style={{ fontSize: "12px" }}
+                  >
+                    <span className="text-green-500 font-medium">{proj.result}</span>
+                    <ArrowRight className="w-4 h-4 text-purple-400 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </motion.button>
               ))}
@@ -168,128 +192,104 @@ export function ProjectsSection() {
         ) : (
           <motion.div
             key="detail"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease }}
+            transition={{ duration: 0.4, ease }}
           >
-            <div className="grid lg:grid-cols-[260px_1fr] gap-6 lg:gap-10 h-[520px]">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.45, delay: 0.08, ease }}
-                className="flex lg:flex-col gap-3 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 scrollbar-hide"
-              >
-                {filteredProjects.map((proj, i) => {
-                  const isActive = selectedIndex === i;
-                  return (
-                    <motion.button
-                      key={proj.id}
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.12 + i * 0.06, duration: 0.4, ease }}
-                      onClick={() => setSelectedIndex(i)}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className={`relative flex items-center gap-4 p-4 rounded-2xl border transition-all duration-300 shrink-0 lg:shrink text-left w-[220px] lg:w-full ${
-                        isActive
-                          ? "bg-purple-50 border-purple-300/50 shadow-lg"
-                          : "bg-white border-gray-200/80 hover:border-purple-200 hover:bg-gray-50"
-                      }`}
-                    >
-                      {isActive && (
-                        <motion.div
-                          layoutId="project-active"
-                          className="absolute left-0 top-[20%] bottom-[20%] w-[3px] rounded-full bg-gradient-to-b from-purple-500 to-orange-500 hidden lg:block"
-                          transition={{ duration: 0.3, ease }}
-                        />
-                      )}
-                      <div className="relative shrink-0 w-12 h-12 rounded-xl overflow-hidden bg-gray-100">
-                        <ImageWithFallback
-                          src={proj.image}
-                          alt={proj.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <p className={`truncate ${isActive ? "text-[#1a1a3e]" : "text-[#5a5a72]"}`} style={{ fontSize: "14px", fontWeight: 600 }}>
-                          {proj.title}
-                        </p>
-                        <p className={`truncate ${isActive ? "text-orange-500" : "text-[#8a8a9e]"}`} style={{ fontSize: "12px" }}>
-                          {proj.category}
-                        </p>
-                      </div>
-                      <ChevronRight
-                        className={`w-4 h-4 shrink-0 hidden lg:block ${
-                          isActive ? "text-orange-500 opacity-100" : "text-gray-400 opacity-0"
-                        }`}
-                      />
-                    </motion.button>
-                  );
-                })}
-              </motion.div>
+            {/* Back button */}
+            <motion.button
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 }}
+              onClick={() => closeProject()}
+              className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-10 group"
+              style={{ fontSize: "14px", fontWeight: 500 }}
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+              Back to projects
+            </motion.button>
 
-              <AnimatePresence mode="wait">
-                {project && (
-                  <motion.div
-                    key={project.id}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.4, ease }}
-                    className="relative rounded-2xl bg-white border border-gray-200/80 shadow-lg overflow-hidden h-[520px]"
+            {/* Project detail */}
+            <article className="max-w-3xl mx-auto">
+              {/* Category */}
+              <div className="flex items-center gap-3 mb-6">
+                <span
+                  className="uppercase tracking-[0.15em] text-purple-400"
+                  style={{ fontSize: "12px", fontWeight: 600 }}
+                >
+                  {selectedProject.category}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h1
+                className="text-white mb-6"
+                style={{
+                  fontSize: "clamp(28px, 4vw, 44px)",
+                  fontWeight: 700,
+                  lineHeight: 1.15,
+                  fontFamily: 'Georgia, "Times New Roman", serif',
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                {selectedProject.title}
+              </h1>
+
+              {/* Decorative rule */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px flex-1 bg-gradient-to-r from-purple-500/40 via-orange-500/30 to-transparent" />
+                <span className="text-orange-400/60 text-lg">&#9830;</span>
+                <div className="h-px flex-1 bg-gradient-to-l from-purple-500/40 via-orange-500/30 to-transparent" />
+              </div>
+
+              {/* Tags & result */}
+              <div className="flex flex-wrap items-center gap-3 mb-10">
+                {selectedProject.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.07] text-gray-300 border border-white/[0.08]"
+                    style={{ fontSize: "12px" }}
                   >
-                    <motion.button
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.3 }}
-                      whileHover={{ opacity: 0.7 }}
-                      whileTap={{ scale: 0.9 }}
-                      onClick={() => setSelectedIndex(null)}
-                      className="absolute top-3 right-3 z-10 p-1 text-orange-500 cursor-pointer"
-                    >
-                      <X className="w-4 h-4" />
-                    </motion.button>
-                    <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr] h-full">
-                      <div className="relative h-full">
-                        <div className="h-full relative overflow-hidden">
-                          <ImageWithFallback
-                            src={project.image}
-                            alt={project.title}
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/90" />
-                        </div>
-                      </div>
-                      <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
-                        <h3 className="text-[#1a1a3e] mb-1" style={{ fontSize: "26px", fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
-                          {project.title}
-                        </h3>
-                        <p className="text-orange-500 mb-4" style={{ fontSize: "14px", fontWeight: 500 }}>
-                          {project.category}
-                        </p>
-                        <p className="text-[#5a5a72] mb-6" style={{ fontSize: "15px", lineHeight: "1.8" }}>
-                          {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-1.5 mb-4">
-                          {project.tags.map((tag) => (
-                            <span key={tag} className="px-2.5 py-0.5 rounded-full bg-gray-100 text-[#5a5a72] border border-gray-200/80" style={{ fontSize: '11px' }}>
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                          <span className="text-green-600" style={{ fontSize: '13px', fontWeight: 500 }}>{project.result}</span>
-                          <button className="text-orange-500 hover:text-orange-600 transition-colors">
-                            <ExternalLink className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                    <Tag className="w-3 h-3 text-purple-400" />
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Hero image */}
+              <div className="relative rounded-t-lg overflow-hidden aspect-[2/1]">
+                <ImageWithFallback
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Light reading area */}
+              <div className="bg-[#f5f3ee] rounded-b-lg px-6 sm:px-10 md:px-14 py-10 md:py-14">
+                <p
+                  className="text-[#3a3a52] mb-8"
+                  style={{ fontSize: "16px", lineHeight: "1.9" }}
+                >
+                  {selectedProject.description}
+                </p>
+
+                <div className="flex items-center gap-3 pt-6 border-t border-gray-200/80">
+                  <span className="text-[#5a5a72]" style={{ fontSize: "13px", fontWeight: 500 }}>Result:</span>
+                  <span className="text-green-600 font-semibold" style={{ fontSize: "15px" }}>
+                    {selectedProject.result}
+                  </span>
+                </div>
+              </div>
+
+              {/* End mark */}
+              <div className="flex items-center gap-4 mt-12 mb-8">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                <span className="text-purple-400/50 text-sm">&#9632; &#9632; &#9632;</span>
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              </div>
+            </article>
           </motion.div>
         )}
       </AnimatePresence>

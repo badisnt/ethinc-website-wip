@@ -16,15 +16,31 @@ const items = [
 export function QuoteSection() {
   const { t } = useTranslation();
   return (
-    <section className="py-14 px-4 bg-[#f5f3ee] border-y border-gray-200/60">
-      <p
-        className="text-[#3a3a52] max-w-3xl mx-auto italic text-center"
-        style={{ fontSize: '17px', lineHeight: '1.8', fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}
-      >
-        {t('quote.line1', '"Building meaningful AI systems requires more than technology.')}
-        <br className="hidden sm:block" />
-        {t('quote.line2', 'It requires engineering rigor, responsible choices, and trust."')}
-      </p>
+    <section className="py-16 px-4 bg-[#1a1a3e]">
+      <div className="max-w-3xl mx-auto text-center">
+        <span
+          className="inline-block mb-4 bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent"
+          style={{ fontSize: "32px", fontFamily: "Georgia, serif", lineHeight: 1 }}
+        >
+          &ldquo;
+        </span>
+        <p
+          className="text-gray-200 italic"
+          style={{ fontSize: "clamp(16px, 2vw, 19px)", lineHeight: "1.9", fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}
+        >
+          {t('quote.line1', '"Building meaningful AI systems requires more than technology.')}{" "}
+          <span className="bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent font-semibold not-italic">
+            {t('quote.highlight', 'It requires engineering rigor, responsible choices, and trust.')}
+          </span>
+          {t('quote.line2', '"')}
+        </p>
+        <span
+          className="inline-block mt-4 bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent"
+          style={{ fontSize: "32px", fontFamily: "Georgia, serif", lineHeight: 1 }}
+        >
+          &rdquo;
+        </span>
+      </div>
     </section>
   );
 }

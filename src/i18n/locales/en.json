@@ -22,8 +22,9 @@
     "getInTouch": "Get in Touch"
   },
   "quote": {
-    "line1": "\"Building meaningful AI systems requires more than technology.",
-    "line2": "It requires engineering rigor, responsible choices, and trust.\""
+    "line1": "Building meaningful AI systems requires more than technology.",
+    "highlight": "It requires engineering rigor, responsible choices, and trust.",
+    "line2": ""
   },
   "values": {
     "titlePart1": "What Guides",
@@ -473,5 +474,6 @@
       "noCookies": "We do not use cookies on this website.",
       "content": "Our website does not use cookies or similar tracking technologies. We do not collect any data through cookies, and your browsing experience is not tracked in any way. This means you can browse our site without any concerns about cookie-based tracking or data collection."
     }
-  }
-} 
+  },
+  "trustedBy": "Trusted by"
+}

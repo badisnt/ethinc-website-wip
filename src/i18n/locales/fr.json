@@ -22,8 +22,9 @@
     "getInTouch": "Nous contacter"
   },
   "quote": {
-    "line1": "« Construire des systèmes d'IA significatifs nécessite plus que de la technologie.",
-    "line2": "Cela exige de la rigueur en ingénierie, des choix responsables et de la confiance. »"
+    "line1": "Construire des systèmes d'IA significatifs nécessite plus que de la technologie.",
+    "highlight": "Cela exige de la rigueur en ingénierie, des choix responsables et de la confiance.",
+    "line2": ""
   },
   "values": {
     "titlePart1": "Ce qui guide",
@@ -473,5 +474,6 @@
       "noCookies": "Nous n'utilisons pas de cookies sur ce site web.",
       "content": "Notre site web n'utilise pas de cookies ou de technologies de suivi similaires. Nous ne collectons aucune donnée via des cookies, et votre expérience de navigation n'est suivie d'aucune manière. Cela signifie que vous pouvez naviguer sur notre site sans aucune préoccupation concernant le suivi basé sur les cookies ou la collecte de données."
     }
-  }
-} 
+  },
+  "trustedBy": "Ils nous font confiance"
+}

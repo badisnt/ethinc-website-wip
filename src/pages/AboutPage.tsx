@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
 import { TeamSection } from "@/components/TeamSection";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export function AboutPage() {
@@ -54,10 +53,6 @@ export function AboutPage() {
             className="flex flex-col md:flex-row items-center justify-between gap-10"
           >
             <div className="flex-1 text-center md:text-left">
-              <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
-                <Sparkles className="w-5 h-5 text-orange-400" />
-                <span className="text-orange-400" style={{ fontSize: "14px", fontWeight: 500 }}>{t('aboutPage.growing', "We're growing")}</span>
-              </div>
               <h2
                 className="text-white mb-4"
                 style={{
@@ -74,14 +69,16 @@ export function AboutPage() {
               </p>
             </div>
 
-            <Link
-              to="/contact"
+            <a
+              href="https://www.linkedin.com/company/108837274/admin/posted-jobs/open/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-xl shadow-purple-600/20 group"
               style={{ fontSize: "15px", fontWeight: 600 }}
             >
               {t('aboutPage.applyNow', 'Apply Now')}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>

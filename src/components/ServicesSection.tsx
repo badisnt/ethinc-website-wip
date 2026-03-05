@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import {
-  Brain,
   MessageSquare,
   TrendingUp,
   ScanEye,
@@ -12,7 +11,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const expertiseKeys = [
-  { key: "aiml", icon: Brain, gradient: "from-purple-500 to-violet-600" },
   { key: "genai", icon: MessageSquare, gradient: "from-orange-500 to-amber-600" },
   { key: "ml", icon: TrendingUp, gradient: "from-amber-500 to-yellow-600" },
   { key: "cv", icon: ScanEye, gradient: "from-violet-500 to-purple-600" },
@@ -49,12 +47,12 @@ export function ServicesSection() {
               {t('expertise.titlePart2', 'Expertise')}
             </span>
           </h2>
+          <p className="text-gray-400 max-w-3xl mx-auto" style={{ fontSize: '16px', lineHeight: '1.7' }}>
+            {t('expertise.items.aiml.description', 'AI and ML form the analytical core of modern data systems. We apply engineering rigor to design models capable of interpreting complex data, identifying patterns, and supporting informed decision-making across structured and unstructured information.')}
+          </p>
         </motion.div>
 
-        <div
-          className="flex gap-5 overflow-x-auto pb-4 mb-8 snap-x snap-mandatory scrollbar-hide"
-          style={{ scrollbarWidth: "none" }}
-        >
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
           {expertiseKeys.map((item, i) => (
             <motion.div
               key={item.key}
@@ -63,8 +61,7 @@ export function ServicesSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -6 }}
-              className="group relative snap-start shrink-0"
-              style={{ width: "min(340px, 75vw)" }}
+              className="group relative"
             >
               <div className="relative h-full p-7 rounded-2xl bg-white/[0.05] border border-white/[0.08] hover:bg-white/[0.08] hover:border-purple-500/20 transition-all duration-500">
                 <div

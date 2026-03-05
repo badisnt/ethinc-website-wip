@@ -1,44 +1,22 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Cpu, Scale, Lightbulb, ShieldCheck, X } from "lucide-react";
+import { Cog, Scale, Lightbulb, ShieldCheck, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const pillarKeys = [
-  {
-    key: "engineering",
-    icon: Cpu,
-    bg: "from-[#2a1f5e] to-[#1e1650]",
-    accent: "purple-400",
-    img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=70",
-  },
-  {
-    key: "ethics",
-    icon: Scale,
-    bg: "from-[#3d2a1a] to-[#2a1d14]",
-    accent: "orange-400",
-    img: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=70",
-  },
-  {
-    key: "innovation",
-    icon: Lightbulb,
-    bg: "from-[#3a3010] to-[#2a2410]",
-    accent: "amber-400",
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=70",
-  },
-  {
-    key: "trust",
-    icon: ShieldCheck,
-    bg: "from-[#1e2a5e] to-[#162050]",
-    accent: "violet-400",
-    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=70",
-  },
+  { key: "engineering", Icon: Cog, accent: "#a855f7" },
+  { key: "ethics", Icon: Scale, accent: "#f97316" },
+  { key: "innovation", Icon: Lightbulb, accent: "#eab308" },
+  { key: "trust", Icon: ShieldCheck, accent: "#8b5cf6" },
 ];
 
-const SKEW = 20;
+const SKEW = 8;
+const ease: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
 export function ValuesSection() {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState<number | null>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
   const isExpanded = expanded !== null;
 
   return (
@@ -66,35 +44,57 @@ export function ValuesSection() {
         className="relative w-full overflow-hidden"
         style={{ height: "clamp(320px, 45vh, 480px)" }}
       >
-        <div className="absolute inset-0 flex">
+        <div className="flex h-full" style={{ margin: "0 -4%" }}>
           {pillarKeys.map((pillar, i) => {
-            const Icon = pillar.icon;
+            const { Icon, accent } = pillar;
             const isThis = expanded === i;
-            const someExpanded = isExpanded;
+            const hidden = isExpanded && !isThis;
+            const isHovered = hovered === i && !isExpanded;
 
             return (
               <motion.div
                 key={pillar.key}
-                className="relative h-full cursor-pointer overflow-hidden"
-                style={{ originX: 0.5 }}
+                className="h-full overflow-hidden cursor-pointer relative"
                 animate={{
-                  flex: isThis ? 4 : someExpanded ? 0 : 1,
-                  opacity: someExpanded && !isThis ? 0 : 1,
+                  flex: isThis ? 10 : hidden ? 0 : 1,
+                  opacity: hidden ? 0 : 1,
+                  skewX: isThis ? 0 : -SKEW,
                 }}
-                transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                transition={{ duration: 0.6, ease }}
                 onClick={() => setExpanded(isThis ? null : i)}
+                onMouseEnter={() => setHovered(i)}
+                onMouseLeave={() => setHovered(null)}
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${pillar.img})` }}
-                />
-                <div className={`absolute inset-0 bg-gradient-to-b ${pillar.bg} opacity-85`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
-
-                {i < pillarKeys.length - 1 && !isThis && (
+                {/* Purple background with subtle variation per panel */}
+                <motion.div
+                  className="absolute inset-[-20%]"
+                  animate={{ skewX: isThis ? 0 : SKEW }}
+                  transition={{ duration: 0.6, ease }}
+                >
                   <div
-                    className="absolute top-0 right-0 w-[2px] h-full bg-white/[0.08] origin-top z-10"
-                    style={{ transform: `skewX(-${SKEW}deg)` }}
+                    className="absolute inset-0"
+                    style={{
+                      background: `radial-gradient(ellipse at 50% 60%, ${accent}15 0%, transparent 70%), linear-gradient(180deg, #1e1755 0%, #1a1a3e 100%)`,
+                    }}
+                  />
+                </motion.div>
+
+                {/* Hover glow */}
+                <motion.div
+                  className="absolute inset-0 z-10 pointer-events-none"
+                  animate={{
+                    boxShadow: isHovered
+                      ? `inset 0 0 80px ${accent}30, inset 0 0 30px ${accent}18`
+                      : "inset 0 0 0px rgba(168,85,247,0)",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+
+                {/* Divider line between panels */}
+                {i > 0 && !isThis && !hidden && (
+                  <div
+                    className="absolute left-0 top-0 bottom-0 w-px z-20"
+                    style={{ background: "linear-gradient(180deg, transparent, rgba(255,255,255,0.08), transparent)" }}
                   />
                 )}
 
@@ -103,16 +103,23 @@ export function ValuesSection() {
                     <motion.div
                       key="collapsed"
                       initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
+                      animate={{ opacity: 1, skewX: SKEW }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="relative z-10 h-full flex flex-col items-center justify-center px-4 text-center"
+                      transition={{ duration: 0.25 }}
+                      className="relative z-10 h-full flex flex-col items-center justify-center gap-5 px-6 text-center"
                     >
-                      <div className="w-14 h-14 rounded-2xl bg-white/[0.1] backdrop-blur-sm border border-white/[0.1] flex items-center justify-center mb-4">
-                        <Icon className="w-6 h-6 text-white" />
-                      </div>
+                      <motion.div
+                        animate={{ scale: isHovered ? 1.1 : 1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Icon
+                          className="drop-shadow-lg"
+                          style={{ width: "clamp(40px, 5vw, 64px)", height: "clamp(40px, 5vw, 64px)", color: accent, opacity: 0.85 }}
+                          strokeWidth={1.2}
+                        />
+                      </motion.div>
                       <h3
-                        className="text-white"
+                        className="text-white drop-shadow-lg"
                         style={{
                           fontSize: "clamp(14px, 1.5vw, 18px)",
                           fontWeight: 600,
@@ -128,14 +135,15 @@ export function ValuesSection() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.4, delay: 0.2 }}
+                      transition={{ duration: 0.4, delay: 0.25 }}
                       className="relative z-10 h-full flex items-center"
                     >
-                      <div className="max-w-4xl mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center gap-8 md:gap-14 w-full">
-                        <div className="flex flex-col items-center md:items-start shrink-0">
-                          <div className="w-16 h-16 rounded-2xl bg-white/[0.1] backdrop-blur-sm border border-white/[0.1] flex items-center justify-center mb-3">
-                            <Icon className="w-7 h-7 text-white" />
-                          </div>
+                      <div className="max-w-4xl mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full">
+                        <div className="shrink-0 flex flex-col items-center md:items-start gap-4">
+                          <Icon
+                            style={{ width: 48, height: 48, color: accent }}
+                            strokeWidth={1.2}
+                          />
                           <h3
                             className="text-white text-center md:text-left"
                             style={{
@@ -157,7 +165,7 @@ export function ValuesSection() {
 
                       <button
                         onClick={(e) => { e.stopPropagation(); setExpanded(null); }}
-                        className="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full bg-white/[0.1] border border-white/[0.1] text-white/60 hover:text-white hover:bg-white/[0.15] transition-all z-20"
+                        className="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full bg-white/[0.1] border border-white/[0.12] text-white/60 hover:text-white hover:bg-white/[0.2] transition-all z-20"
                       >
                         <X className="w-4 h-4" />
                       </button>

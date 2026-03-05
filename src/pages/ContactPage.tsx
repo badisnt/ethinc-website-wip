@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { motion } from "motion/react";
 import {
   Mail,
@@ -11,6 +11,9 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
+import ReCAPTCHA from "react-google-recaptcha";
+
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 export function ContactPage() {
   const { t } = useTranslation();
@@ -22,25 +25,14 @@ export function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: "" });
-
-  useEffect(() => {
-    generateCaptcha();
-  }, []);
-
-  const generateCaptcha = () => {
-    const num1 = Math.floor(Math.random() * 10) + 1;
-    const num2 = Math.floor(Math.random() * 10) + 1;
-    setCaptcha({ num1, num2, answer: "" });
-  };
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const correctAnswer = captcha.num1 + captcha.num2;
-    if (parseInt(captcha.answer) !== correctAnswer) {
-      toast.error("Incorrect answer. Please try again.");
-      generateCaptcha();
+    if (!captchaToken) {
+      toast.error(t("contact.captcha.required", "Please complete the CAPTCHA."));
       return;
     }
 
@@ -127,7 +119,8 @@ export function ContactPage() {
                       onClick={() => {
                         setSubmitted(false);
                         setFormData({ name: "", email: "", company: "", subject: "", message: "" });
-                        generateCaptcha();
+                        setCaptchaToken(null);
+                        recaptchaRef.current?.reset();
                       }}
                       className="text-purple-600 hover:text-orange-500 transition-colors flex items-center gap-2 mx-auto"
                       style={{ fontSize: '14px', fontWeight: 500 }}
@@ -184,28 +177,20 @@ export function ContactPage() {
                   </div>
 
                   <div className="mb-6">
-                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>{t('contact.captcha.label', 'Security Check')} *</label>
-                    <div className="flex items-center gap-3">
-                      <div className="text-sm font-medium bg-[#f5f3ee] px-4 py-3 rounded-lg border border-gray-200 text-[#1a1a3e] whitespace-nowrap">
-                        {captcha.num1} + {captcha.num2} = ?
-                      </div>
-                      <input
-                        type="number"
-                        value={captcha.answer}
-                        onChange={(e) => setCaptcha(prev => ({ ...prev, answer: e.target.value }))}
-                        placeholder="Answer"
-                        required
-                        className="w-32 px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
-                        style={{ fontSize: '14px' }}
-                      />
-                    </div>
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={RECAPTCHA_SITE_KEY}
+                      onChange={(token) => setCaptchaToken(token)}
+                      onExpired={() => setCaptchaToken(null)}
+                    />
                   </div>
 
                   <div className="flex justify-end gap-3">
                     <button type="button"
                       onClick={() => {
                         setFormData({ name: "", email: "", company: "", subject: "", message: "" });
-                        generateCaptcha();
+                        setCaptchaToken(null);
+                        recaptchaRef.current?.reset();
                       }}
                       className="px-6 py-3 rounded-lg border border-gray-200 text-[#3a3a52] hover:bg-gray-50 transition-colors"
                       style={{ fontSize: '14px', fontWeight: 500 }}>
