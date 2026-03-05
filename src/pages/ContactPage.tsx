@@ -13,7 +13,7 @@ import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+const RECAPTCHA_SITE_KEY = "6LdGxYAsAAAAAFcyAfy48RGRWNchTL6motGJt9XN";
 
 export function ContactPage() {
   const { t } = useTranslation();
