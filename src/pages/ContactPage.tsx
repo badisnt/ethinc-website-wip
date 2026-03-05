@@ -162,8 +162,8 @@ export function ContactPage() {
                   </div>
 
                   <div className="mb-5">
-                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>{t('contactPage.subject', 'Subject')}</label>
-                    <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="What is this about?"
+                    <label className="block text-[#3a3a52] mb-2" style={{ fontSize: '13px', fontWeight: 500 }}>{t('contactPage.subject', 'Subject')} *</label>
+                    <input type="text" name="subject" value={formData.subject} onChange={handleChange} required placeholder="What is this about?"
                       className="w-full px-4 py-3 rounded-lg bg-[#f5f3ee] border border-gray-200 text-[#1a1a3e] placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/20 transition-colors"
                       style={{ fontSize: '14px' }} />
                   </div>

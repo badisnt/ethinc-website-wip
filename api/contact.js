@@ -5,11 +5,11 @@ export default async function handler(req, res) {
     return res.status(405).send('Method not allowed');
   }
 
-  const { name, email, company, phone, message } = req.body;
+  const { name, email, company, subject, message } = req.body;
 
   // Validate required fields
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'Name, email, and message are required' });
+  if (!name || !email || !subject || !message) {
+    return res.status(400).json({ error: 'Name, email, subject, and message are required' });
   }
 
   // Check for SMTP credentials
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
     from: 'ETHINC Contact Form <contact@ethinc.ch>', // Send FROM shared mailbox
     to: 'contact@ethinc.ch', // Send TO shared mailbox
     replyTo: email, // Reply goes to the form submitter
-    subject: `New Contact Form Submission from ${name}`,
+    subject: `[Contact Form] ${subject} — ${name}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #7523BF;">New Contact Form Submission</h2>
@@ -54,12 +54,10 @@ export default async function handler(req, res) {
               <td style="padding: 12px 0; color: #666;">${company}</td>
             </tr>
             ` : ''}
-            ${phone ? `
             <tr>
-              <td style="padding: 12px 0; font-weight: bold; color: #333;">Phone:</td>
-              <td style="padding: 12px 0; color: #666;">${phone}</td>
+              <td style="padding: 12px 0; font-weight: bold; color: #333;">Subject:</td>
+              <td style="padding: 12px 0; color: #666;">${subject}</td>
             </tr>
-            ` : ''}
           </table>
         </div>
         <div style="margin: 20px 0;">
@@ -79,7 +77,7 @@ New Contact Form Submission
 Name: ${name}
 Email: ${email}
 ${company ? `Company: ${company}` : ''}
-${phone ? `Phone: ${phone}` : ''}
+Subject: ${subject}
 
 Message:
 ${message}
