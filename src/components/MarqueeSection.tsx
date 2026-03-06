@@ -16,30 +16,23 @@ const items = [
 export function QuoteSection() {
   const { t } = useTranslation();
   return (
-    <section className="py-16 px-4 bg-[#1a1a3e]">
-      <div className="max-w-3xl mx-auto text-center">
-        <span
-          className="inline-block mb-4 bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent"
-          style={{ fontSize: "32px", fontFamily: "Georgia, serif", lineHeight: 1 }}
-        >
-          &ldquo;
-        </span>
+    <section className="py-20 md:py-28 px-4 bg-[#f5f3ee]">
+      <div className="max-w-5xl mx-auto text-center">
         <p
-          className="text-gray-200 italic"
-          style={{ fontSize: "clamp(16px, 2vw, 19px)", lineHeight: "1.9", fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}
+          className="text-[#1a1a3e]"
+          style={{
+            fontSize: "clamp(24px, 3.5vw, 42px)",
+            lineHeight: 1.35,
+            fontWeight: 600,
+            fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+            letterSpacing: "-0.02em",
+          }}
         >
-          {t('quote.line1', '"Building meaningful AI systems requires more than technology.')}{" "}
-          <span className="bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent font-semibold not-italic">
+          {t('quote.line1', 'Building meaningful AI systems requires more than technology.')}{" "}
+          <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
             {t('quote.highlight', 'It requires engineering rigor, responsible choices, and trust.')}
           </span>
-          {t('quote.line2', '"')}
         </p>
-        <span
-          className="inline-block mt-4 bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent"
-          style={{ fontSize: "32px", fontFamily: "Georgia, serif", lineHeight: 1 }}
-        >
-          &rdquo;
-        </span>
       </div>
     </section>
   );
@@ -49,9 +42,9 @@ export function MarqueeSection() {
   const doubled = [...items, ...items];
 
   return (
-    <section className="relative overflow-hidden bg-[#f5f3ee] border-y border-gray-200/60 py-8">
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f5f3ee] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f5f3ee] to-transparent z-10 pointer-events-none" />
+    <section className="relative overflow-hidden bg-[#f0ede5] border-y border-[#e5e2d9] py-8">
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f0ede5] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f0ede5] to-transparent z-10 pointer-events-none" />
 
       <style>{`
         @keyframes marquee-scroll {

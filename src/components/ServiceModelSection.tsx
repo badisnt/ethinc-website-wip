@@ -11,7 +11,7 @@ const modelKeys = [
 export function ServiceModelSection() {
   const { t } = useTranslation();
   return (
-    <section className="py-24 bg-[#f5f3ee] min-h-screen flex items-center">
+    <section className="py-24 bg-[#1a1a3e] min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ export function ServiceModelSection() {
           className="text-center mb-16"
         >
           <h2
-            className="text-[#1a1a3e] mb-4"
+            className="text-white mb-4"
             style={{
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
               fontWeight: 700,
@@ -32,7 +32,7 @@ export function ServiceModelSection() {
               {t('serviceModel.titlePart2', 'Model')}
             </span>
           </h2>
-          <p className="text-[#5a5a72] max-w-2xl mx-auto" style={{ fontSize: "16px", lineHeight: "1.7" }}>
+          <p className="text-gray-400 max-w-2xl mx-auto" style={{ fontSize: "16px", lineHeight: "1.7" }}>
             {t('serviceModel.subtitle', 'We support organizations at different stages of their AI and data initiatives, from early exploration to system development and long-term operational support.')}
           </p>
         </motion.div>
@@ -50,7 +50,7 @@ export function ServiceModelSection() {
                 whileHover={{ y: -6 }}
                 className="group"
               >
-                <div className="h-full p-8 rounded-2xl bg-white border border-gray-200/80 shadow-sm hover:shadow-lg hover:border-purple-300/50 transition-all duration-500">
+                <div className="h-full p-8 rounded-2xl bg-[#f0ede5] shadow-sm shadow-black/5 hover:shadow-lg hover:shadow-purple-900/10 transition-all duration-500">
                   <div
                     className={`w-14 h-14 rounded-xl bg-gradient-to-br ${model.gradient} flex items-center justify-center mb-6 shadow-lg`}
                   >

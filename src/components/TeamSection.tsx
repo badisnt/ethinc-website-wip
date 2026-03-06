@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Linkedin, ChevronRight, X } from "lucide-react";
+import { Linkedin, ChevronRight, X, Mail } from "lucide-react";
 import Selim from "@/assets/people/selim.png";
 import Nizar from "@/assets/people/nizar.jpeg";
 import Badis from "@/assets/people/badis.png";
@@ -22,6 +22,7 @@ const team = [
     education: "EPFL, MSc Computer Science",
     location: "Lausanne, Switzerland",
     linkedin: "https://www.linkedin.com/in/nizar-ghandri-232b71174/",
+    email: "nizar.ghandri@ethinc.ch",
   },
   {
     id: 2,
@@ -39,6 +40,7 @@ const team = [
     education: "EPFL, MSc Data Science",
     location: "Lausanne, Switzerland",
     linkedin: "https://www.linkedin.com/in/selim-fekih-a37521181/",
+    email: "selim.fekih@ethinc.ch",
   },
   {
     id: 3,
@@ -56,6 +58,7 @@ const team = [
     education: "EPFL, MSc Robotics",
     location: "Lausanne, Switzerland",
     linkedin: "https://www.linkedin.com/in/badis-machraoui-9a44051b7/",
+    email: "badis.machraoui@ethinc.ch",
   },
 ];
 
@@ -305,16 +308,26 @@ export function TeamSection() {
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: 0.2, duration: 0.4, ease }}
                             >
-                              <a
-                                href={member.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600/10 text-blue-400 hover:bg-blue-600/20 border border-blue-500/15 hover:border-blue-500/25 transition-all duration-300"
-                                style={{ fontSize: "13px", fontWeight: 500 }}
-                              >
-                                <Linkedin className="w-4 h-4" />
-                                Connect on LinkedIn
-                              </a>
+                              <div className="flex flex-wrap gap-3">
+                                <a
+                                  href={member.linkedin}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600/10 text-blue-400 hover:bg-blue-600/20 border border-blue-500/15 hover:border-blue-500/25 transition-all duration-300"
+                                  style={{ fontSize: "13px", fontWeight: 500 }}
+                                >
+                                  <Linkedin className="w-4 h-4" />
+                                  LinkedIn
+                                </a>
+                                <a
+                                  href={`mailto:${member.email}`}
+                                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 border border-orange-500/15 hover:border-orange-500/25 transition-all duration-300"
+                                  style={{ fontSize: "13px", fontWeight: 500 }}
+                                >
+                                  <Mail className="w-4 h-4" />
+                                  {member.email}
+                                </a>
+                              </div>
                             </motion.div>
                           </div>
                         </div>
