@@ -18,7 +18,6 @@ import {
   ArrowRight,
   ArrowLeft,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 interface SubService {
@@ -229,24 +228,19 @@ export function ServicesSection() {
                         className="absolute top-0 left-0 right-0 h-[3px] opacity-60 group-hover:opacity-100 transition-opacity duration-500"
                         style={{ background: `linear-gradient(90deg, ${layer.accent}, transparent)` }}
                       />
-                      {/* Decorative large icon */}
-                      <div className="absolute -bottom-6 -right-6 opacity-[0.04] group-hover:opacity-[0.08] transition-opacity duration-700">
-                        <Icon className="w-48 h-48" />
+                      {/* Decorative large icon - inset from corner so not clipped by rounded corners */}
+                      <div className="absolute bottom-10 right-10 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity duration-700">
+                        <Icon className="w-28 h-28" />
                       </div>
 
                       <div className="relative h-full flex flex-col justify-between p-6 md:p-8 text-left">
                         <div>
                           <p
-                            className="uppercase tracking-[0.2em] mb-6 transition-colors duration-300"
+                            className="uppercase tracking-[0.2em] mb-5 transition-colors duration-300"
                             style={{ fontSize: "10px", fontWeight: 600, color: layer.accent }}
                           >
                             {layer.layerLabel}
                           </p>
-                          <div
-                            className={`w-12 h-12 rounded-xl bg-gradient-to-br ${layer.gradient} flex items-center justify-center shadow-lg mb-5`}
-                          >
-                            <Icon className="w-5 h-5 text-white" />
-                          </div>
                           <h3
                             className="text-white mb-3"
                             style={{ fontSize: "clamp(16px, 2vw, 22px)", fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)', lineHeight: 1.25 }}
@@ -509,21 +503,6 @@ export function ServicesSection() {
           </AnimatePresence>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 text-purple-400 hover:text-orange-400 transition-colors group"
-            style={{ fontSize: "15px", fontWeight: 500 }}
-          >
-            {t("expertise.cta", "Discuss your project with us")}
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   );

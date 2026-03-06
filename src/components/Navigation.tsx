@@ -8,9 +8,7 @@ import EthincIcon from "@/assets/ethinc_icon2.png";
 
 const navLinks = [
   { labelKey: "navigation.home", fallback: "Home", href: "/" },
-  { labelKey: "navigation.projects", fallback: "Projects", href: "/projects" },
   { labelKey: "navigation.blog", fallback: "Blog", href: "/blog" },
-  { labelKey: "navigation.aboutUs", fallback: "About Us", href: "/about" },
 ];
 
 const Navigation = () => {

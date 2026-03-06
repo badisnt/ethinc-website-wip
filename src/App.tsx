@@ -7,9 +7,7 @@ import "./i18n";
 
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { PortfolioPage } from "./pages/PortfolioPage";
 import { BlogPage } from "./pages/BlogPage";
-import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 
 const queryClient = new QueryClient();
@@ -24,9 +22,7 @@ const App: React.FC = () => {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />
-            <Route path="/projects" element={<PortfolioPage />} />
             <Route path="/blog" element={<BlogPage />} />
-            <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>

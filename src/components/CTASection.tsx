@@ -67,67 +67,6 @@ export function CTASection() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            <Link
-              to="/projects"
-              className="dashed-cta shrink-0 inline-flex items-center gap-2 px-7 py-4 rounded-xl text-white transition-all duration-300 group cursor-pointer relative"
-              style={{ fontSize: '15px', fontWeight: 500 }}
-            >
-              <style>{`
-                .dashed-cta {
-                  background: transparent;
-                  border: none;
-                }
-                .dashed-cta::before {
-                  content: '';
-                  position: absolute;
-                  inset: 0;
-                  border-radius: 0.75rem;
-                  padding: 1.5px;
-                  background: conic-gradient(
-                    from var(--dash-angle, 0deg),
-                    rgba(139,92,246,0.6) 0%,
-                    transparent 15%,
-                    transparent 35%,
-                    rgba(249,115,22,0.5) 50%,
-                    transparent 65%,
-                    transparent 85%,
-                    rgba(139,92,246,0.6) 100%
-                  );
-                  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                  mask-composite: exclude;
-                  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                  -webkit-mask-composite: xor;
-                  animation: dash-rotate 4s linear infinite;
-                }
-                .dashed-cta:hover::before {
-                  animation-duration: 2s;
-                  background: conic-gradient(
-                    from var(--dash-angle, 0deg),
-                    rgba(139,92,246,0.9) 0%,
-                    transparent 15%,
-                    transparent 35%,
-                    rgba(249,115,22,0.8) 50%,
-                    transparent 65%,
-                    transparent 85%,
-                    rgba(139,92,246,0.9) 100%
-                  );
-                  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                  mask-composite: exclude;
-                  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-                  -webkit-mask-composite: xor;
-                }
-                @keyframes dash-rotate {
-                  to { --dash-angle: 360deg; }
-                }
-                @property --dash-angle {
-                  syntax: '<angle>';
-                  initial-value: 0deg;
-                  inherits: false;
-                }
-              `}</style>
-              {t('cta.viewWork', 'View Our Work')}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
           </div>
         </motion.div>
       </div>

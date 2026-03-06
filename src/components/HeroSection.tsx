@@ -3,6 +3,17 @@ import { motion, useMotionValue, useSpring, useTransform, useScroll, AnimatePres
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import EthincIcon from "@/assets/ethinc_icon2.png";
+import sapLogo from "@/assets/logos/SAP_2011_logo.png";
+import iciLogo from "@/assets/logos/ICI_Logo.png";
+import idmcLogo from "@/assets/logos/IDMC-logo.png";
+import focusLogo from "@/assets/logos/focus_logo.jpg";
+
+const trustedLogos = [
+  { src: sapLogo, alt: "SAP" },
+  { src: iciLogo, alt: "ICI" },
+  { src: idmcLogo, alt: "IDMC" },
+  { src: focusLogo, alt: "Focus" },
+];
 
 const stats = [
   { value: 3, suffix: "+", labelKey: "hero.stats.industries" },
@@ -436,15 +447,8 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <Link
-                to="/projects"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-purple-600/20"
-                style={{ fontSize: '15px', fontWeight: 500 }}
-              >
-                {t('hero.viewWork', 'View Our Work')}
-              </Link>
-              <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/[0.1] text-white hover:bg-white/[0.05] transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:from-purple-500 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-purple-600/20"
                 style={{ fontSize: '15px', fontWeight: 500 }}
               >
                 {t('hero.getInTouch', 'Get in Touch')}
@@ -463,6 +467,36 @@ export function HeroSection() {
         </div>
 
       </div>
+
+      {/* Trusted By */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute bottom-8 left-0 right-0 z-10"
+      >
+        <div className="flex justify-center px-4">
+          <div className="flex flex-col sm:flex-row items-center gap-5 md:gap-10">
+            <p
+              className="text-gray-500 uppercase tracking-[0.2em] shrink-0 whitespace-nowrap"
+              style={{ fontSize: "10px", fontWeight: 500 }}
+            >
+              {t("trustedBy", "Trusted by")}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              {trustedLogos.map((logo) => (
+                <div key={logo.alt} className="flex items-center justify-center">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-8 md:h-10 w-auto object-contain opacity-40 hover:opacity-70 transition-opacity duration-300 grayscale hover:grayscale-0"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }

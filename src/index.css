@@ -9,6 +9,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Full-page scroll snap on home - one section per scroll */
+html.home-scroll-snap {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 /* Prevent horizontal overflow on mobile - more targeted approach */
 html, body {
   overflow-x: hidden;

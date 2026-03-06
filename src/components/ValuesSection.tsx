@@ -21,7 +21,7 @@ export function ValuesSection() {
 
   return (
     <section className="bg-[#1a1a3e]">
-      <div className="text-center pt-20 pb-10 px-4">
+      <div className="text-center pt-20 pb-6 px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,6 +39,28 @@ export function ValuesSection() {
           </span>
         </motion.h2>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center px-4 pb-12 max-w-4xl mx-auto"
+      >
+        <p
+          className="text-gray-300"
+          style={{
+            fontSize: "clamp(17px, 2.2vw, 22px)",
+            lineHeight: 1.6,
+            fontWeight: 500,
+            fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+          }}
+        >
+          {t('quote.line1', 'Building meaningful AI systems requires more than technology.')}{" "}
+          <span className="bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent font-semibold">
+            {t('quote.highlight', 'It requires engineering rigor, responsible choices, and trust.')}
+          </span>
+        </p>
+      </motion.div>
 
       <div
         className="relative w-full overflow-hidden"
