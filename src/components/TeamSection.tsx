@@ -141,15 +141,15 @@ export function TeamSection() {
                   <X className="w-5 h-5" />
                 </motion.button>
                 <div className="grid md:grid-cols-[minmax(280px,40%)_1fr] min-h-[400px]">
-                  <div className="relative min-h-[300px] md:min-h-[450px]">
+                  <div className="relative min-h-[300px] md:min-h-[450px] overflow-hidden">
                     <motion.img
                       key={member.id}
-                      initial={{ scale: 1.05 }}
-                      animate={{ scale: 1 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      initial={{ opacity: 0.7, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full min-h-[300px] object-cover"
+                      className="w-full h-full min-h-[300px] object-cover block"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a3e] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#1a1a3e]/60" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 md:hidden">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Cog, Scale, Lightbulb, ShieldCheck, X } from "lucide-react";
+import { Cog, Scale, Lightbulb, ShieldCheck } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const pillarKeys = [
@@ -20,7 +20,7 @@ export function ValuesSection() {
   const isExpanded = expanded !== null;
 
   return (
-    <section className="bg-[#1a1a3e]">
+    <section className="bg-[#1a1a3e] pt-16 md:pt-24">
       <div className="text-center pt-20 pb-6 px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -157,7 +157,7 @@ export function ValuesSection() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.4, delay: 0.25 }}
+                      transition={{ duration: 0.35 }}
                       className="relative z-10 h-full flex items-center"
                     >
                       <div className="max-w-4xl mx-auto px-8 md:px-16 flex flex-col md:flex-row items-center gap-6 md:gap-12 w-full">
@@ -184,13 +184,6 @@ export function ValuesSection() {
                           {t(`values.pillars.${pillar.key}.description`)}
                         </p>
                       </div>
-
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setExpanded(null); }}
-                        className="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full bg-white/[0.1] border border-white/[0.12] text-white/60 hover:text-white hover:bg-white/[0.2] transition-all z-20"
-                      >
-                        <X className="w-4 h-4" />
-                      </button>
                     </motion.div>
                   )}
                 </AnimatePresence>

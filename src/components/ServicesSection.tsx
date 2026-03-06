@@ -17,6 +17,7 @@ import {
   Container,
   ArrowRight,
   ArrowLeft,
+  X,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -253,7 +254,7 @@ export function ServicesSection() {
                             animate={{ opacity: isHovered ? 1 : 0, height: isHovered ? "auto" : 0 }}
                             transition={{ duration: 0.35, ease }}
                           >
-                            {layer.intro.slice(0, 180)}...
+                            {layer.intro}
                           </motion.p>
                         </div>
                         <div
@@ -326,54 +327,17 @@ export function ServicesSection() {
                       })}
                     </div>
                   </div>
-
-                  {/* Subservice list */}
-                  <div className="flex-1 p-5">
-                    <p className="text-gray-600 uppercase tracking-[0.2em] mb-4" style={{ fontSize: "9px", fontWeight: 700 }}>
-                      Services
-                    </p>
-                    <div className="flex flex-col gap-1">
-                      {selectedLayer.subServices.map((sub, i) => {
-                        const isActive = activeSub === sub.key;
-                        const SubIcon = sub.icon;
-                        return (
-                          <motion.button
-                            key={sub.key}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.1 + i * 0.05, duration: 0.3, ease }}
-                            onClick={() => setActiveSub(isActive ? null : sub.key)}
-                            className={`flex items-center gap-3 px-3 py-3 rounded-lg text-left transition-all duration-300 cursor-pointer ${
-                              isActive ? "bg-white/[0.08]" : "hover:bg-white/[0.04]"
-                            }`}
-                          >
-                            <SubIcon
-                              className="w-4 h-4 shrink-0 transition-colors duration-300"
-                              style={{ color: isActive ? selectedLayer.accent : "#6b7280" }}
-                            />
-                            <span
-                              className={`transition-colors duration-300 ${isActive ? "text-white" : "text-gray-400"}`}
-                              style={{ fontSize: "13px", fontWeight: isActive ? 600 : 400 }}
-                            >
-                              {sub.title}
-                            </span>
-                            {isActive && (
-                              <motion.div
-                                layoutId="sub-dot"
-                                className="ml-auto w-1.5 h-1.5 rounded-full shrink-0"
-                                style={{ background: selectedLayer.accent }}
-                                transition={{ duration: 0.25, ease }}
-                              />
-                            )}
-                          </motion.button>
-                        );
-                      })}
-                    </div>
-                  </div>
                 </div>
 
                 {/* Content panel */}
                 <div className="rounded-2xl bg-[#f0ede5] overflow-hidden relative" style={{ minHeight: "520px" }}>
+                  {/* Close button - back to all areas */}
+                  <button
+                    onClick={() => { setActiveLayer(null); setActiveSub(null); }}
+                    className="absolute top-4 right-4 z-20 p-2 rounded-full bg-[#1a1a3e]/[0.08] hover:bg-[#1a1a3e]/[0.15] text-[#5a5a72] hover:text-[#1a1a3e] transition-all cursor-pointer"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
                   {/* Accent strip */}
                   <div
                     className="absolute top-0 left-0 w-[3px] h-full transition-colors duration-500"
@@ -446,6 +410,14 @@ export function ServicesSection() {
                         transition={{ duration: 0.3, ease }}
                         className="p-8 md:p-10 h-full flex flex-col"
                       >
+                        <button
+                          onClick={() => setActiveSub(null)}
+                          className="flex items-center gap-2 text-[#5a5a72] hover:text-[#1a1a3e] transition-colors mb-6 cursor-pointer"
+                          style={{ fontSize: "13px", fontWeight: 500 }}
+                        >
+                          <ArrowLeft className="w-4 h-4" />
+                          {selectedLayer.title}
+                        </button>
                         <div className="flex items-center gap-4 mb-6">
                           <div
                             className="w-11 h-11 rounded-xl flex items-center justify-center"
@@ -454,9 +426,6 @@ export function ServicesSection() {
                             <selectedSub.icon className="w-5 h-5" style={{ color: selectedLayer.accent }} />
                           </div>
                           <div>
-                            <p className="uppercase tracking-[0.2em]" style={{ fontSize: "9px", fontWeight: 600, color: selectedLayer.accent }}>
-                              {selectedLayer.layerLabel}
-                            </p>
                             <h3
                               className="text-[#1a1a3e]"
                               style={{ fontSize: "clamp(1.2rem, 2vw, 1.6rem)", fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}
