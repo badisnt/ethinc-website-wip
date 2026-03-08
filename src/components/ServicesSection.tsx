@@ -100,15 +100,15 @@ export function ServicesContent() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-      <div className="relative w-full" style={{ minHeight: "520px" }}>
+      <div className="relative w-full">
         <AnimatePresence mode="wait">
           {!activeLayer && (
             <motion.div
               key="panels"
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.3, ease }}
-              className="flex gap-3 md:gap-4"
-              style={{ height: "520px" }}
+              className="flex flex-col md:flex-row gap-3 md:gap-4"
+              style={{ minHeight: "520px" }}
             >
               {layers.map((layer) => {
                 const Icon = layer.icon;
@@ -116,7 +116,7 @@ export function ServicesContent() {
                 return (
                   <div
                     key={layer.key}
-                    className="h-full"
+                    className="md:h-[520px]"
                     style={{
                       flex: isHovered ? 1.8 : 1,
                       transition: "flex 0.5s cubic-bezier(0.4,0,0.2,1)",
@@ -126,7 +126,7 @@ export function ServicesContent() {
                       onMouseEnter={() => setHovered(layer.key)}
                       onMouseLeave={() => setHovered(null)}
                       onClick={() => { setActiveLayer(layer.key); setActiveSub(null); }}
-                      className="relative w-full h-full rounded-2xl overflow-hidden cursor-pointer group text-left"
+                      className="relative w-full h-full min-h-[160px] md:min-h-0 rounded-2xl overflow-hidden cursor-pointer group text-left"
                     >
                       <div
                         className="absolute inset-0 transition-opacity duration-700"
@@ -148,16 +148,22 @@ export function ServicesContent() {
                             className="uppercase tracking-[0.2em] mb-5 transition-colors duration-300"
                             style={{ fontSize: "10px", fontWeight: 600, color: layer.accent }}
                           >
-                            {layer.layerLabel}
+                            {t(`layers.${layer.key}.label`, layer.layerLabel)}
                           </p>
                           <h3
                             className="text-white mb-3"
                             style={{ fontSize: "clamp(16px, 2vw, 22px)", fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)', lineHeight: 1.25 }}
                           >
-                            {layer.title}
+                            {t(`layers.${layer.key}.title`, layer.title)}
                           </h3>
                           <p
-                            className="text-gray-400 transition-all duration-500"
+                            className="text-gray-400 md:hidden"
+                            style={{ fontSize: "13px", lineHeight: "1.65" }}
+                          >
+                            {t(`layers.${layer.key}.intro`, layer.intro)}
+                          </p>
+                          <p
+                            className="text-gray-400 hidden md:block transition-all duration-500"
                             style={{
                               fontSize: "13px",
                               lineHeight: "1.65",
@@ -166,14 +172,14 @@ export function ServicesContent() {
                               overflow: "hidden",
                             }}
                           >
-                            {layer.intro}
+                            {t(`layers.${layer.key}.intro`, layer.intro)}
                           </p>
                         </div>
                         <div
                           className="flex items-center gap-2 transition-all duration-300"
                           style={{ fontSize: "12px", fontWeight: 600, color: layer.accent }}
                         >
-                          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">Explore</span>
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">{t('layers.explore', 'Explore')}</span>
                           <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                         </div>
                       </div>
@@ -191,8 +197,7 @@ export function ServicesContent() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease }}
-              className="grid lg:grid-cols-[280px_1fr] gap-5 rounded-2xl overflow-hidden"
-              style={{ minHeight: "520px" }}
+              className="grid lg:grid-cols-[280px_1fr] gap-4 lg:gap-5 rounded-2xl overflow-hidden"
             >
               <div className="rounded-2xl overflow-hidden flex flex-col" style={{ background: "linear-gradient(180deg, #252555 0%, #1a1a3e 100%)" }}>
                 <div className="p-5 border-b border-white/[0.06]">
@@ -218,7 +223,7 @@ export function ServicesContent() {
                           <div className="w-2 h-2 rounded-full shrink-0 transition-all duration-300" style={{ background: isActive ? layer.accent : "transparent", boxShadow: isActive ? `0 0 8px ${layer.accent}60` : "none" }} />
                           <LayerIcon className="w-4 h-4 shrink-0" style={{ color: isActive ? layer.accent : "#6b7280" }} />
                           <span className={`truncate transition-colors duration-300 ${isActive ? "text-white" : "text-gray-500"}`} style={{ fontSize: "12px", fontWeight: isActive ? 600 : 400 }}>
-                            {layer.title}
+                            {t(`layers.${layer.key}.title`, layer.title)}
                           </span>
                         </button>
                       );
@@ -227,7 +232,7 @@ export function ServicesContent() {
                 </div>
               </div>
 
-              <div className="rounded-2xl bg-[#f0ede5] overflow-hidden relative" style={{ minHeight: "520px" }}>
+              <div className="rounded-2xl bg-[#f0ede5] overflow-hidden relative">
                 <button
                   onClick={() => { setActiveLayer(null); setActiveSub(null); }}
                   className="absolute top-4 right-4 z-20 p-2 rounded-full bg-[#1a1a3e]/[0.08] hover:bg-[#1a1a3e]/[0.15] text-[#5a5a72] hover:text-[#1a1a3e] transition-all cursor-pointer"
@@ -247,12 +252,12 @@ export function ServicesContent() {
                       className="p-8 md:p-10 h-full flex flex-col"
                     >
                       <div className="mb-8">
-                        <p className="uppercase tracking-[0.2em] mb-2" style={{ fontSize: "10px", fontWeight: 600, color: selectedLayer.accent }}>{selectedLayer.layerLabel}</p>
-                        <h3 className="text-[#1a1a3e] mb-5" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)", fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>{selectedLayer.title}</h3>
-                        <p className="text-[#5a5a72]" style={{ fontSize: "15px", lineHeight: "1.8" }}>{selectedLayer.intro}</p>
+                        <p className="uppercase tracking-[0.2em] mb-2" style={{ fontSize: "10px", fontWeight: 600, color: selectedLayer.accent }}>{t(`layers.${selectedLayer.key}.label`, selectedLayer.layerLabel)}</p>
+                        <h3 className="text-[#1a1a3e] mb-5" style={{ fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)", fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>{t(`layers.${selectedLayer.key}.title`, selectedLayer.title)}</h3>
+                        <p className="text-[#5a5a72]" style={{ fontSize: "15px", lineHeight: "1.8" }}>{t(`layers.${selectedLayer.key}.intro`, selectedLayer.intro)}</p>
                       </div>
                       <div className="mt-auto">
-                        <p className="text-[#1a1a3e]/40 uppercase tracking-[0.2em] mb-4" style={{ fontSize: "9px", fontWeight: 700 }}>Select a service to learn more</p>
+                        <p className="text-[#1a1a3e]/40 uppercase tracking-[0.2em] mb-4" style={{ fontSize: "9px", fontWeight: 700 }}>{t('layers.selectService', 'Select a service to learn more')}</p>
                         <div className="grid grid-cols-2 gap-3">
                           {selectedLayer.subServices.map((sub, i) => {
                             const SubIcon = sub.icon;
@@ -267,7 +272,7 @@ export function ServicesContent() {
                                 className="group flex items-center gap-3 p-4 rounded-xl bg-[#1a1a3e]/[0.05] hover:bg-[#1a1a3e]/[0.1] border border-[#1a1a3e]/[0.06] hover:border-[#1a1a3e]/[0.12] transition-all duration-300 text-left cursor-pointer"
                               >
                                 <SubIcon className="w-5 h-5 shrink-0 transition-colors duration-300" style={{ color: selectedLayer.accent }} />
-                                <span className="text-[#3a3a52] group-hover:text-[#1a1a3e] transition-colors" style={{ fontSize: "13px", fontWeight: 600 }}>{sub.title}</span>
+                                <span className="text-[#3a3a52] group-hover:text-[#1a1a3e] transition-colors" style={{ fontSize: "13px", fontWeight: 600 }}>{t(`layers.${selectedLayer.key}.subs.${sub.key}.title`, sub.title)}</span>
                               </motion.button>
                             );
                           })}
@@ -285,21 +290,21 @@ export function ServicesContent() {
                     >
                       <button onClick={() => setActiveSub(null)} className="flex items-center gap-2 text-[#5a5a72] hover:text-[#1a1a3e] transition-colors mb-6 cursor-pointer" style={{ fontSize: "13px", fontWeight: 500 }}>
                         <ArrowLeft className="w-4 h-4" />
-                        {selectedLayer.title}
+                        {t(`layers.${selectedLayer.key}.title`, selectedLayer.title)}
                       </button>
                       <div className="flex items-center gap-4 mb-6">
                         <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: `${selectedLayer.accent}18` }}>
                           <selectedSub.icon className="w-5 h-5" style={{ color: selectedLayer.accent }} />
                         </div>
-                        <h3 className="text-[#1a1a3e]" style={{ fontSize: "clamp(1.2rem, 2vw, 1.6rem)", fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>{selectedSub.title}</h3>
+                        <h3 className="text-[#1a1a3e]" style={{ fontSize: "clamp(1.2rem, 2vw, 1.6rem)", fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>{t(`layers.${selectedLayer.key}.subs.${selectedSub.key}.title`, selectedSub.title)}</h3>
                       </div>
-                      <p className="text-[#5a5a72] mb-8" style={{ fontSize: "15px", lineHeight: "1.8" }}>{selectedSub.description}</p>
+                      <p className="text-[#5a5a72] mb-8" style={{ fontSize: "15px", lineHeight: "1.8" }}>{t(`layers.${selectedLayer.key}.subs.${selectedSub.key}.description`, selectedSub.description)}</p>
                       <div className="mt-auto">
-                        <p className="text-[#1a1a3e]/40 uppercase tracking-[0.2em] mb-4" style={{ fontSize: "9px", fontWeight: 700 }}>Capabilities</p>
+                        <p className="text-[#1a1a3e]/40 uppercase tracking-[0.2em] mb-4" style={{ fontSize: "9px", fontWeight: 700 }}>{t('layers.capabilities', 'Capabilities')}</p>
                         <div className="flex flex-wrap gap-2">
                           {selectedSub.capabilities.map((cap, i) => (
                             <motion.span key={cap} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.15 + i * 0.04, duration: 0.25, ease }} className="px-3.5 py-1.5 rounded-full text-[#3a3a52]" style={{ fontSize: "12px", fontWeight: 500, background: `${selectedLayer.accent}10`, border: `1px solid ${selectedLayer.accent}20` }}>
-                              {cap}
+                              {t(`layers.${selectedLayer.key}.subs.${selectedSub.key}.caps.${i}`, cap)}
                             </motion.span>
                           ))}
                         </div>

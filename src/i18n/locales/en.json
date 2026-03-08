@@ -15,6 +15,7 @@
   },
   "hero": {
     "title": "Making Intelligence Work for Organizations",
+    "highlightWord": "Organizations",
     "subtitle": "We design and implement AI and data solutions that improve workflows, support decision-making, and unlock value from organizational data.",
     "cta": "Get Started",
     "learnMore": "Learn More",
@@ -475,5 +476,204 @@
       "content": "Our website does not use cookies or similar tracking technologies. We do not collect any data through cookies, and your browsing experience is not tracked in any way. This means you can browse our site without any concerns about cookie-based tracking or data collection."
     }
   },
-  "trustedBy": "Trusted by"
+  "trustedBy": "Trusted by",
+  "team": {
+    "nizar": {
+      "role": "Chief Technology Officer",
+      "bio": "Nizar leads the technical vision at Ethinc. With experience designing and deploying machine learning and generative AI systems across industry environments, he focuses on building reliable AI infrastructures that integrate with real workflows. His work spans applied machine learning, graph analytics, and large-scale AI deployment."
+    },
+    "selim": {
+      "role": "Chief Operating Officer",
+      "bio": "Selim oversees operations and project delivery at Ethinc, ensuring that technical work translates into practical systems for real-world organizations. His background in NLP and AI for humanitarian and international contexts has shaped a strong focus on multilingual data analysis and privacy-aware system design. At Ethinc, he bridges technical rigor with thoughtful collaboration across teams and partners."
+    },
+    "badis": {
+      "role": "Founding Engineer",
+      "bio": "Badis contributes to the development of Ethinc's software systems and technical infrastructure. His work spans backend development, AI integration, and cybersecurity-informed system design, allowing him to support projects across multiple layers of the technology stack. He plays a fundamental role in translating ideas into reliable and maintainable engineering solutions."
+    }
+  },
+  "layers": {
+    "explore": "Explore",
+    "selectService": "Select a service to learn more",
+    "capabilities": "Capabilities",
+    "intelligence": {
+      "label": "Intelligence Layer",
+      "title": "AI & Machine Learning",
+      "intro": "Artificial intelligence and machine learning form the analytical core of modern data systems. At Ethinc, these technologies are applied with engineering rigor to design models capable of interpreting complex data, identifying patterns, and supporting informed decision-making. Our work spans generative AI, predictive modeling, computer vision, and graph-based learning.",
+      "subs": {
+        "genai": {
+          "title": "Generative AI & NLP",
+          "description": "Generative AI allows organizations to interact directly with their own knowledge — documents, reports, emails, and research — transforming unstructured information into usable insights. These systems are designed to structure and retrieve knowledge, automate document-heavy workflows, and support analytical work that traditionally required extensive manual review.",
+          "caps": {
+            "0": "LLM integration",
+            "1": "Retrieval-Augmented Generation (RAG)",
+            "2": "Model fine-tuning",
+            "3": "Agent systems",
+            "4": "Multilingual processing",
+            "5": "OCR",
+            "6": "Multimodal AI"
+          }
+        },
+        "ml": {
+          "title": "Machine Learning",
+          "description": "Machine learning enables organizations to detect patterns in data that would otherwise remain invisible. These models support forecasting, anomaly detection, and process optimization across operational environments where decisions depend on complex or evolving datasets.",
+          "caps": {
+            "0": "Predictive modeling",
+            "1": "Anomaly detection",
+            "2": "Time-series forecasting",
+            "3": "Deep learning",
+            "4": "Explainable AI"
+          }
+        },
+        "cv": {
+          "title": "Computer Vision",
+          "description": "Computer vision allows machines to interpret visual environments and transform images or video into structured information. From quality inspection to infrastructure monitoring and media analysis, these systems enable organizations to analyze visual data at scale.",
+          "caps": {
+            "0": "Object detection",
+            "1": "Classification",
+            "2": "Segmentation",
+            "3": "Vision transformers",
+            "4": "Image & video processing"
+          }
+        },
+        "graphml": {
+          "title": "Graph Machine Learning",
+          "description": "Many real-world problems are defined not only by data but by relationships between entities. Graph machine learning models these connections to reveal patterns that traditional analytics often miss.",
+          "caps": {
+            "0": "Knowledge graphs",
+            "1": "Graph embeddings",
+            "2": "Link prediction",
+            "3": "Network analytics"
+          }
+        }
+      }
+    },
+    "application": {
+      "label": "Application Layer",
+      "title": "Software Engineering",
+      "intro": "Software engineering forms the operational layer that allows intelligent systems to function reliably in real environments. We design and build robust applications and system architectures that integrate AI, data processing, and user-facing interfaces into coherent platforms — secure, maintainable, and scalable.",
+      "subs": {
+        "backend": {
+          "title": "Backend Systems",
+          "description": "Robust server-side architectures designed for performance, security, and seamless integration with AI pipelines and data sources.",
+          "caps": {
+            "0": "API design & development",
+            "1": "Microservices architecture",
+            "2": "Secure server-side logic",
+            "3": "Database integration"
+          }
+        },
+        "frontend": {
+          "title": "Frontend Applications",
+          "description": "User-facing interfaces that make complex data and AI outputs accessible, intuitive, and actionable for teams and stakeholders.",
+          "caps": {
+            "0": "Web application interfaces",
+            "1": "Data visualization interfaces",
+            "2": "User-centric design implementation"
+          }
+        },
+        "appdev": {
+          "title": "Application Development",
+          "description": "End-to-end application development from internal tools to AI-powered SaaS prototypes, built for security and enterprise integration.",
+          "caps": {
+            "0": "Internal tools & platforms",
+            "1": "Mobile applications",
+            "2": "AI-powered SaaS prototypes",
+            "3": "Secure enterprise integration"
+          }
+        }
+      }
+    },
+    "infrastructure": {
+      "label": "Infrastructure Layer",
+      "title": "Data Engineering & Distributed Systems",
+      "intro": "Reliable AI systems depend on well-structured data infrastructures capable of processing large and diverse datasets. We design and implement data pipelines and distributed architectures that enable organizations to collect, transform, and analyze data efficiently — the backbone of modern analytical platforms.",
+      "subs": {
+        "pipelines": {
+          "title": "Data Pipelines & Orchestration",
+          "description": "Automated data workflows that ensure reliable collection, transformation, and delivery of data across the organization.",
+          "caps": {
+            "0": "ETL pipelines",
+            "1": "Workflow orchestration",
+            "2": "Automated data processing"
+          }
+        },
+        "platforms": {
+          "title": "Data Platforms",
+          "description": "Scalable data storage and analytical infrastructure designed for both real-time queries and historical analysis.",
+          "caps": {
+            "0": "Data warehousing",
+            "1": "OLAP systems",
+            "2": "SQL & NoSQL architecture"
+          }
+        },
+        "distributed": {
+          "title": "Distributed Processing",
+          "description": "Large-scale data processing frameworks for organizations handling volumes that exceed single-system capacity.",
+          "caps": {
+            "0": "Apache Spark",
+            "1": "Large-scale data processing",
+            "2": "Distributed computing frameworks"
+          }
+        },
+        "devops": {
+          "title": "Infrastructure & DevOps",
+          "description": "Production-grade deployment environments with automation, monitoring, and continuous delivery built in.",
+          "caps": {
+            "0": "Containerized services",
+            "1": "Workflow automation",
+            "2": "CI/CD pipelines",
+            "3": "Scalable deployment environments"
+          }
+        }
+      }
+    }
+  },
+  "delivery": {
+    "viewDetails": "View details",
+    "allPhases": "All phases",
+    "keyActivities": "Key activities",
+    "research": {
+      "label": "Phase 1",
+      "title": "Research & Framing",
+      "subtitle": "Understanding the problem space and defining a viable technical approach.",
+      "bullets": {
+        "0": "Use-case definition & feasibility assessment",
+        "1": "Technical evaluation (GenAI, ML, Computer Vision, Graph ML)",
+        "2": "Risk, governance & compliance considerations",
+        "3": "Prototype validation"
+      }
+    },
+    "design": {
+      "label": "Phase 2",
+      "title": "Design & Engineering",
+      "subtitle": "Designing the architecture and building the core intelligence systems.",
+      "bullets": {
+        "0": "AI architecture & data modeling",
+        "1": "LLM integration (cloud or on-premise)",
+        "2": "Custom machine learning pipelines",
+        "3": "API-ready modular systems"
+      }
+    },
+    "deploy": {
+      "label": "Phase 3",
+      "title": "Deploy",
+      "subtitle": "Deploying systems within secure and scalable operational environments.",
+      "bullets": {
+        "0": "Cloud or on-premise infrastructure (AWS, GCP, Azure)",
+        "1": "Secure containerized environments",
+        "2": "CI/CD and MLOps integration",
+        "3": "Monitoring, versioning & system reliability"
+      }
+    },
+    "transfer": {
+      "label": "Phase 4",
+      "title": "Knowledge Transfer",
+      "subtitle": "Ensuring teams understand, operate, and evolve the deployed systems.",
+      "bullets": {
+        "0": "Documentation and system handover",
+        "1": "Internal team enablement",
+        "2": "Training workshops"
+      }
+    }
+  }
 }

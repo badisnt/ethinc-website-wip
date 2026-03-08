@@ -1,62 +1,36 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Linkedin, X, Mail } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Selim from "@/assets/people/selim.png";
 import Nizar from "@/assets/people/nizar.jpeg";
 import Badis from "@/assets/people/badis.png";
 
-const team = [
+const teamData = [
   {
     id: 1,
+    key: "nizar",
     name: "Nizar Ghandri",
-    role: "Chief Technology Officer",
     shortRole: "CTO",
     image: Nizar,
-    bio: "Nizar leads the technical vision at Ethinc. With experience designing and deploying machine learning and generative AI systems across industry environments, he focuses on building reliable AI infrastructures that integrate with real workflows. His work spans applied machine learning, graph analytics, and large-scale AI deployment.",
-    focus: [
-      "Technical Architecture & System Design",
-      "NLP & Generative AI",
-      "Graph Machine Learning",
-      "MLOps & Infrastructure",
-    ],
-    education: "EPFL, MSc Computer Science",
-    location: "Lausanne, Switzerland",
     linkedin: "https://www.linkedin.com/in/nizar-ghandri-232b71174/",
     email: "nizar.ghandri@ethinc.ch",
   },
   {
     id: 2,
+    key: "selim",
     name: "Selim Fekih",
-    role: "Chief Operating Officer",
     shortRole: "COO",
     image: Selim,
-    bio: "Selim oversees operations and project delivery at Ethinc, ensuring that technical work translates into practical systems for real-world organizations. His background in NLP and AI for humanitarian and international contexts has shaped a strong focus on multilingual data analysis and privacy-aware system design. At Ethinc, he bridges technical rigor with thoughtful collaboration across teams and partners.",
-    focus: [
-      "Business Strategy & Operations",
-      "AI Ethics & Governance",
-      "Client Partnerships",
-      "Product Management",
-    ],
-    education: "EPFL, MSc Data Science",
-    location: "Lausanne, Switzerland",
     linkedin: "https://www.linkedin.com/in/selim-fekih-a37521181/",
     email: "selim.fekih@ethinc.ch",
   },
   {
     id: 3,
+    key: "badis",
     name: "Badis Machraoui",
-    role: "Founding Engineer",
     shortRole: "Engineer",
     image: Badis,
-    bio: "Badis contributes to the development of Ethinc's software systems and technical infrastructure. His work spans backend development, AI integration, and cybersecurity-informed system design, allowing him to support projects across multiple layers of the technology stack. He plays a fundamental role in translating ideas into reliable and maintainable engineering solutions.",
-    focus: [
-      "Computer Vision & Image Processing",
-      "Edge AI & Robotics",
-      "Deep Learning Research",
-      "Production Engineering",
-    ],
-    education: "EPFL, MSc Robotics",
-    location: "Lausanne, Switzerland",
     linkedin: "https://www.linkedin.com/in/badis-machraoui-9a44051b7/",
     email: "badis.machraoui@ethinc.ch",
   },
@@ -65,9 +39,10 @@ const team = [
 const ease = [0.4, 0, 0.2, 1] as const;
 
 export function TeamSection() {
+  const { t } = useTranslation();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const isExpanded = selectedIndex !== null;
-  const member = isExpanded ? team[selectedIndex] : null;
+  const member = isExpanded ? teamData[selectedIndex] : null;
 
   return (
     <div className="relative w-full">
@@ -79,12 +54,12 @@ export function TeamSection() {
             transition={{ duration: 0.3, ease }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto sm:h-[420px]"
           >
-            {team.map((person) => (
+            {teamData.map((person, i) => (
               <motion.button
                 key={person.id}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => setSelectedIndex(team.indexOf(person))}
+                onClick={() => setSelectedIndex(i)}
                 className="group relative rounded-2xl bg-white/[0.04] border border-white/[0.07] overflow-hidden text-center cursor-pointer hover:border-purple-500/30 hover:bg-white/[0.06] transition-colors duration-300 w-full"
               >
                 <div className="relative h-[320px] sm:h-[420px] overflow-hidden">
@@ -151,7 +126,7 @@ export function TeamSection() {
                       <h3 className="text-white" style={{ fontSize: "22px", fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>
                         {member.name}
                       </h3>
-                      <p className="text-orange-400" style={{ fontSize: "14px", fontWeight: 500 }}>{member.role}</p>
+                      <p className="text-orange-400" style={{ fontSize: "14px", fontWeight: 500 }}>{t(`team.${member.key}.role`)}</p>
                     </div>
                   </div>
 
@@ -172,7 +147,7 @@ export function TeamSection() {
                       className="text-orange-400 mb-6"
                       style={{ fontSize: "15px", fontWeight: 500 }}
                     >
-                      {member.role}
+                      {t(`team.${member.key}.role`)}
                     </motion.p>
 
                     <motion.p
@@ -182,7 +157,7 @@ export function TeamSection() {
                       className="text-gray-300 mb-8"
                       style={{ fontSize: "15px", lineHeight: "1.8" }}
                     >
-                      {member.bio}
+                      {t(`team.${member.key}.bio`)}
                     </motion.p>
 
                     <motion.div

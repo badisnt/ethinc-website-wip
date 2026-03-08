@@ -11,19 +11,21 @@
     "products": "Produits",
     "about": "Équipe",
     "contact": "Contact",
-    "contactUs": "Contactez-nous"
+    "contactUs": "Contactez-nous",
+    "blog": "Blog"
   },
   "hero": {
     "title": "L'intelligence au service des organisations",
-    "subtitle": "Nous concevons et mettons en œuvre des solutions d'IA et de données qui améliorent les flux de travail, soutiennent la prise de décision et valorisent les données organisationnelles.",
+    "highlightWord": "organisations",
+    "subtitle": "Nous concevons et déployons des solutions d'intelligence artificielle et de données qui améliorent les processus opérationnels, soutiennent la prise de décision et permettent de valoriser les données des organisations.",
     "cta": "Commencer",
     "learnMore": "En savoir plus",
     "viewWork": "Voir nos réalisations",
     "getInTouch": "Nous contacter"
   },
   "quote": {
-    "line1": "Construire des systèmes d'IA significatifs nécessite plus que de la technologie.",
-    "highlight": "Cela exige de la rigueur en ingénierie, des choix responsables et de la confiance.",
+    "line1": "Construire des systèmes d'IA réellement utiles demande plus que de la technologie.",
+    "highlight": "Cela exige de la rigueur d'ingénierie, des choix responsables et une relation de confiance.",
     "line2": ""
   },
   "values": {
@@ -32,19 +34,19 @@
     "pillars": {
       "engineering": {
         "title": "L'IA comme discipline d'ingénierie",
-        "description": "Nous traitons l'intelligence artificielle comme une discipline d'ingénierie. Les systèmes sont conçus avec des objectifs clairement définis, des hypothèses documentées et des critères d'évaluation mesurables. Une attention particulière est accordée à la transparence et à l'explicabilité, garantissant que les modèles restent compréhensibles dans leur comportement et appropriés à leur usage prévu."
+        "description": "Chez Ethinc, l'intelligence artificielle est abordée comme une véritable discipline d'ingénierie. Les systèmes sont conçus avec des objectifs clairement définis, des hypothèses documentées et des critères d'évaluation mesurables. Une attention particulière est portée à la transparence et à l'explicabilité, afin que les modèles restent compréhensibles dans leur fonctionnement et adaptés à leur usage réel."
       },
       "ethics": {
         "title": "Éthique",
-        "description": "L'éthique chez Ethinc guide la manière dont les projets sont sélectionnés, conçus et livrés. Nous appliquons un filtre éthique rigoureux lors de l'évaluation des missions, en privilégiant les travaux qui contribuent à des résultats constructifs et durables. Les considérations éthiques façonnent également les choix techniques, y compris la conception respectueuse de la vie privée et la documentation transparente des capacités et limitations des systèmes."
+        "description": "Chez Ethinc, l'éthique guide la manière dont les projets sont sélectionnés, conçus et déployés. Nous appliquons un filtre éthique rigoureux lors de l'évaluation des collaborations, en privilégiant les projets contribuant à des résultats constructifs et durables. Les considérations éthiques influencent également les choix techniques, notamment en matière de conception respectueuse de la vie privée et de documentation transparente des capacités et limites des systèmes."
       },
       "innovation": {
         "title": "Innovation pragmatique",
-        "description": "Nous abordons l'innovation avec pragmatisme et discipline. Les nouvelles technologies sont adoptées lorsqu'elles offrent une valeur mesurable claire et peuvent être intégrées de manière fiable dans les environnements opérationnels. Les idées expérimentales sont explorées par des prototypes ou preuves de concept avant un déploiement plus large. Nous croyons en la possibilité d'innover tout en maintenant contrôle et stabilité."
+        "description": "Nous abordons l'innovation avec pragmatisme et discipline. Les nouvelles technologies sont adoptées lorsqu'elles apportent une valeur mesurable et peuvent être intégrées de manière fiable dans des environnements opérationnels. Les approches expérimentales sont généralement explorées sous forme de prototypes ou de preuves de concept avant tout déploiement à plus grande échelle. Notre objectif est de permettre aux organisations d'innover tout en conservant maîtrise et stabilité."
       },
       "trust": {
         "title": "Confiance",
-        "description": "La confiance chez Ethinc se construit par la clarté et la transparence dans chaque engagement. Les projets sont définis avec des objectifs clairement documentés, une communication ouverte et des processus de livraison structurés. Nous donnons la priorité à une documentation approfondie, au transfert de connaissances et au strict respect de la confidentialité des données afin que les clients conservent une compréhension et un contrôle complets des systèmes développés."
+        "description": "La confiance chez Ethinc repose sur la clarté et la transparence dans chaque collaboration. Les projets sont définis avec des objectifs clairement documentés, une communication ouverte et des processus de livraison structurés. Nous accordons une grande importance à la documentation, au transfert de connaissances et au respect strict de la confidentialité des données afin que nos clients conservent une compréhension et un contrôle complets des systèmes développés."
       }
     }
   },
@@ -55,65 +57,65 @@
     "items": {
       "aiml": {
         "title": "Intelligence artificielle & Machine Learning",
-        "description": "L'IA et le ML forment le cœur analytique des systèmes de données modernes. Nous appliquons une rigueur d'ingénierie pour concevoir des modèles capables d'interpréter des données complexes, d'identifier des schémas et de soutenir une prise de décision éclairée sur des informations structurées et non structurées."
+        "description": "L'intelligence artificielle et le machine learning constituent le cœur analytique des systèmes de données modernes. Nous appliquons une rigueur d'ingénierie afin de concevoir des modèles capables d'interpréter des données complexes, d'identifier des schémas et de soutenir la prise de décision."
       },
       "genai": {
-        "title": "IA générative & NLP",
-        "description": "Systèmes conçus pour structurer et récupérer les connaissances, automatiser les flux de travail documentaires et soutenir le travail analytique. Cela comprend l'intégration de LLM, le RAG, le fine-tuning de modèles, les systèmes d'agents, le traitement multilingue, l'OCR et l'IA multimodale."
+        "title": "IA Générative & NLP",
+        "description": "L'IA générative permet aux organisations d'interagir directement avec leur propre base de connaissances et de transformer des informations non structurées en insights exploitables. Ces systèmes sont conçus pour structurer et retrouver l'information, automatiser les flux documentaires et soutenir les analyses nécessitant traditionnellement de longues revues manuelles."
       },
       "ml": {
         "title": "Machine Learning",
-        "description": "Systèmes prédictifs qui détectent des schémas dans les données pour la prévision, la détection d'anomalies et l'optimisation des processus. Nous nous concentrons sur la construction de modèles qui restent interprétables, fiables et alignés sur les processus décisionnels réels."
+        "description": "Le machine learning permet de détecter des schémas dans les données qui resteraient autrement invisibles. Ces modèles soutiennent la prévision, la détection d'anomalies et l'optimisation de processus dans des environnements opérationnels où les décisions reposent sur des données complexes ou évolutives."
       },
       "cv": {
         "title": "Vision par ordinateur",
-        "description": "Systèmes de vision qui interprètent les environnements visuels et transforment les images ou vidéos en informations structurées. Du contrôle qualité à la surveillance d'infrastructures, ces systèmes s'intègrent directement dans les flux de travail opérationnels."
+        "description": "La computer vision permet aux machines d'interpréter des images et des flux vidéo afin d'en extraire des informations structurées. De l'inspection industrielle au suivi d'infrastructures, ces systèmes permettent d'analyser des données visuelles à grande échelle."
       },
       "graphml": {
         "title": "Graph Machine Learning",
-        "description": "Modèles qui capturent les relations entre entités — personnes, transactions, documents ou systèmes — pour révéler des schémas que l'analyse traditionnelle ne détecte pas. Utile pour les graphes de connaissances, l'analyse de réseaux, la détection de fraude et les structures de données complexes."
+        "description": "De nombreux problèmes réels sont définis non seulement par les données mais aussi par les relations entre entités. Le machine learning sur graphes modélise ces connexions afin de révéler des structures que l'analyse traditionnelle ne détecte pas."
       }
     }
   },
   "serviceModel": {
     "titlePart1": "Notre modèle",
-    "titlePart2": "de service",
-    "subtitle": "Nous accompagnons les organisations à différentes étapes de leurs initiatives en IA et données, de l'exploration initiale au développement de systèmes et au support opérationnel à long terme.",
+    "titlePart2": "d'intervention",
+    "subtitle": "Ethinc accompagne les organisations à différentes étapes de leurs initiatives en IA et en data, de l'exploration initiale au développement de systèmes et à leur exploitation dans la durée.",
     "items": {
       "implementation": {
         "title": "Implémentation",
-        "description": "Conception et développement de systèmes d'IA et de données. Une équipe dédiée de conseil et d'ingénierie travaille avec vous sur un périmètre et un calendrier convenus, de l'architecture système et du développement aux tests et au déploiement."
+        "description": "Les missions d'implémentation portent sur la conception et le développement de systèmes d'IA et de données. Ethinc mobilise une équipe dédiée de consultants et d'ingénieurs qui travaille avec le client selon un périmètre et un calendrier définis. Le travail est structuré en phases allant de l'architecture système au développement, aux tests et au déploiement."
       },
       "maintenance": {
         "title": "Maintenance",
-        "description": "Support technique continu pour les systèmes précédemment développés ou déployés. Une équipe de conseil surveille les performances, met à jour les modèles, améliore les pipelines de données et adapte les systèmes à mesure que les exigences opérationnelles évoluent."
+        "description": "Les missions de maintenance assurent le suivi technique des systèmes déjà déployés. Une équipe reste disponible pour surveiller les performances, mettre à jour les modèles, améliorer les pipelines de données et adapter les systèmes à l'évolution des besoins opérationnels."
       },
       "advisory": {
         "title": "Conseil",
-        "description": "Expertise ciblée pour aider les organisations à évaluer les opportunités, structurer les initiatives et prendre des décisions éclairées concernant les systèmes d'IA et de données. Les missions se concentrent sur le cadrage des problèmes, la conception de solutions, l'évaluation technique et la planification de la mise en œuvre."
+        "description": "Les missions de conseil apportent une expertise ciblée pour identifier les opportunités, structurer les initiatives et éclairer les décisions liées à l'IA et aux systèmes de données. Elles portent généralement sur la définition des cas d'usage, la conception de solutions, l'évaluation technique et la planification de l'implémentation."
       }
     }
   },
   "projectDelivery": {
-    "titlePart1": "Livraison",
+    "titlePart1": "Delivery",
     "titlePart2": "de projet",
-    "subtitle": "Les projets Ethinc suivent un processus de livraison structuré conçu pour passer du cadrage du problème à des systèmes opérationnels fiables.",
+    "subtitle": "Les projets Ethinc suivent un processus structuré permettant de passer de la définition du problème à la mise en production de systèmes fiables.",
     "steps": {
       "research": {
         "title": "Recherche & cadrage",
-        "description": "Comprendre l'espace du problème et définir une approche technique viable. Définition du cas d'usage, évaluation de faisabilité, évaluation technique, considérations de risque et de gouvernance, et validation de prototype."
+        "description": "Compréhension du problème et définition d'une approche technique viable. Définition des cas d'usage et études de faisabilité, évaluation technologique, analyse des risques, gouvernance et conformité, validation par prototype."
       },
       "design": {
         "title": "Conception & ingénierie",
-        "description": "Concevoir l'architecture et construire les systèmes d'intelligence de base. Architecture IA et modélisation des données, intégration de LLM, pipelines de machine learning personnalisés et systèmes modulaires prêts pour l'API."
+        "description": "Conception de l'architecture et développement des systèmes intelligents. Architecture IA et modélisation des données, intégration de LLM (cloud ou on-premise), pipelines de machine learning personnalisés, systèmes modulaires exposés via API."
       },
       "deploy": {
         "title": "Infrastructure & déploiement",
-        "description": "Déployer les systèmes dans des environnements opérationnels sécurisés et évolutifs. Infrastructure cloud ou sur site, environnements conteneurisés sécurisés, intégration CI/CD et MLOps, surveillance et fiabilité du système."
+        "description": "Déploiement des systèmes dans des environnements sécurisés et évolutifs. Infrastructure cloud ou on-premise (AWS, GCP, Azure), environnements conteneurisés sécurisés, intégration CI/CD et MLOps, supervision, versionnement et fiabilité des systèmes."
       },
       "transfer": {
         "title": "Transfert de connaissances",
-        "description": "S'assurer que les équipes comprennent, opèrent et font évoluer les systèmes déployés. Documentation et transfert du système, montée en compétence des équipes internes et ateliers de formation."
+        "description": "Assurer que les équipes clientes comprennent et maîtrisent les systèmes déployés. Documentation et transfert technique, formation des équipes internes, ateliers de formation."
       }
     }
   },
@@ -123,8 +125,8 @@
     "subtitle": "Découvrez notre collection de projets IA qui ont eu un impact mesurable dans divers secteurs."
   },
   "aboutPage": {
-    "titlePart1": "Découvrez",
-    "titlePart2": "notre équipe",
+    "titlePart1": "L'",
+    "titlePart2": "équipe",
     "subtitle": "Nous sommes une équipe d'anciens de l'EPFL et de spécialistes en IA basés à Lausanne, en Suisse. Nous combinons une expertise technique approfondie avec la passion de résoudre des problèmes concrets grâce à l'intelligence artificielle.",
     "growing": "Nous grandissons",
     "joinTitle": "Intéressé à rejoindre notre équipe ?",
@@ -132,9 +134,9 @@
     "applyNow": "Postuler"
   },
   "blogPage": {
-    "titlePart1": "Lisez",
-    "titlePart2": "-nous",
-    "subtitle": "Notre blog est l'endroit où nous documentons les idées, expériences et observations qui émergent de notre travail. Nous écrivons sur les découvertes techniques, les expériences sectorielles et les questions plus larges entourant l'intelligence artificielle et les systèmes de données."
+    "titlePart1": "Le",
+    "titlePart2": "Blog",
+    "subtitle": "Notre blog est l'espace où nous partageons les idées, les expériences et les observations issues de notre travail. Nous y publions des réflexions techniques, des retours d'expérience et des analyses sur l'évolution de l'intelligence artificielle et des systèmes de données."
   },
   "contactPage": {
     "titlePart1": "Contactez",
@@ -162,7 +164,7 @@
       "nlp": {
         "title": "IA Générative & NLP",
         "shortDescription": "Nous concevons des systèmes IA générative et NLP robustes pour des environnements multilingues, à haut volume et sensibles.",
-        "description": "Nous concevons des systèmes IA générative et NLP robustes pour des environnements multilingues, à haut volume et sensibles. Notre expertise couvre les frameworks agentiques, le fine-tuning et déploiement de LLM, la classification de texte, l'extraction d'entités, la synthèse, l'analyse de documents et le traitement multilingue.",
+        "description": "L'IA générative permet aux organisations d'interagir directement avec leur propre base de connaissances, documents, rapports, emails ou données de recherche, et de transformer des informations non structurées en insights exploitables. Cela inclut les modèles de langage, les systèmes de recherche augmentée, le traitement multilingue et les approches multimodales combinant texte, image et données structurées.",
         "useCases": [
           "Frameworks IA agentique avec LangGraph et LangChain",
           "Fine-tuning et déploiement local de LLM",
@@ -183,7 +185,7 @@
       "computerVision": {
         "title": "Vision par Ordinateur",
         "shortDescription": "Nous construisons des modèles de vision avancés qui apportent structure et perspicacité aux données d'image et de vidéo.",
-        "description": "Nous construisons des modèles de vision avancés et génératifs qui apportent structure et perspicacité aux données d'image et de vidéo. Nos solutions incluent la détection d'objets, la classification d'images, OCR, imagerie médicale et des pipelines multimodaux personnalisés.",
+        "description": "La computer vision permet aux machines d'interpréter des images et des flux vidéo afin d'en extraire des informations structurées. De l'inspection industrielle au suivi d'infrastructures en passant par l'analyse de contenus visuels, ces systèmes permettent d'analyser des données visuelles à grande échelle. Ethinc combine techniques de deep learning et ingénierie logicielle pour développer des systèmes de vision intégrés aux processus opérationnels.",
         "useCases": [
           "Imagerie médicale et détection de neurones",
           "OCR et traitement de documents",
@@ -201,7 +203,7 @@
       "ml": {
         "title": "Machine Learning",
         "shortDescription": "Nous résolvons les défis prédictifs et analytiques sur des données structurées et non structurées.",
-        "description": "Nous résolvons les défis prédictifs et analytiques sur des données structurées et non structurées. Nos solutions incluent l'IA explicable, l'analyse statistique, les prévisions, le clustering et des solutions ML classiques adaptées à vos besoins.",
+        "description": "Le machine learning permet de détecter des schémas dans les données qui resteraient autrement invisibles. Ces modèles soutiennent la prévision, la détection d'anomalies et l'optimisation de processus dans des environnements opérationnels où les décisions reposent sur des données complexes ou évolutives. Ethinc conçoit des systèmes prédictifs interprétables, fiables et alignés avec les processus décisionnels réels des organisations.",
         "useCases": [
           "IA explicable pour support décisionnel",
           "Analyse statistique et inférence causale",
@@ -220,7 +222,7 @@
       "graphML": {
         "title": "Graph Machine Learning",
         "shortDescription": "Nous utilisons l'intelligence basée sur les graphes pour révéler des relations cachées et permettre un raisonnement complexe sur des données connectées.",
-        "description": "Nous utilisons l'intelligence basée sur les graphes pour révéler des relations cachées et permettre un raisonnement complexe sur des données connectées. Notre expertise inclut les embeddings de graphes, la détection de fraude, les réseaux biologiques et le traitement de graphes à grande échelle.",
+        "description": "De nombreux problèmes réels sont définis non seulement par les données mais aussi par les relations entre entités. Le machine learning sur graphes modélise ces connexions, entre personnes, transactions, documents ou systèmes, afin de révéler des structures que l'analyse traditionnelle ne détecte pas. Ces méthodes sont particulièrement utiles pour les graphes de connaissances, l'analyse de réseaux, la détection de fraude et les systèmes complexes de données relationnelles.",
         "useCases": [
           "Embeddings de topologie de graphe pour détection de fraude",
           "Analyse de réseaux biologiques",
@@ -275,7 +277,7 @@
     "prism": {
       "title": "PRISM",
       "subtitle": "Récupération et synthèse confidentielle d'informations",
-      "description": "Une plateforme IA entièrement locale, axée sur la confidentialité, qui analyse et résume divers types de documents, prend en charge le traitement multilingue et fournit des insights vérifiables et exportables—tout en assurant un contrôle complet des données.",
+      "description": "Une plateforme IA entièrement locale, axée sur la confidentialité, qui analyse et résume divers types de documents, prend en charge le traitement multilingue et fournit des insights vérifiables et exportables — tout en assurant un contrôle complet des données.",
       "features": [
         "Prend en charge le texte, les médias, les emails et le contenu multilingue",
         "Extrait les métadonnées et les données structurées des documents",
@@ -308,7 +310,7 @@
     "nizar": {
       "name": "Nizar Ghandri",
       "role": "Co-fondateur & Directeur Technique (CTO)",
-      "bio": "Ancien responsable technique GenAI chez UBS, spécialisé en IA générative, déploiement end-to-end et gestion des parties prenantes. Combinant une solide expertise technique avec des compétences commerciales, il stimule l'innovation IA du concept à la production.",
+      "bio": "Nizar dirige la vision technique d'Ethinc. Fort d'une expérience dans la conception et le déploiement de systèmes de machine learning et d'IA générative dans des environnements industriels, il se concentre sur la construction d'infrastructures d'IA fiables intégrées aux processus opérationnels.",
       "skills": [
         "IA Générative",
         "Traitement du langage naturel",
@@ -330,7 +332,7 @@
     "selim": {
       "name": "Selim Fekih",
       "role": "Co-fondateur & Directeur des Opérations (COO)",
-      "bio": "Consultant IA spécialisé dans le secteur humanitaire, avec une expérience pratique dans le développement de solutions NLP et de pipelines d'analyse axés sur la confidentialité pour relever les défis humanitaires. A contribué à des plateformes comme theDEEP et Reporter AI (reporterai.org), construisant des systèmes NLP multilingues et déployables localement.",
+      "bio": "Selim supervise les opérations et la livraison des projets chez Ethinc, veillant à ce que les solutions techniques se traduisent par des systèmes utiles pour les organisations. Son expérience en NLP et en IA appliquée aux contextes humanitaires et internationaux l'a amené à développer une expertise forte dans l'analyse multilingue et la conception de systèmes respectueux de la confidentialité.",
       "skills": [
         "Conseil en IA",
         "Solutions NLP",
@@ -353,7 +355,7 @@
     "badis": {
       "name": "Badis Machraoui",
       "role": "Co-fondateur & Ingénieur Logiciel/IA",
-      "bio": "Se concentre sur le développement de nos plateformes, incluant le développement IA, l'ingénierie de prompts et le backend logiciel. Dédié à la création de systèmes robustes et évolutifs qui alimentent nos solutions IA.",
+      "bio": "Badis contribue au développement des systèmes logiciels et de l'infrastructure technique d'Ethinc. Son travail couvre le développement backend, l'intégration de l'IA et la conception de systèmes inspirés des bonnes pratiques en cybersécurité.",
       "skills": [
         "Développement frontend",
         "Développement backend",
@@ -380,7 +382,7 @@
     "viewWork": "Voir nos réalisations"
   },
   "footer": {
-    "description": "L'intelligence au service des organisations. Nous concevons et mettons en œuvre des solutions d'IA et de données qui améliorent les flux de travail, soutiennent la prise de décision et valorisent les données organisationnelles.",
+    "description": "L'intelligence au service des organisations. Nous concevons et déployons des solutions d'IA et de données qui améliorent les processus opérationnels, soutiennent la prise de décision et valorisent les données des organisations.",
     "descriptionBrief": "L'intelligence au service des organisations.",
     "contactTitle": "Contact",
     "quickLinks": "Liens Rapides",
@@ -475,5 +477,204 @@
       "content": "Notre site web n'utilise pas de cookies ou de technologies de suivi similaires. Nous ne collectons aucune donnée via des cookies, et votre expérience de navigation n'est suivie d'aucune manière. Cela signifie que vous pouvez naviguer sur notre site sans aucune préoccupation concernant le suivi basé sur les cookies ou la collecte de données."
     }
   },
-  "trustedBy": "Ils nous font confiance"
+  "trustedBy": "Ils nous font confiance",
+  "team": {
+    "nizar": {
+      "role": "Directeur Technique",
+      "bio": "Nizar dirige la vision technique d'Ethinc. Fort d'une expérience dans la conception et le déploiement de systèmes de machine learning et d'IA générative dans des environnements industriels, il se concentre sur la construction d'infrastructures d'IA fiables, intégrées aux processus opérationnels. Son travail couvre le machine learning appliqué, l'analyse de graphes et le déploiement d'IA à grande échelle."
+    },
+    "selim": {
+      "role": "Directeur des Opérations",
+      "bio": "Selim supervise les opérations et la livraison des projets chez Ethinc, veillant à ce que les solutions techniques se traduisent par des systèmes utiles pour les organisations. Son expérience en NLP et en IA appliquée aux contextes humanitaires et internationaux l'a amené à développer une expertise forte dans l'analyse multilingue et la conception de systèmes respectueux de la confidentialité. Chez Ethinc, il fait le lien entre la rigueur technique et la collaboration avec les équipes et les partenaires."
+    },
+    "badis": {
+      "role": "Ingénieur fondateur",
+      "bio": "Badis contribue au développement des systèmes logiciels et de l'infrastructure technique d'Ethinc. Son travail couvre le développement backend, l'intégration de l'IA et la conception de systèmes inspirés des bonnes pratiques en cybersécurité, lui permettant d'intervenir sur plusieurs couches de la stack technologique. Il joue un rôle fondamental dans la transformation d'idées en solutions d'ingénierie fiables et maintenables."
+    }
+  },
+  "layers": {
+    "explore": "Explorer",
+    "selectService": "Sélectionnez un service pour en savoir plus",
+    "capabilities": "Compétences",
+    "intelligence": {
+      "label": "Couche Intelligence",
+      "title": "IA & Machine Learning",
+      "intro": "L'intelligence artificielle et le machine learning constituent le cœur analytique des systèmes de données modernes. Chez Ethinc, ces technologies sont appliquées avec rigueur d'ingénierie pour concevoir des modèles capables d'interpréter des données complexes, d'identifier des schémas et de soutenir la prise de décision éclairée. Notre travail couvre l'IA générative, la modélisation prédictive, la vision par ordinateur et l'apprentissage sur graphes.",
+      "subs": {
+        "genai": {
+          "title": "IA Générative & NLP",
+          "description": "L'IA générative permet aux organisations d'interagir directement avec leur propre base de connaissances — documents, rapports, emails et données de recherche — pour transformer des informations non structurées en insights exploitables. Ces systèmes sont conçus pour structurer et retrouver l'information, automatiser les flux documentaires et soutenir les analyses nécessitant traditionnellement de longues revues manuelles.",
+          "caps": {
+            "0": "Intégration de LLM",
+            "1": "Génération augmentée par récupération (RAG)",
+            "2": "Fine-tuning de modèles",
+            "3": "Systèmes d'agents",
+            "4": "Traitement multilingue",
+            "5": "OCR",
+            "6": "IA multimodale"
+          }
+        },
+        "ml": {
+          "title": "Machine Learning",
+          "description": "Le machine learning permet de détecter des schémas dans les données qui resteraient autrement invisibles. Ces modèles soutiennent la prévision, la détection d'anomalies et l'optimisation de processus dans des environnements opérationnels où les décisions reposent sur des données complexes ou évolutives.",
+          "caps": {
+            "0": "Modélisation prédictive",
+            "1": "Détection d'anomalies",
+            "2": "Prévision de séries temporelles",
+            "3": "Deep learning",
+            "4": "IA explicable"
+          }
+        },
+        "cv": {
+          "title": "Vision par ordinateur",
+          "description": "La vision par ordinateur permet aux machines d'interpréter des environnements visuels et de transformer des images ou des vidéos en informations structurées. De l'inspection qualité au suivi d'infrastructures en passant par l'analyse de médias, ces systèmes permettent d'analyser des données visuelles à grande échelle.",
+          "caps": {
+            "0": "Détection d'objets",
+            "1": "Classification",
+            "2": "Segmentation",
+            "3": "Vision transformers",
+            "4": "Traitement d'images & vidéo"
+          }
+        },
+        "graphml": {
+          "title": "Graph Machine Learning",
+          "description": "De nombreux problèmes réels sont définis non seulement par les données mais aussi par les relations entre entités. Le machine learning sur graphes modélise ces connexions afin de révéler des structures que l'analyse traditionnelle ne détecte pas.",
+          "caps": {
+            "0": "Graphes de connaissances",
+            "1": "Embeddings de graphes",
+            "2": "Prédiction de liens",
+            "3": "Analyse de réseaux"
+          }
+        }
+      }
+    },
+    "application": {
+      "label": "Couche Application",
+      "title": "Ingénierie logicielle",
+      "intro": "L'ingénierie logicielle constitue la couche opérationnelle qui permet aux systèmes intelligents de fonctionner de manière fiable dans des environnements réels. Nous concevons et construisons des applications robustes et des architectures système intégrant l'IA, le traitement de données et les interfaces utilisateur dans des plateformes cohérentes — sécurisées, maintenables et évolutives.",
+      "subs": {
+        "backend": {
+          "title": "Systèmes backend",
+          "description": "Architectures serveur robustes conçues pour la performance, la sécurité et l'intégration fluide avec les pipelines d'IA et les sources de données.",
+          "caps": {
+            "0": "Conception & développement d'API",
+            "1": "Architecture microservices",
+            "2": "Logique serveur sécurisée",
+            "3": "Intégration de bases de données"
+          }
+        },
+        "frontend": {
+          "title": "Applications frontend",
+          "description": "Interfaces utilisateur rendant les données complexes et les résultats d'IA accessibles, intuitifs et actionnables pour les équipes et les parties prenantes.",
+          "caps": {
+            "0": "Interfaces d'applications web",
+            "1": "Interfaces de visualisation de données",
+            "2": "Implémentation de design centré utilisateur"
+          }
+        },
+        "appdev": {
+          "title": "Développement d'applications",
+          "description": "Développement d'applications de bout en bout, des outils internes aux prototypes SaaS alimentés par l'IA, conçus pour la sécurité et l'intégration en entreprise.",
+          "caps": {
+            "0": "Outils & plateformes internes",
+            "1": "Applications mobiles",
+            "2": "Prototypes SaaS alimentés par l'IA",
+            "3": "Intégration sécurisée en entreprise"
+          }
+        }
+      }
+    },
+    "infrastructure": {
+      "label": "Couche Infrastructure",
+      "title": "Ingénierie des données & systèmes distribués",
+      "intro": "Des systèmes d'IA fiables reposent sur des infrastructures de données bien structurées, capables de traiter des volumes importants et diversifiés. Nous concevons et mettons en œuvre des pipelines de données et des architectures distribuées permettant aux organisations de collecter, transformer et analyser les données efficacement — l'épine dorsale des plateformes analytiques modernes.",
+      "subs": {
+        "pipelines": {
+          "title": "Pipelines de données & orchestration",
+          "description": "Workflows de données automatisés garantissant la collecte, la transformation et la livraison fiables des données à travers l'organisation.",
+          "caps": {
+            "0": "Pipelines ETL",
+            "1": "Orchestration de workflows",
+            "2": "Traitement automatisé des données"
+          }
+        },
+        "platforms": {
+          "title": "Plateformes de données",
+          "description": "Infrastructure de stockage et d'analyse de données évolutive, conçue pour les requêtes en temps réel et l'analyse historique.",
+          "caps": {
+            "0": "Entreposage de données",
+            "1": "Systèmes OLAP",
+            "2": "Architecture SQL & NoSQL"
+          }
+        },
+        "distributed": {
+          "title": "Traitement distribué",
+          "description": "Frameworks de traitement de données à grande échelle pour les organisations gérant des volumes dépassant la capacité d'un seul système.",
+          "caps": {
+            "0": "Apache Spark",
+            "1": "Traitement de données à grande échelle",
+            "2": "Frameworks de calcul distribué"
+          }
+        },
+        "devops": {
+          "title": "Infrastructure & DevOps",
+          "description": "Environnements de déploiement de qualité production avec automatisation, supervision et livraison continue intégrées.",
+          "caps": {
+            "0": "Services conteneurisés",
+            "1": "Automatisation des workflows",
+            "2": "Pipelines CI/CD",
+            "3": "Environnements de déploiement évolutifs"
+          }
+        }
+      }
+    }
+  },
+  "delivery": {
+    "viewDetails": "Voir les détails",
+    "allPhases": "Toutes les phases",
+    "keyActivities": "Activités clés",
+    "research": {
+      "label": "Phase 1",
+      "title": "Recherche & cadrage",
+      "subtitle": "Compréhension du problème et définition d'une approche technique viable.",
+      "bullets": {
+        "0": "Définition des cas d'usage & évaluation de faisabilité",
+        "1": "Évaluation technique (IA générative, ML, Vision par ordinateur, Graph ML)",
+        "2": "Analyse des risques, gouvernance & conformité",
+        "3": "Validation par prototype"
+      }
+    },
+    "design": {
+      "label": "Phase 2",
+      "title": "Conception & ingénierie",
+      "subtitle": "Conception de l'architecture et développement des systèmes intelligents.",
+      "bullets": {
+        "0": "Architecture IA & modélisation des données",
+        "1": "Intégration de LLM (cloud ou on-premise)",
+        "2": "Pipelines de machine learning personnalisés",
+        "3": "Systèmes modulaires exposés via API"
+      }
+    },
+    "deploy": {
+      "label": "Phase 3",
+      "title": "Déploiement",
+      "subtitle": "Déploiement des systèmes dans des environnements sécurisés et évolutifs.",
+      "bullets": {
+        "0": "Infrastructure cloud ou on-premise (AWS, GCP, Azure)",
+        "1": "Environnements conteneurisés sécurisés",
+        "2": "Intégration CI/CD et MLOps",
+        "3": "Supervision, versionnement & fiabilité des systèmes"
+      }
+    },
+    "transfer": {
+      "label": "Phase 4",
+      "title": "Transfert de connaissances",
+      "subtitle": "Assurer que les équipes comprennent, opèrent et font évoluer les systèmes déployés.",
+      "bullets": {
+        "0": "Documentation et transfert technique",
+        "1": "Formation des équipes internes",
+        "2": "Ateliers de formation"
+      }
+    }
+  }
 }

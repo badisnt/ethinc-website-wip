@@ -360,7 +360,7 @@ export function HeroSection() {
   }, [mouseX, mouseY, glowX, glowY]);
 
   const fullTitle = t('hero.title', 'Making Intelligence Work for Organizations');
-  const highlightWord = 'Organizations';
+  const highlightWord = t('hero.highlightWord', 'Organizations');
   const allWords = fullTitle.split(/\s+/).filter(Boolean);
 
   const fallbackLabels = ["Industries Served", "Projects Delivered", "EPFL Alumni", "Founded"];

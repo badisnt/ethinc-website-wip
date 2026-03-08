@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { HeroSection } from "@/components/HeroSection";
 import { TeamSection } from "@/components/TeamSection";
 import { ValuesContent } from "@/components/ValuesSection";
@@ -6,6 +7,13 @@ import { ServiceModelContent } from "@/components/ServiceModelSection";
 import { ProjectDeliveryContent } from "@/components/ProjectDeliverySection";
 import { CTASection } from "@/components/CTASection";
 import { useTranslation } from "react-i18next";
+
+const scrollReveal = {
+  initial: { opacity: 0, y: 36 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.15 },
+  transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] },
+};
 
 const titleStyle = {
   fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
@@ -20,7 +28,11 @@ const Index = () => {
     <>
       <HeroSection />
 
-      <section className="py-20 md:py-28" style={{ background: "#1a1a3e" }}>
+      <motion.section
+        className="py-20 md:py-28"
+        style={{ background: "#1a1a3e" }}
+        {...scrollReveal}
+      >
         <div className="text-center px-4 sm:px-6 lg:px-8 mb-12">
           <h2 className="text-white mb-4" style={titleStyle}>
             {t("aboutPage.titlePart1", "Meet")}{" "}
@@ -35,9 +47,13 @@ const Index = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <TeamSection />
         </div>
-      </section>
+      </motion.section>
 
-      <section className="py-20 md:py-28" style={{ background: "#1a1a3e" }}>
+      <motion.section
+        className="py-20 md:py-28"
+        style={{ background: "#1a1a3e" }}
+        {...scrollReveal}
+      >
         <div className="text-center px-4 sm:px-6 lg:px-8 mb-8">
           <h2 className="text-white mb-4" style={titleStyle}>
             {t("values.titlePart1", "What Guides")}{" "}
@@ -45,12 +61,12 @@ const Index = () => {
               {t("values.titlePart2", "Our Work")}
             </span>
           </h2>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-2xl mx-auto px-4">
             <p
               className="text-gray-300"
               style={{
-                fontSize: "clamp(17px, 2.2vw, 22px)",
-                lineHeight: 1.6,
+                fontSize: "clamp(15px, 1.4vw, 17px)",
+                lineHeight: 1.8,
                 fontWeight: 500,
                 fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
               }}
@@ -63,9 +79,14 @@ const Index = () => {
           </div>
         </div>
         <ValuesContent />
-      </section>
+      </motion.section>
 
-      <section id="services" className="py-20 md:py-28" style={{ background: "#1a1a3e" }}>
+      <motion.section
+        id="services"
+        className="py-20 md:py-28"
+        style={{ background: "#1a1a3e" }}
+        {...scrollReveal}
+      >
         <div className="text-center px-4 sm:px-6 lg:px-8 mb-12">
           <h2 className="text-white mb-4" style={titleStyle}>
             {t("expertise.titlePart1", "Areas of")}{" "}
@@ -75,9 +96,13 @@ const Index = () => {
           </h2>
         </div>
         <ServicesContent />
-      </section>
+      </motion.section>
 
-      <section className="py-20 md:py-28" style={{ background: "#1a1a3e" }}>
+      <motion.section
+        className="py-20 md:py-28"
+        style={{ background: "#1a1a3e" }}
+        {...scrollReveal}
+      >
         <div className="text-center px-4 sm:px-6 lg:px-8 mb-12">
           <h2 className="text-white mb-4" style={titleStyle}>
             {t('serviceModel.titlePart1', 'Our Service')}{" "}
@@ -90,9 +115,13 @@ const Index = () => {
           </p>
         </div>
         <ServiceModelContent />
-      </section>
+      </motion.section>
 
-      <section className="py-20 md:py-28" style={{ background: "#1a1a3e" }}>
+      <motion.section
+        className="py-20 md:py-28"
+        style={{ background: "#1a1a3e" }}
+        {...scrollReveal}
+      >
         <div className="text-center px-4 sm:px-6 lg:px-8 mb-12">
           <h2 className="text-white mb-4" style={titleStyle}>
             {t("projectDelivery.titlePart1", "Project")}{" "}
@@ -105,9 +134,11 @@ const Index = () => {
           </p>
         </div>
         <ProjectDeliveryContent />
-      </section>
+      </motion.section>
 
-      <CTASection />
+      <motion.div {...scrollReveal}>
+        <CTASection />
+      </motion.div>
     </>
   );
 };
