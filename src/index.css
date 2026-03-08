@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,15 +9,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Full-page scroll snap on home - one section per scroll */
-html.home-scroll-snap {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-
-/* Prevent horizontal overflow on mobile - more targeted approach */
+/* Prevent horizontal overflow on mobile - use clip to not break sticky positioning */
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   max-width: 100%;
 }

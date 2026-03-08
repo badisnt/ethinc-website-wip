@@ -75,7 +75,7 @@ export function ContactPage() {
               style={{
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
-                fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+                fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
               }}
             >
               {t('contactPage.titlePart1', 'Contact')}{" "}
@@ -109,7 +109,7 @@ export function ContactPage() {
                     <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="w-10 h-10 text-green-500" />
                     </div>
-                    <h3 className="text-[#1a1a3e] mb-3" style={{ fontSize: '24px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+                    <h3 className="text-[#1a1a3e] mb-3" style={{ fontSize: '24px', fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>
                       {t('contactPage.messageSent', 'Message Sent!')}
                     </h3>
                     <p className="text-[#5a5a72] mb-6 max-w-md" style={{ fontSize: '15px', lineHeight: '1.7' }}>
@@ -132,7 +132,7 @@ export function ContactPage() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="rounded-2xl bg-white border border-gray-200/80 shadow-sm p-8 md:p-10">
-                  <h3 className="text-[#1a1a3e] mb-2" style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+                  <h3 className="text-[#1a1a3e] mb-2" style={{ fontSize: '20px', fontWeight: 600, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>
                     {t('contactPage.formTitle', 'Get in Touch')}
                   </h3>
                   <p className="text-[#8a8a9e] mb-6" style={{ fontSize: '14px' }}>
@@ -214,7 +214,7 @@ export function ContactPage() {
               className="space-y-6"
             >
               <div className="rounded-2xl bg-white border border-gray-200/80 shadow-sm p-8">
-                <h3 className="text-[#1a1a3e] mb-6" style={{ fontSize: '18px', fontWeight: 600, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+                <h3 className="text-[#1a1a3e] mb-6" style={{ fontSize: '18px', fontWeight: 600, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>
                   {t('contactPage.contactInfo', 'Contact Information')}
                 </h3>
                 <div className="space-y-5">

@@ -35,7 +35,7 @@ export function CTASection() {
               style={{
                 fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
                 fontWeight: 700,
-                fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+                fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
                 lineHeight: 1.2,
               }}
             >

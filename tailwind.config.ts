@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+				sans: ['"Albert Sans"', 'system-ui', 'sans-serif'],
+				heading: ['"Albert Sans"', 'system-ui', 'sans-serif'],
 				system: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif'],
 			},
 			backgroundImage: {

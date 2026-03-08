@@ -65,7 +65,7 @@ function FontShowcase() {
           </p>
           <h2
             className="text-[#1a1a3e] mb-3"
-            style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}
+            style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}
           >
             Pick a heading font
           </h2>
@@ -137,7 +137,7 @@ export function AboutPage() {
               style={{
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
-                fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+                fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
               }}
             >
               {t('aboutPage.titlePart1', 'Meet')}{" "}
@@ -178,7 +178,7 @@ export function AboutPage() {
                 style={{
                   fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
                   fontWeight: 700,
-                  fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+                  fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
                   lineHeight: 1.2,
                 }}
               >

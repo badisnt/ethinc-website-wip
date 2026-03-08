@@ -19,7 +19,7 @@ export function MeetUsSection() {
             style={{
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
               fontWeight: 700,
-              fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+              fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
             }}
           >
             {t("aboutPage.titlePart1", "Meet")}{" "}

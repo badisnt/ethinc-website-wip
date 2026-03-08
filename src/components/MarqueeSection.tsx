@@ -24,7 +24,7 @@ export function QuoteSection() {
             fontSize: "clamp(24px, 3.5vw, 42px)",
             lineHeight: 1.35,
             fontWeight: 600,
-            fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+            fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
             letterSpacing: "-0.02em",
           }}
         >

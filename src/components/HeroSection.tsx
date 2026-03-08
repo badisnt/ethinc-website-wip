@@ -403,7 +403,7 @@ export function HeroSection() {
                 fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                 fontWeight: 700,
                 lineHeight: 1.1,
-                fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+                fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
               }}
             >
               {allWords.map((word, i) => {

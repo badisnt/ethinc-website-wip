@@ -16,7 +16,7 @@ export function BlogPage() {
         style={{
           fontSize: 'clamp(2rem, 4vw, 3rem)',
           fontWeight: 700,
-          fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+          fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
         }}
       >
         {t('blogPage.titlePart1', 'Read')}{" "}

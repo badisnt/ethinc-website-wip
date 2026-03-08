@@ -13,58 +13,17 @@ const pillarKeys = [
 const SKEW = 8;
 const ease: [number, number, number, number] = [0.4, 0, 0.2, 1];
 
-export function ValuesSection() {
+export function ValuesContent() {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState<number | null>(null);
   const [hovered, setHovered] = useState<number | null>(null);
   const isExpanded = expanded !== null;
 
   return (
-    <section className="bg-[#1a1a3e] pt-16 md:pt-24">
-      <div className="text-center pt-20 pb-6 px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-white"
-          style={{
-            fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
-            fontWeight: 700,
-            fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
-          }}
-        >
-          {t("values.titlePart1", "What Guides")}{" "}
-          <span className="bg-gradient-to-r from-purple-600 to-orange-500 bg-clip-text text-transparent">
-            {t("values.titlePart2", "Our Work")}
-          </span>
-        </motion.h2>
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center px-4 pb-12 max-w-4xl mx-auto"
-      >
-        <p
-          className="text-gray-300"
-          style={{
-            fontSize: "clamp(17px, 2.2vw, 22px)",
-            lineHeight: 1.6,
-            fontWeight: 500,
-            fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
-          }}
-        >
-          {t('quote.line1', 'Building meaningful AI systems requires more than technology.')}{" "}
-          <span className="bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent font-semibold">
-            {t('quote.highlight', 'It requires engineering rigor, responsible choices, and trust.')}
-          </span>
-        </p>
-      </motion.div>
-
+    <div className="h-full w-full flex items-end">
       <div
         className="relative w-full overflow-hidden"
-        style={{ height: "clamp(320px, 45vh, 480px)" }}
+        style={{ height: "clamp(320px, 50vh, 520px)" }}
       >
         <div className="flex h-full" style={{ margin: "0 -4%" }}>
           {pillarKeys.map((pillar, i) => {
@@ -87,7 +46,6 @@ export function ValuesSection() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
               >
-                {/* Purple background with subtle variation per panel */}
                 <motion.div
                   className="absolute inset-[-20%]"
                   animate={{ skewX: isThis ? 0 : SKEW }}
@@ -101,7 +59,6 @@ export function ValuesSection() {
                   />
                 </motion.div>
 
-                {/* Hover glow */}
                 <motion.div
                   className="absolute inset-0 z-10 pointer-events-none"
                   animate={{
@@ -112,7 +69,6 @@ export function ValuesSection() {
                   transition={{ duration: 0.3 }}
                 />
 
-                {/* Divider line between panels */}
                 {i > 0 && !isThis && !hidden && (
                   <div
                     className="absolute left-0 top-0 bottom-0 w-px z-20"
@@ -145,7 +101,7 @@ export function ValuesSection() {
                         style={{
                           fontSize: "clamp(14px, 1.5vw, 18px)",
                           fontWeight: 600,
-                          fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+                          fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
                         }}
                       >
                         {t(`values.pillars.${pillar.key}.title`)}
@@ -171,7 +127,7 @@ export function ValuesSection() {
                             style={{
                               fontSize: "clamp(20px, 2.5vw, 28px)",
                               fontWeight: 700,
-                              fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+                              fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
                             }}
                           >
                             {t(`values.pillars.${pillar.key}.title`)}
@@ -192,8 +148,6 @@ export function ValuesSection() {
           })}
         </div>
       </div>
-
-      <div className="h-12 bg-[#1a1a3e]" />
-    </section>
+    </div>
   );
 }

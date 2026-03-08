@@ -70,27 +70,22 @@ export function TeamSection() {
   const member = isExpanded ? team[selectedIndex] : null;
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <AnimatePresence mode="wait">
         {!isExpanded ? (
           <motion.div
             key="grid"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.97 }}
             transition={{ duration: 0.3, ease }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 max-w-4xl mx-auto sm:h-[420px]"
           >
-            {team.map((person, i) => (
+            {team.map((person) => (
               <motion.button
                 key={person.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.05 + i * 0.1, duration: 0.5, ease }}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => setSelectedIndex(i)}
-                className="group relative rounded-2xl bg-white/[0.04] border border-white/[0.07] overflow-hidden text-center cursor-pointer hover:border-purple-500/30 hover:bg-white/[0.06] transition-colors duration-300"
+                onClick={() => setSelectedIndex(team.indexOf(person))}
+                className="group relative rounded-2xl bg-white/[0.04] border border-white/[0.07] overflow-hidden text-center cursor-pointer hover:border-purple-500/30 hover:bg-white/[0.06] transition-colors duration-300 w-full"
               >
                 <div className="relative h-[320px] sm:h-[420px] overflow-hidden">
                   <img
@@ -106,7 +101,7 @@ export function TeamSection() {
                     style={{
                       fontSize: "18px",
                       fontWeight: 700,
-                      fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)',
+                      fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)',
                     }}
                   >
                     {person.name}
@@ -153,7 +148,7 @@ export function TeamSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a3e] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#1a1a3e]/60" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 md:hidden">
-                      <h3 className="text-white" style={{ fontSize: "22px", fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+                      <h3 className="text-white" style={{ fontSize: "22px", fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>
                         {member.name}
                       </h3>
                       <p className="text-orange-400" style={{ fontSize: "14px", fontWeight: 500 }}>{member.role}</p>
@@ -166,7 +161,7 @@ export function TeamSection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1, duration: 0.4, ease }}
                       className="text-white mb-1 hidden md:block"
-                      style={{ fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}
+                      style={{ fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}
                     >
                       {member.name}
                     </motion.h3>

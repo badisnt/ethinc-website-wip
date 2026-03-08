@@ -22,7 +22,7 @@ const NotFound = () => {
       >
         <h1
           className="mb-4 bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent"
-          style={{ fontSize: 'clamp(4rem, 10vw, 8rem)', fontWeight: 800, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)', lineHeight: 1 }}
+          style={{ fontSize: 'clamp(4rem, 10vw, 8rem)', fontWeight: 800, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)', lineHeight: 1 }}
         >
           404
         </h1>

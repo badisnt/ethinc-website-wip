@@ -55,7 +55,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2 group">
             <img src={EthincIcon} alt="Ethinc" className="w-8 h-8 object-contain" />
-            <span className="text-white" style={{ fontSize: '20px', fontWeight: 700, fontFamily: 'var(--font-heading, "Space Grotesk", system-ui, sans-serif)' }}>
+            <span className="text-white" style={{ fontSize: '20px', fontWeight: 700, fontFamily: 'var(--font-heading, "Albert Sans", system-ui, sans-serif)' }}>
               Ethinc
             </span>
           </Link>
